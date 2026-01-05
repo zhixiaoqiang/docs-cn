@@ -1,59 +1,59 @@
-# Configure Fonts
+# 配置字体
 
-While you can use HTML and CSS to customize the fonts and style for your slides as you want, Slidev also provides a convenient way to use them effortlessly.
+虽然你可以使用 HTML 和 CSS 来自定义幻灯片的字体和样式，Slidev 也提供了一种便捷的方式来轻松使用它们。
 
-In your frontmatter, configure as the following:
+在你的 frontmatter 中，按如下方式配置：
 
 ```yaml
 ---
 fonts:
-  # basically the text
+  # 基本文本字体
   sans: Robot
-  # use with `font-serif` css class from UnoCSS
+  # 配合 UnoCSS 的 `font-serif` css 类使用
   serif: Robot Slab
-  # for code blocks, inline code, etc.
+  # 用于代码块、内联代码等
   mono: Fira Code
 ---
 ```
 
-And that's all.
+就这样。
 
-Fonts will be **imported automatically from a provider via CDN, by default it is [Google Fonts](https://fonts.google.com/)**. That means you can use any fonts available on Google Fonts directly.
+字体将**通过 CDN 从提供商自动导入，默认是 [Google Fonts](https://fonts.google.com/)**。这意味着你可以直接使用 Google Fonts 上可用的任何字体。
 
-## Local Fonts
+## 本地字体
 
-By default, Slidev assumes all the fonts specified via `fonts` configurations come from Google Fonts. If you want to use local fonts, specify the `fonts.local` to opt-out the auto-importing.
+默认情况下，Slidev 假设通过 `fonts` 配置指定的所有字体都来自 Google Fonts。如果你想使用本地字体，请指定 `fonts.local` 来禁用自动导入。
 
 ```yaml
 ---
 fonts:
-  # like font-family in css, you can use `,` to separate multiple fonts for fallback
+  # 像 css 中的 font-family 一样，你可以使用 `,` 分隔多个字体作为备选
   sans: 'Helvetica Neue,Robot'
-  # mark 'Helvetica Neue' as local font
+  # 将 'Helvetica Neue' 标记为本地字体
   local: Helvetica Neue
 ---
 ```
 
-## Weights & Italic
+## 字重和斜体
 
-By default, Slidev imports three weights `200`,`400`,`600` for each font. You can configure them by:
+默认情况下，Slidev 为每种字体导入三种字重 `200`、`400`、`600`。你可以通过以下方式配置：
 
 ```yaml
 ---
 fonts:
   sans: Robot
-  # default
+  # 默认
   weights: '200,400,600'
-  # import italic fonts, default `false`
+  # 导入斜体字体，默认 `false`
   italic: false
 ---
 ```
 
-This configuration applies to all web fonts. For more fine-grained controls of each font's weights, you will need to manually import them with [HTML](/custom/directory-structure.html#index-html) and CSS.
+此配置适用于所有网络字体。要更精细地控制每种字体的字重，你需要手动通过 [HTML](/custom/directory-structure.html#index-html) 和 CSS 导入它们。
 
-## Fallback Fonts
+## 备选字体
 
-For most of the scenarios, you only need to specify the "special font" and Slidev will append the fallback fonts for you, for example:
+对于大多数场景，你只需要指定"特殊字体"，Slidev 会为你追加备选字体，例如：
 
 ```yaml
 ---
@@ -64,7 +64,7 @@ fonts:
 ---
 ```
 
-will result in
+将产生
 
 <!-- eslint-skip -->
 
@@ -80,7 +80,7 @@ will result in
 }
 ```
 
-If you want to disable the fallback fonts, configure as the following:
+如果你想禁用备选字体，请按以下方式配置：
 
 ```yaml
 ---
@@ -90,12 +90,12 @@ fonts:
 ---
 ```
 
-## Providers
+## 提供商
 
-- Options: `google` | `coollabs` | `none`
-- Default: `google`
+- 选项：`google` | `coollabs` | `none`
+- 默认：`google`
 
-Currently, only [Google Fonts](https://fonts.google.com/) and [coolLabs](https://fonts.coollabs.io/) supported, we are planning to add more providers in the future. Specify to `none` will disable the auto-importing feature entirely and treat all the fonts locally.
+目前只支持 [Google Fonts](https://fonts.google.com/) 和 [coolLabs](https://fonts.coollabs.io/)，我们计划在未来添加更多提供商。指定为 `none` 将完全禁用自动导入功能并将所有字体视为本地字体。
 
 ```yaml
 ---
