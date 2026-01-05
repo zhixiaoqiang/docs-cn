@@ -1,10 +1,10 @@
-# Configure Context Menu
+# 配置上下文菜单
 
 <Environment type="client" />
 
-Customize the context menu items in Slidev.
+自定义 Slidev 中的上下文菜单项。
 
-Create `./setup/context-menu.ts` with the following content:
+创建 `./setup/context-menu.ts`，内容如下：
 
 <!-- eslint-disable import/first -->
 
@@ -24,8 +24,8 @@ export default defineContextMenuSetup((items) => {
     ...items.value,
     {
       small: false,
-      icon: Icon3DCursor, // if `small` is `true`, only the icon is shown
-      label: 'Custom Menu Item', // or a Vue component
+      icon: Icon3DCursor, // 如果 `small` 为 `true`，只显示图标
+      label: 'Custom Menu Item', // 或一个 Vue 组件
       action() {
         alert('Custom Menu Item Clicked!')
       },
@@ -35,6 +35,6 @@ export default defineContextMenuSetup((items) => {
 })
 ```
 
-This will append a new menu item to the context menu.
+这将向上下文菜单追加一个新的菜单项。
 
-To disable context menu globally, set `contextMenu` to `false` in the frontmatter. `contextMenu` can also be set to `dev` or `build` to only enable the context menu in development or build mode.
+要全局禁用上下文菜单，请在 frontmatter 中将 `contextMenu` 设置为 `false`。`contextMenu` 也可以设置为 `dev` 或 `build` 以仅在开发模式或构建模式下启用上下文菜单。
