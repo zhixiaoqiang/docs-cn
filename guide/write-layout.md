@@ -1,8 +1,8 @@
-# Writing Layouts
+# 编写布局
 
-> Please read <LinkInline link="guide/layout" /> first.
+> 请先阅读 <LinkInline link="guide/layout" />。
 
-To create a custom layout, simply create a new Vue file in the `layouts` directory:
+要创建自定义布局，只需在 `layouts` 目录中创建一个新的 Vue 文件：
 
 ```bash
 your-slidev/
@@ -13,9 +13,9 @@ your-slidev/
       └── MyLayout.vue
 ```
 
-Layouts are Vue components, so you can use all the features of Vue in them.
+布局是 Vue 组件，因此你可以在其中使用 Vue 的所有功能。
 
-In the layout component, use `<slot/>` (the default slot) for the slide content:
+在布局组件中，使用 `<slot/>` (默认插槽) 来放置幻灯片内容：
 
 ```vue [default.vue]
 <template>
@@ -25,7 +25,7 @@ In the layout component, use `<slot/>` (the default slot) for the slide content:
 </template>
 ```
 
-You can also have [named slots](https://vuejs.org/guide/components/slots.html) for more complex layouts:
+你还可以使用[具名插槽](https://vuejs.org/guide/components/slots.html)来实现更复杂的布局：
 
 ```vue [split.vue]
 <template>
@@ -40,4 +40,4 @@ You can also have [named slots](https://vuejs.org/guide/components/slots.html) f
 </template>
 ```
 
-And then use it with <LinkInline link="features/slot-sugar" />.
+然后配合 <LinkInline link="features/slot-sugar" /> 使用。
