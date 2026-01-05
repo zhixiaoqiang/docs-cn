@@ -1,28 +1,28 @@
 # Slidev CLI
 
-`@slidev/cli` exposes a binary called `slidev` that you can use to develop, build, and export your slides.
+`@slidev/cli` 提供了一个名为 `slidev` 的二进制文件，你可以用它来开发、构建和导出你的幻灯片。
 
-## Prerequisites
+## 前置条件
 
-To use the CLI, you can either install `@slidev/cli` globally or install it locally in your Node.js project. If you created your project with `npm init slidev`, the CLI is already installed locally.
+要使用 CLI，你可以全局安装 `@slidev/cli`，或者在你的 Node.js 项目中本地安装。如果你是使用 `npm init slidev` 创建的项目，CLI 已经本地安装好了。
 
 ::: warning
-Usually `npx slidev` is not supported because the package name is actually `@slidev/cli`.
+通常不支持 `npx slidev`，因为包名实际上是 `@slidev/cli`。
 :::
 
-The CLI options of the commands obey the following conventions:
+CLI 命令的选项遵循以下约定：
 
-- the value of the option can be passed after a space or a `=` character:
+- 选项的值可以在空格或 `=` 字符后传递：
 
-  Example: `slidev --port 8080` is equivalent to `slidev --port=8080`
+  示例：`slidev --port 8080` 等同于 `slidev --port=8080`
 
-- `true` can be omitted for boolean options:
+- 布尔选项可以省略 `true`：
 
-  Example: `slidev --open` is equivalent to `slidev --open true`
+  示例：`slidev --open` 等同于 `slidev --open true`
 
 ::: info
 
-If you use npm, please don't forget to add `--` before the options to pass them to Slidev:
+如果你使用 npm，请不要忘记在选项前添加 `--` 以将它们传递给 Slidev：
 
 ```bash
 npm run slidev -- --remote --port 8080 --open
@@ -32,66 +32,66 @@ npm run slidev -- --remote --port 8080 --open
 
 ## `slidev [entry]` {#dev}
 
-Start a local server for Slidev.
+启动 Slidev 的本地服务器。
 
-- `[entry]` (`string`, default: `slides.md`): path to the markdown file containing your slides.
+- `[entry]`（`string`，默认：`slides.md`）：包含幻灯片的 markdown 文件路径。
 
-Options:
+选项：
 
-- `--port`, `-p` (`number`, default: `3030`): port number.
-- `--base` (`string`, default: `/`): base URL (see https://vitejs.dev/config/shared-options.html#base).
-- `--open`, `-o` (`boolean`, default: `false`): open in the browser.
-- `--remote [password]` (`string`): listen to the public host and enable remote control, if a value is passed then the presenter mode is private and only accessible by passing the given password in the URL query `password` parameter.
-- `--bind` (`string`, default: `0.0.0.0`): specify which IP addresses the server should listen on in the remote mode.
-- `--log` (`'error', 'warn', 'info', 'silent'`, default: `'warn'`): Log level.
-- `--force`, `-f` (`boolean`, default: `false`): force the optimizer to ignore the cache and re-bundle.
-- `--theme`, `-t` (`string`): override theme.
+- `--port`, `-p`（`number`，默认：`3030`）：端口号。
+- `--base`（`string`，默认：`/`）：基础 URL（参见 https://vitejs.dev/config/shared-options.html#base）。
+- `--open`, `-o`（`boolean`，默认：`false`）：在浏览器中打开。
+- `--remote [password]`（`string`）：监听公共主机并启用远程控制，如果传递了值，则演讲者模式是私有的，只能通过在 URL 查询参数 `password` 中传递给定密码来访问。
+- `--bind`（`string`，默认：`0.0.0.0`）：指定在远程模式下服务器应监听的 IP 地址。
+- `--log`（`'error', 'warn', 'info', 'silent'`，默认：`'warn'`）：日志级别。
+- `--force`, `-f`（`boolean`，默认：`false`）：强制优化器忽略缓存并重新打包。
+- `--theme`, `-t`（`string`）：覆盖主题。
 
 ## `slidev build [entry]` {#build}
 
-Build a hostable SPA. See <LinkInline link="guide/hosting" /> for more details.
+构建可托管的 SPA。有关更多详情，请参阅 <LinkInline link="guide/hosting" />。
 
-- `[entry]` (`string`, default: `slides.md`): path to the slides markdown file.
+- `[entry]`（`string`，默认：`slides.md`）：幻灯片 markdown 文件路径。
 
-Options:
+选项：
 
-- `--out`, `-o` (`string`, default: `dist`): output directory
-- `--base` (`string`, default: `/`): base URL (see https://vitejs.dev/config/shared-options.html#base)
-- `--download` (`boolean`, default: `false`): allow the download of the slides as a PDF inside the SPA
-- `--theme`, `-t` (`string`): override theme
-- `--without-notes` (`boolean`, default: `false`): exclude speaker notes from the SPA
+- `--out`, `-o`（`string`，默认：`dist`）：输出目录
+- `--base`（`string`，默认：`/`）：基础 URL（参见 https://vitejs.dev/config/shared-options.html#base）
+- `--download`（`boolean`，默认：`false`）：允许在 SPA 中下载幻灯片的 PDF
+- `--theme`, `-t`（`string`）：覆盖主题
+- `--without-notes`（`boolean`，默认：`false`）：从 SPA 中排除演讲者备注
 
 ## `slidev export [...entry]` {#export}
 
-Export slides to PDF (or other format). See <LinkInline link="guide/exporting" /> for more details.
+将幻灯片导出为 PDF（或其他格式）。有关更多详情，请参阅 <LinkInline link="guide/exporting" />。
 
-- `[entry]` (`string`, default: `slides.md`): path to the slides markdown entry.
+- `[entry]`（`string`，默认：`slides.md`）：幻灯片 markdown 入口路径。
 
-Options:
+选项：
 
-- `--output` (`string`, default: use `exportFilename` (see https://sli.dev/custom/#frontmatter-configures) or use `[entry]-export`): path to the output.
-- `--format` (`'pdf', 'png', 'pptx', 'md'`, default: `'pdf'`): output format.
-- `--timeout` (`number`, default: `30000`): timeout for rendering the print page (see https://playwright.dev/docs/api/class-page#page-goto).
-- `--range` (`string`): page ranges to export (example: `'1,4-5,6'`).
-- `--dark` (`boolean`, default: `false`): export as dark theme.
-- `--with-clicks`, `-c` (`boolean`, default: `false`): export pages for every click animation (see https://sli.dev/guide/animations.html#click-animation).
-- `--theme`, `-t` (`string`): override theme.
-- `--omit-background` (`boolean`, default: `false`): remove the default browser background
+- `--output`（`string`，默认：使用 `exportFilename`（参见 https://sli.dev/custom/#frontmatter-configures）或使用 `[entry]-export`）：输出路径。
+- `--format`（`'pdf', 'png', 'pptx', 'md'`，默认：`'pdf'`）：输出格式。
+- `--timeout`（`number`，默认：`30000`）：渲染打印页面的超时时间（参见 https://playwright.dev/docs/api/class-page#page-goto）。
+- `--range`（`string`）：要导出的页面范围（示例：`'1,4-5,6'`）。
+- `--dark`（`boolean`，默认：`false`）：以深色主题导出。
+- `--with-clicks`, `-c`（`boolean`，默认：`false`）：为每个点击动画导出页面（参见 https://sli.dev/guide/animations.html#click-animation）。
+- `--theme`, `-t`（`string`）：覆盖主题。
+- `--omit-background`（`boolean`，默认：`false`）：移除默认浏览器背景
 
 ## `slidev format [entry]` {#format}
 
-Format the markdown file. Note that this won't format the content of the slides, only the organization of the markdown file.
+格式化 markdown 文件。请注意，这不会格式化幻灯片的内容，只会格式化 markdown 文件的组织结构。
 
-- `[entry]` (`string`, default: `slides.md`): path to the slides markdown entry.
+- `[entry]`（`string`，默认：`slides.md`）：幻灯片 markdown 入口路径。
 
 ## `slidev theme [subcommand]` {#theme}
 
-Theme-related operations.
+主题相关操作。
 
-Subcommands:
+子命令：
 
-- `eject [entry]`: Eject the current theme into the local file system. See <LinkInline link="features/eject-theme" />.
-  - `[entry]` (`string`, default: `slides.md`): path to the slides markdown entry.
-  - Options:
-    - `--dir` (`string`, default: `theme`): the output dir.
-    - `--theme`, `-t` (`string`): override theme.
+- `eject [entry]`：将当前主题弹出到本地文件系统。参见 <LinkInline link="features/eject-theme" />。
+  - `[entry]`（`string`，默认：`slides.md`）：幻灯片 markdown 入口路径。
+  - 选项：
+    - `--dir`（`string`，默认：`theme`）：输出目录。
+    - `--theme`, `-t`（`string`）：覆盖主题。
