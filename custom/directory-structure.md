@@ -1,47 +1,47 @@
-# Directory Structure
+# 目录结构
 
-Slidev employs some directory structure conventions to minimize the configuration surface and to make the functionality extensions flexible and intuitive.
+Slidev 采用目录结构约定来最小化配置并使功能扩展灵活直观。
 
-The conventional directory structure is:
+常规目录结构如下：
 
 ```bash
 your-slidev/
-  ├── components/       # custom components
-  ├── layouts/          # custom layouts
-  ├── public/           # static assets
-  ├── setup/            # custom setup / hooks
-  ├── snippets/         # code snippets
-  ├── styles/           # custom style
-  ├── index.html        # injections to index.html
-  ├── slides.md         # the main slides entry
-  └── vite.config.ts    # extending vite config
+  ├── components/       # 自定义组件
+  ├── layouts/          # 自定义布局
+  ├── public/           # 静态资源
+  ├── setup/            # 自定义 setup / hooks
+  ├── snippets/         # 代码片段
+  ├── styles/           # 自定义样式
+  ├── index.html        # 注入到 index.html
+  ├── slides.md         # 主幻灯片入口
+  └── vite.config.ts    # 扩展 vite 配置
 ```
 
-All of them are optional.
+以上都是可选的。
 
-## Components
+## 组件
 
-Pattern: `./components/*.{vue,js,ts,jsx,tsx,md}`
+模式：`./components/*.{vue,js,ts,jsx,tsx,md}`
 
 <LinkCard link="guide/component" />
 
-## Layouts
+## 布局
 
-Pattern: `./layouts/*.{vue,js,ts,jsx,tsx}`
+模式：`./layouts/*.{vue,js,ts,jsx,tsx}`
 
 <LinkCard link="guide/layout" />
 
 ## Public
 
-Pattern: `./public/*`
+模式：`./public/*`
 
-Assets in this directory will be served at root path `/` during dev, and copied to the root of the dist directory as-is. Read more about [Assets Handling](../guide/faq#assets-handling).
+此目录中的资源将在开发时以根路径 `/` 提供服务，并原样复制到 dist 目录的根目录。了解更多关于[资源处理](../guide/faq#assets-handling)。
 
-## Style
+## 样式
 
-Pattern: `./style.css` | `./styles/index.{css,js,ts}`
+模式：`./style.css` | `./styles/index.{css,js,ts}`
 
-Files following this convention will be injected to the App root. If you need to import multiple CSS entries, you can create the following structure and manage the import order yourself.
+遵循此约定的文件将被注入到 App 根部。如果你需要导入多个 CSS 入口，可以创建以下结构并自行管理导入顺序。
 
 ```bash
 your-slidev/
@@ -61,7 +61,7 @@ import './code.css'
 import './layouts.css'
 ```
 
-Styles will be processed by [UnoCSS](https://unocss.dev/) and [PostCSS](https://postcss.org/), so you can use CSS nesting and [at-directives](https://unocss.dev/transformers/directives#apply) and Nested CSS out-of-box. For example:
+样式将由 [UnoCSS](https://unocss.dev/) 和 [PostCSS](https://postcss.org/) 处理，因此你可以开箱即用地使用 CSS 嵌套和 [at-directives](https://unocss.dev/transformers/directives#apply) 以及嵌套 CSS。例如：
 
 <!-- eslint-skip -->
 
@@ -83,15 +83,15 @@ Styles will be processed by [UnoCSS](https://unocss.dev/) and [PostCSS](https://
 }
 ```
 
-Learn more about the syntax [here](https://unocss.dev/transformers/directives#apply).
+在[这里](https://unocss.dev/transformers/directives#apply)了解更多关于语法的信息。
 
 ## `index.html`
 
-Pattern: `index.html`
+模式：`index.html`
 
-The `index.html` provides the ability to inject meta tags and/or scripts to the main `index.html`
+`index.html` 提供了向主 `index.html` 注入 meta 标签和/或脚本的能力。
 
-For example, for the following custom `index.html`:
+例如，对于以下自定义 `index.html`：
 
 ```html [index.html]
 <head>
@@ -104,7 +104,7 @@ For example, for the following custom `index.html`:
 </body>
 ```
 
-The final hosted `index.html` will be:
+最终托管的 `index.html` 将是：
 
 ```html
 <!DOCTYPE html>
@@ -126,8 +126,8 @@ The final hosted `index.html` will be:
 </html>
 ```
 
-## Global Layers
+## 全局图层
 
-Pattern: `global-top.vue` | `global-bottom.vue` | `custom-nav-controls.vue` | `slide-top.vue` | `slide-bottom.vue`
+模式：`global-top.vue` | `global-bottom.vue` | `custom-nav-controls.vue` | `slide-top.vue` | `slide-bottom.vue`
 
 <LinkCard link="features/global-layers" />
