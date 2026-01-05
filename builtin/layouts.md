@@ -1,85 +1,85 @@
-# Layouts
+# 布局
 
-This page lists all the built-in layouts provided by Slidev. These layouts can be used via the `layout` option in the frontmatters of your slides.
+本页列出了 Slidev 提供的所有内置布局。这些布局可以通过幻灯片 frontmatter 中的 `layout` 选项使用。
 
-Note that <LinkInline link="guide/theme-addon" /> may provide additional layouts or override the existing ones. To add your own layouts, see <LinkInline link="guide/write-layout" />.
+注意 <LinkInline link="guide/theme-addon" /> 可能会提供额外的布局或覆盖现有布局。要添加你自己的布局，请参阅 <LinkInline link="guide/write-layout" />。
 
 ## `center`
 
-Displays the content in the middle of the screen.
+在屏幕中间显示内容。
 
 ## `cover`
 
-Used to display the cover page for the presentation, may contain the presentation title, contextualization, etc.
+用于显示演示的封面页，可以包含演示标题、背景说明等。
 
 ## `default`
 
-The most basic layout, to display any kind of content.
+最基本的布局，用于显示任何类型的内容。
 
 ## `end`
 
-The final page for the presentation.
+演示的最后一页。
 
 ## `fact`
 
-To show some fact or data with a lot of prominence on the screen.
+在屏幕上突出显示某些事实或数据。
 
 ## `full`
 
-Use all the space of the screen to display the content.
+使用屏幕的所有空间来显示内容。
 
 ## `image-left`
 
-Shows an image on the left side of the screen, the content will be placed on the right side.
+在屏幕左侧显示图片，内容放置在右侧。
 
-### Usage
+### 使用方法
 
 ```yaml
 ---
 layout: image-left
 
-# the image source
+# 图片来源
 image: /path/to/the/image
 
-# a custom class name to the content
+# 右侧内容的自定义类名
 class: my-cool-content-on-the-right
 ---
 ```
 
 ## `image-right`
 
-Shows an image on the right side of the screen, the content will be placed on the left side.
+在屏幕右侧显示图片，内容放置在左侧。
 
-### Usage
+### 使用方法
 
 ```yaml
 ---
 layout: image-right
 
-# the image source
+# 图片来源
 image: /path/to/the/image
 
-# a custom class name to the content
+# 左侧内容的自定义类名
 class: my-cool-content-on-the-left
 ---
 ```
 
 ## `image`
 
-Shows an image as the main content of the page.
+将图片作为页面的主要内容显示。
 
-### Usage
+### 使用方法
 
 ```yaml
 ---
 layout: image
 
-# the image source
+# 图片来源
 image: /path/to/the/image
 ---
 ```
 
-You can change the default background size (`cover`) by adding the `backgroundSize` attribute:
+你可以通过添加 `backgroundSize` 属性来更改默认的背景大小（`cover`）：
 
 ```yaml
 ---
@@ -99,125 +99,125 @@ backgroundSize: 20em 70%
 
 ## `iframe-left`
 
-Shows a web page on the left side of the screen, the content will be placed on the right side.
+在屏幕左侧显示网页，内容放置在右侧。
 
-### Usage
+### 使用方法
 
 ```yaml
 ---
 layout: iframe-left
 
-# the web page source
+# 网页来源
 url: https://github.com/slidevjs/slidev
 
-# a custom class name to the content
+# 右侧内容的自定义类名
 class: my-cool-content-on-the-right
 ---
 ```
 
 ## `iframe-right`
 
-Shows a web page on the right side of the screen, the content will be placed on the left side.
+在屏幕右侧显示网页，内容放置在左侧。
 
-### Usage
+### 使用方法
 
 ```yaml
 ---
 layout: iframe-right
 
-# the web page source
+# 网页来源
 url: https://github.com/slidevjs/slidev
 
-# a custom class name to the content
+# 左侧内容的自定义类名
 class: my-cool-content-on-the-left
 ---
 ```
 
 ## `iframe`
 
-Shows a web page as the main content of the page.
+将网页作为页面的主要内容显示。
 
-### Usage
+### 使用方法
 
 ```yaml
 ---
 layout: iframe
 
-# the web page source
+# 网页来源
 url: https://github.com/slidevjs/slidev
 ---
 ```
 
 ## `intro`
 
-To introduce the presentation, usually with the presentation title, a short description, the author, etc.
+用于介绍演示，通常包含演示标题、简短描述、作者等。
 
 ## `none`
 
-A layout without any existing styling.
+没有任何现有样式的布局。
 
 ## `quote`
 
-To display a quotation with prominence.
+突出显示引用。
 
 ## `section`
 
-Used to mark the beginning of a new presentation section.
+用于标记新演示章节的开始。
 
 ## `statement`
 
-Make an affirmation/statement as the main page content.
+将声明/陈述作为页面的主要内容。
 
 ## `two-cols`
 
-Separates the page content in two columns.
+将页面内容分成两列。
 
-### Usage
+### 使用方法
 
 ```md
 ---
 layout: two-cols
 ---
 
-# Left
+# 左侧
 
-This shows on the left
+这显示在左侧
 
 ::right::
 
-# Right
+# 右侧
 
-This shows on the right
+这显示在右侧
 ```
 
 ## `two-cols-header`
 
-Separates the upper and lower lines of the page content, and the second line separates the left and right columns.
+将页面内容分成上下两行，第二行分成左右两列。
 
-### Usage
+### 使用方法
 
 ```md
 ---
 layout: two-cols-header
 ---
 
-This spans both
+这横跨两列
 
 ::left::
 
-# Left
+# 左侧
 
-This shows on the left
+这显示在左侧
 
 ::right::
 
-# Right
+# 右侧
 
-This shows on the right
+这显示在右侧
 
 <style>
 .two-cols-header {
-  column-gap: 20px; /* Adjust the gap size as needed */
+  column-gap: 20px; /* 根据需要调整间隙大小 */
 }
 </style>
 ```
