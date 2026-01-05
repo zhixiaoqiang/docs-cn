@@ -1,10 +1,10 @@
-# Writing Themes
+# 编写主题
 
-> Please read <LinkInline link="guide/theme-addon" /> first.
+> 请先阅读 <LinkInline link="guide/theme-addon" />。
 
-Each slides project can only have one theme. Themes should focus on providing the appearance of slides. If the feature isn't related to the appearance and can be used separately, it should be implemented as an [addon](./write-addon).
+每个幻灯片项目只能有一个主题。主题应专注于提供幻灯片的外观。如果功能与外观无关且可以单独使用，应作为[插件](./write-addon)实现。
 
-To get started, we recommend you use our generator for scaffolding your first theme
+要开始，我们建议使用生成器来创建你的第一个主题
 
 ::: code-group
 
@@ -30,27 +30,27 @@ $ deno init --npm slidev-theme
 
 :::
 
-Then you can modify and play with it. You can also refer to the [official themes](../resources/theme-gallery#official-themes) as examples.
+然后你可以修改并使用它。你也可以参考[官方主题](../resources/theme-gallery#official-themes)作为示例。
 
-## Capability
+## 能力范围
 
-A theme can contribute to the following points:
+主题可以贡献以下功能点：
 
-- Global styles
-- Provide default configurations
-- Provide custom layouts or override the existing ones
-- Provide custom components
-- Configure tools like UnoCSS, Shiki, etc.
+- 全局样式
+- 提供默认配置
+- 提供自定义布局或覆盖现有布局
+- 提供自定义组件
+- 配置工具，如 UnoCSS、Shiki 等
 
-However, the following points are **not** recommended to be done in a theme, and may be better implemented as an [addon](./write-addon):
+但是，以下功能点**不建议**在主题中实现，可能更适合作为[插件](./write-addon)实现：
 
-- New code snippets
-- New code runners
-- Other things that can be used separately
+- 新的代码片段
+- 新的代码运行器
+- 其他可以单独使用的内容
 
-Basically, the way to provide global styles, layouts, components and configure tools is the same as doing these in a slides project. For example, to configure Shiki, you can create a `./setup/shiki.ts` as described in [Configure Highlighter](../custom/config-highlighter). You can refer to the [customization guide](/custom/) for more information.
+基本上，提供全局样式、布局、组件和配置工具的方式与在幻灯片项目中操作相同。例如，要配置 Shiki，你可以按照[配置代码高亮器](../custom/config-highlighter)中描述的创建 `./setup/shiki.ts`。你可以参考[自定义指南](/custom/)了解更多信息。
 
-To provide default Slidev configurations, you can add a `slidev.defaults` field in the `package.json` file, which will be merged with the user's configurations:
+要提供默认 Slidev 配置，你可以在 `package.json` 文件中添加 `slidev.defaults` 字段，它将与用户的配置合并：
 
 ```json [package.json]
 {
@@ -63,9 +63,9 @@ To provide default Slidev configurations, you can add a `slidev.defaults` field 
 }
 ```
 
-### Require Slidev Version
+### 要求 Slidev 版本
 
-If the theme is relying on a specific feature of Slidev that is newly introduced, you can set the minimal Slidev version required to have your theme working properly:
+如果主题依赖于 Slidev 新引入的特定功能，你可以设置使主题正常工作所需的最低 Slidev 版本：
 
 ```json
 {
@@ -75,39 +75,39 @@ If the theme is relying on a specific feature of Slidev that is newly introduced
 }
 ```
 
-An error message will be shown when the an incompatible version is used.
+当使用不兼容的版本时，将显示错误消息。
 
-### Theme Metadata
+### 主题元数据
 
-By default, Slidev assumes themes support both light mode and dark mode. If you only want your theme to be presented in a specific color schema, you need to specify it explicitly in the `package.json`:
+默认情况下，Slidev 假设主题同时支持浅色模式和深色模式。如果你只希望主题以特定的颜色模式呈现，需要在 `package.json` 中明确指定：
 
 ```json [package.json]
 {
   "slidev": {
-    "colorSchema": "light" // or "dark" or "both"
+    "colorSchema": "light" // 或 "dark" 或 "both"
   }
 }
 ```
 
-## Previewing
+## 预览
 
-You can preview your theme when developing by using a demo slide deck. To do so, create a `./slides.md` file with the following headmatter:
+在开发时，你可以使用演示幻灯片预览你的主题。为此，创建一个 `./slides.md` 文件，包含以下 headmatter：
 
 ```md [slides.md]
 ---
-theme: ./  # Use the theme in the current directory
+theme: ./  # 使用当前目录中的主题
 ---
 ```
 
-Then you can start the demo slides as usual.
+然后你可以像往常一样启动演示幻灯片。
 
-## Publishing
+## 发布
 
-When publishing the theme, non-JS files like `.vue` and `.ts` files can be published directly without compiling. Slidev will automatically compile them when using the theme.
+发布主题时，`.vue` 和 `.ts` 等非 JS 文件可以直接发布，无需编译。Slidev 在使用主题时会自动编译它们。
 
-Themes should follow the following conventions:
+主题应遵循以下约定：
 
-- Package name should start with `slidev-theme-`. For example, `slidev-theme-name` or `@scope/slidev-theme-name`
-- Add `"slidev-theme"` and `"slidev"` in the `keywords` field of your `package.json`
+- 包名应以 `slidev-theme-` 开头。例如 `slidev-theme-name` 或 `@scope/slidev-theme-name`
+- 在 `package.json` 的 `keywords` 字段中添加 `"slidev-theme"` 和 `"slidev"`
 
-Theme can be used locally without publishing to NPM. If your theme is only for personal use, you can simply use it as a local theme, or publish it as a private scoped package. However, it is recommended to publish it to the NPM registry if you want to share it with others.
+主题可以在本地使用而无需发布到 NPM。如果你的主题仅供个人使用，可以简单地将其作为本地主题使用，或发布为私有作用域包。但是，如果你想与他人分享，建议将其发布到 NPM 注册表。
