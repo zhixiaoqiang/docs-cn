@@ -1,14 +1,14 @@
-# Configure Vite and Plugins
+# 配置 Vite 和插件
 
 <Environment type="node" />
 
-Slidev is powered by [Vite](https://vitejs.dev/) under the hood. This means you can leverage Vite's great plugin system to customize your slides even further.
+Slidev 底层由 [Vite](https://vitejs.dev/) 驱动。这意味着你可以利用 Vite 强大的插件系统来进一步自定义你的幻灯片。
 
-The `vite.config.ts` will be respected if you have one, and will be merged with the Vite config provided by Slidev, your theme and the addons.
+如果你有 `vite.config.ts`，它将被识别并与 Slidev、主题和插件提供的 Vite 配置合并。
 
-## Configure Internal Plugins
+## 配置内部插件
 
-Slidev internally adds the following plugins to Vite:
+Slidev 内部向 Vite 添加了以下插件：
 
 - [@vitejs/plugin-vue](https://github.com/vitejs/vite-plugin-vue)
 - [unplugin-vue-components](https://github.com/unplugin/unplugin-vue-components)
@@ -17,7 +17,7 @@ Slidev internally adds the following plugins to Vite:
 - [vite-plugin-remote-assets](https://github.com/antfu/vite-plugin-remote-assets)
 - [unocss/vite](https://github.com/unocss/unocss/tree/main/packages/vite)
 
-To configure the built-in plugins listed above, create a `vite.config.ts` with the following content. Please note that Slidev has some [default configurations](https://github.com/slidevjs/slidev/blob/main/packages/slidev/node/vite/index.ts) for those plugins, this usage will override some of them, which may potentially cause the app to break. Please treat this as **an advanced feature**, and make sure you know what you are doing before moving on.
+要配置上面列出的内置插件，请创建包含以下内容的 `vite.config.ts`。请注意，Slidev 对这些插件有一些[默认配置](https://github.com/slidevjs/slidev/blob/main/packages/slidev/node/vite/index.ts)，此用法将覆盖其中一些配置，这可能会导致应用程序崩溃。请将此视为**高级功能**，并确保在继续之前了解你在做什么。
 
 <!-- eslint-disable import/first -->
 
@@ -32,24 +32,24 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   slidev: {
     vue: {
-      /* vue options */
+      /* vue 选项 */
     },
     markdown: {
-      /* markdown-it options */
+      /* markdown-it 选项 */
       markdownItSetup(md) {
-        /* custom markdown-it plugins */
+        /* 自定义 markdown-it 插件 */
         md.use(MyPlugin)
       },
     },
-    /* options for other plugins */
+    /* 其他插件的选项 */
   },
 })
 ```
 
-See the [type declarations](https://github.com/slidevjs/slidev/blob/main/packages/types/src/vite.ts#L11) for more options.
+查看[类型声明](https://github.com/slidevjs/slidev/blob/main/packages/types/src/vite.ts#L11)了解更多选项。
 
 ::: warning
-It is not allowed to re-add plugins that has been used internally be Slidev. For example, instead of
+不允许重新添加 Slidev 内部已使用的插件。例如，不要这样做：
 
 ```ts twoslash
 import Vue from '@vitejs/plugin-vue'
@@ -58,27 +58,27 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   plugins: [
     Vue({
-      /* vue options */
+      /* vue 选项 */
     })
   ],
 })
 ```
 
-Please pass the Vue options to the `slidev.vue` field as described above
+请按照上述描述将 Vue 选项传递给 `slidev.vue` 字段
 :::
 
-## Add Custom Plugins based on Slide data
+## 基于幻灯片数据添加自定义插件
 
-Usually you can add Vite plugins into your `vite.config.ts` (see above).
-However, if you want to add plugins based on the slide data, you need to add a `./setup/vite-plugins.ts` with the following content:
+通常你可以在 `vite.config.ts` 中添加 Vite 插件（见上文）。
+但是，如果你想根据幻灯片数据添加插件，需要添加 `./setup/vite-plugins.ts` 文件，内容如下：
 
 ```ts twoslash
 import { defineVitePluginsSetup } from '@slidev/types'
 
 export default defineVitePluginsSetup((options) => {
   return [
-    // Your plugins here
-    // Slide data is available as options.data.slides
+    // 你的插件在这里
+    // 幻灯片数据可通过 options.data.slides 访问
   ]
 })
 ```
