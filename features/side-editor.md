@@ -3,15 +3,15 @@ depends:
   - guide/ui#navigation-actions
 relates:
   - features/vscode-extension
-tags: [编辑器]
+tags: [editor]
 description: |
-  在放映模式下编辑你的幻灯片源文件。
+  Edit your slides source file alongside the presentation.
 ---
 
-# 内嵌编辑器
+# Integrated Editor
 
-Slidev 附带了一个集成编辑器，可以立即重载并保存对文件的更改。
+Slidev comes with an integrated editor that will instantly reload and save the changes to your file.
 
-点击导航栏中的 <carbon-edit class="inline-icon-btn"/> 来打开它。
+Click the <carbon-edit class="inline-icon-btn"/> button on the navigation panel to open it.
 
 ![](/screenshots/integrated-editor.png)

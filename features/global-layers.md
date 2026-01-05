@@ -1,84 +1,83 @@
 ---
-tags: [导航, 布局]
+tags: [navigation, layout]
 description: |
-  为所有幻灯片创建图层。
+  Create custom components that persist across slides.
 ---
 
-# 全局图层
+# Global Layers
 
-全局图层允许你拥有**持续存在**的跨幻灯片自定义组件。这对于有页脚、跨幻灯片动画、全局特效等来说可能很有用。
+Global layers allow you to have custom components that **persist** across slides. This could be useful for having footers, cross-slide animations, global effects, etc.
 
-Slidev 为这种用法提供了三种图层，在你的项目根目录下创建 `global-top.vue` 、 `global-bottom.vue` 或 `custom-nav-controls.vue` 文件，它们会被自动识别。
+Slidev provides three layers for this usage, create `global-top.vue`, `global-bottom.vue`, or `custom-nav-controls.vue` under your project root and it will pick up automatically.
 
-**每张**幻灯片也有图层：`layouts/slide-top.vue`和`layout/slide-bottom.vue`。其用法类似于全局图层，但它们应用于每张幻灯片，因此可能有多个实例。
-
+There are also layers for **each** slide: `slide-top.vue` and `slide-bottom.vue`. The usage is similar to the global layers, but they are applied to every slide, so there may be more than one instance of them.
 
 ::: tip
-导出时，应使用 `--per-slide` 选项以确保全局层正确应用于每张幻灯片。
+If you are using `global-top.vue` or `global-bottom.vue` depending on the current navigation state, when exporting, the `--per-slide` option should be used to ensure the correct state is applied to each slide. Or you can use `slide-top.vue` and `slide-bottom.vue` instead.
 :::
 
-## 图层关系
+## Layers relationship
 
-在 z 轴上，从上到下排序：
+At z-axis, from top to bottom:
 
-- 导航栏
-  - 自定义导航栏控制 (`custom-nav-controls.vue`)
-- 全局顶层 (`global-top.vue`) - 单个实例
-- 幻灯片顶层 (`slide-top.vue`) - 每页间独立实例
-- 幻灯片内容
-- 幻灯片底层 (`slide-bottom.vue`) - 每页间独立实例
-- 全局底层 (`global-bottom.vue`) - 单个实例
+- NavControls
+  - Customized Navigation Controls (`custom-nav-controls.vue`)
+- Global Top (`global-top.vue`) - single instance
+- Slide Top (`slide-top.vue`) - instance per slide
+- Slide Content
+- Slide Bottom (`slide-bottom.vue`) - instance per slide
+- Global Bottom (`global-bottom.vue`) - single instance
 
-## 示例
+## Example
 
 ```html
 <!-- global-bottom.vue -->
 <template>
-  <footer class="absolute bottom-0 left-0 right-0 p-2">你的名字</footer>
+  <footer class="absolute bottom-0 left-0 right-0 p-2">Your Name</footer>
 </template>
 ```
 
-文本 `你的名字` 将出现在你的所有幻灯片中。
+The text `Your Name` will appear on all your slides.
 
 ```html
 <!-- custom-nav-controls -->
 <template>
   <button class="icon-btn" title="Next" @click="$nav.next">
-    <carbon:arrow-right />
+    <div class="i-carbon:arrow-right" />
   </button>
 </template>
 ```
 
-`Next` 按钮会出现在导航栏中。
+The button `Next` will appear in NavControls.
 
-如需有条件地启用它，你可以用 <LinkInline link="guide/global-context" />。
+To enable it conditionally, you can use the <LinkInline link="guide/global-context" />
 
 ```html
-<!-- 在第四页时隐藏页脚 -->
+<!-- hide the footer from Page 4 -->
 <template>
   <footer
     v-if="$nav.currentPage !== 4"
     class="absolute bottom-0 left-0 right-0 p-2"
   >
-    你的名字
+    Your Name
   </footer>
 </template>
 ```
 
 ```html
-<!-- h"cover" 布局的情况下隐藏页脚 -->
+<!-- hide the footer from "cover" layout -->
 <template>
   <footer
     v-if="$nav.currentLayout !== 'cover'"
     class="absolute bottom-0 left-0 right-0 p-2"
   >
-    你的名字
+    Your Name
   </footer>
 </template>
 ```
 
 ```html
-<!-- 一个显示页数的页脚示例 -->
+<!-- an example footer for pages -->
 <template>
   <footer
     v-if="$nav.currentLayout !== 'cover'"
@@ -91,10 +90,10 @@ Slidev 为这种用法提供了三种图层，在你的项目根目录下创建 
 
 ```html
 <!-- custom-nav-controls -->
-<!-- 在演讲者模式隐藏按钮 -->
+<!-- hide the button in Presenter model -->
 <template>
   <button v-if="!$nav.isPresenter" class="icon-btn" title="Next" @click="$nav.next">
-    <carbon:arrow-right />
+    <div class="i-carbon:arrow-right" />
   </button>
 </template>
 ```

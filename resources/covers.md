@@ -1,16 +1,16 @@
-# 精选封面 {#curated-covers}
+# Curated Covers
 
-我们精心挑选了一些封面图片，用以展示在我们的初始模板中。
+We curated a few cover images to demonstrate our starter template.
 
 ![](/screenshots/covers.png)
 
 ```yaml
 ---
-# 来自精选集的随机图片
+# random image from the curated collection
 background: https://cover.sli.dev
 ---
 ```
 
-如果你喜欢这些图片，可以访问我们的 [Unsplash 合集](https://unsplash.com/collections/94734566/slidev)，同时还能了解它们的作者。
+If you enjoy any of them, check out our [Unsplash collection](https://unsplash.com/collections/94734566/slidev) and find out their authors.
 
-目前，[cover.sli.dev](https://cover.sli.dev) 的内容来自于 [`slidevjs/slidev-covers` 仓库](https://github.com/slidevjs/slidev-covers)。
+[cover.sli.dev](https://cover.sli.dev) is hosted from [`slidevjs/slidev-covers`](https://github.com/slidevjs/slidev-covers).

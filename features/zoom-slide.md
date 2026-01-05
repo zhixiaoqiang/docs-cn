@@ -3,31 +3,31 @@ relates:
   - guide/faq#adjust-size
   - features/canvas-size
   - features/transform-component
-tags: [布局]
+tags: [layout]
 description: |
-  将幻灯片内容缩放到一个特定的比例。
+  Zoom the content of a slide to a specific scale.
 ---
 
-# 缩放幻灯片
+# Zoom Slides
 
-你可能会发现部分幻灯片太宽敞或太拥挤。Slidev 为每张幻灯片提供了一个 `zoom` 选项来缩放幻灯片的内容：
+You may find some slides in your presentation too spacious or too crowded. Slidev provides a `zoom` option for each slide that allows you to scale the content of a slide:
 
 ```md
 ---
 zoom: 0.8
 ---
 
-# 一张有很多内容的幻灯片，该幻灯片的内容会被缩小为 80%
+# A Slide with lots of content
 
 ---
 
-# 其他幻灯片不会受到影响
+# Other slides aren't affected
 ```
 
-如要缩放所有的幻灯片，你可以设置幻灯片的 canvas 大小：
+To scale all the slides in your presentation, you can set the slide canvas size:
 
 <LinkCard link="features/canvas-size" />
 
-如要调整幻灯片中部分元素的大小，你可以适用 `Transform` 组件：
+To adjust the size of some elements on your slides, you can use the `Transform` component:
 
 <LinkCard link="features/transform-component" />

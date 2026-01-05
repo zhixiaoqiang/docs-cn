@@ -1,31 +1,31 @@
 ---
 relates:
-  - Nuxt 的 MDC 语法指南: https://content.nuxt.com/docs/files/markdown#mdc-syntax
+  - Nuxt's MDC Syntax: https://content.nuxt.com/docs/files/markdown#mdc-syntax
   - markdown-it-mdc: https://github.com/antfu/markdown-it-mdc
 since: v0.43.0
-tags: [语法, 样式]
+tags: [syntax, styling]
 description: |
-  一种强大的语法，用组件和样式增强 markdown 内容。
+  A powerful syntax to enhance your markdown content with components and styles.
 ---
 
-# MDC 语法
+# MDC Syntax
 
-Slidev 支持可选的 [MDC (Markdown Components) 语法](https://content.nuxt.com/docs/files/markdown#mdc-syntax)，由 [`markdown-it-mdc`](https://github.com/antfu/markdown-it-mdc) 驱动。
+Slidev supports optional [MDC (Markdown Components) Syntax](https://content.nuxt.com/docs/files/markdown#mdc-syntax) powered by [`markdown-it-mdc`](https://github.com/antfu/markdown-it-mdc).
 
-你可以通过在 markdown 文件的 frontmatter 中添加 `mdc:true` 来启用它。
+You can enable it by adding `mdc: true` to the frontmatter of your markdown file.
 
 ```mdc
 ---
 mdc: true
 ---
 
-这是一个 [红色的文本]{style="color:red"} :inline-component{prop="value"}
+This is a [red text]{style="color:red"} :inline-component{prop="value"}
 
 ![](/image.png){width=500px lazy}
 
 ::block-component{prop="value"}
-**default** 插槽的内容
+The **default** slot
 ::
 ```
 
-请参阅 [MDC Syntax](https://content.nuxt.com/docs/files/markdown#mdc-syntax) 了解更多。
+Learn more about [MDC Syntax](https://content.nuxt.com/docs/files/markdown#mdc-syntax).

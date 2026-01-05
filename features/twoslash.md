@@ -4,16 +4,16 @@ depends:
 relates:
   - TwoSlash: https://twoslash.netlify.app/
 since: v0.46.0
-tags: [代码块]
+tags: [codeblock]
 description: |
-  一个强大的工具，用于在悬停或内联时渲染带有类型信息的 TypeScript 代码块。
+  A powerful tool for rendering TypeScript code blocks with type information on hover or inlined.
 ---
 
-# TwoSlash 集成
+# TwoSlash Integration
 
-[TwoSlash](https://twoslash.netlify.app/) 是一个强大的工具，用于在悬停或内联时呈现带有类型信息的 TypeScript 代码块。它对于为 JavaScript/TypeScript 相关主题准备幻灯片非常有用。
+[TwoSlash](https://twoslash.netlify.app/) is a powerful tool for rendering TypeScript code blocks with type information on hover or inlined. It's quite useful for preparing slides for JavaScript/TypeScript-related topics.
 
-要使用它，你可以在代码块的 语言id 中添加 `twoslash`：
+To use it, you can add `twoslash` to the code block's language identifier:
 
 ````md
 ```ts twoslash
@@ -24,7 +24,7 @@ const count = ref(0)
 ```
 ````
 
-它会被渲染为:
+It will be rendered as:
 
 ```ts twoslash
 import { ref } from 'vue'
@@ -33,4 +33,5 @@ const count = ref(0)
 //            ^?
 ```
 
+<!-- For the popup to not overlap the content below -->
 <div class="py-20" />

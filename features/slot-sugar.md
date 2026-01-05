@@ -1,16 +1,16 @@
 ---
 relates:
-  - Vue's 具名插槽: https://cn.vuejs.org/guide/components/slots#named-slots
-tags: [布局, 语法]
+  - Vue's Named Slots: https://v3.vuejs.org/guide/component-slots.html
+tags: [layout, syntax]
 description: |
-  针对布局中具名插槽的语法糖。
+  A syntax sugar for named slots in layouts.
 ---
 
-# 布局插槽语法糖
+# Slot Sugar for Layouts
 
-一些布局可以通过 [Vue 具名插槽](https://vuejs.org/guide/components/slots.html) 提供多个可插入的位点。
+Some layouts can provide multiple contributing points using [Vue's named slots](https://vuejs.org/guide/components/slots.html).
 
-例如，在 [`two-cols` 布局](https://github.com/slidevjs/slidev/blob/main/packages/client/layouts/two-cols.vue)中，你可以创建一左一右的双栏布局。
+For example, in [`two-cols` layout](https://github.com/slidevjs/slidev/blob/main/packages/client/layouts/two-cols.vue), you can have two columns left (`default` slot) and right (`right` slot) side by side.
 
 ```md
 ---
@@ -19,50 +19,50 @@ layout: two-cols
 
 <template v-slot:default>
 
-# 左
+# Left
 
-这会在左边显示
+This is shown on the left
 
 </template>
 <template v-slot:right>
 
-# 右
+# Right
 
-这会在右边显示
+This is shown on the right
 
 </template>
 ```
 
 <div class="grid grid-cols-2 rounded border border-gray-400 border-opacity-50 px-10 pb-4">
 <div>
-<h3>左</h3>
-<p>这会在左边显示</p>
+<h3>Left</h3>
+<p>This shows on the left</p>
 </div>
 <div>
-<h3>右</h3>
-<p>这会在右边显示</p>
+<h3>Right</h3>
+<p>This shows on the right</p>
 </div>
 </div>
 
-我们还为插槽名称提供了一个简写语法糖 `::name::`。下面的示例与前面的示例完全相同：
+We also provide a shorthand syntactical sugar `::name::` for slot name. The following works exactly the same as the previous example.
 
 ```md
 ---
 layout: two-cols
 ---
 
-# 左
+# Left
 
-这会在左边显示
+This is shown on the left
 
 ::right::
 
-# 右
+# Right
 
-这会在右边显示
+This is shown on the right
 ```
 
-你还可以明确指定默认插槽，并按自定义顺序排列。
+You can also explicitly specify the default slot and provide it in the custom order.
 
 ```md
 ---
@@ -71,13 +71,13 @@ layout: two-cols
 
 ::right::
 
-# 右
+# Right
 
-这会在右边显示
+This shows on the right
 
 ::default::
 
-# 左
+# Left
 
-这会在左边显示
+This is shown on the left
 ```

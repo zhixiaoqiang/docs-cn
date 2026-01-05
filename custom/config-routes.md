@@ -1,16 +1,14 @@
-# 配置路由
+# Configure Routes
 
 <Environment type="client" />
 
-将自定义页面添加到 Slidev。
+Add custom pages to the Slidev app.
 
+## Usage
 
-## 用法 {#usage}
+Create `./setup/routes.ts` with the following content:
 
-创建一份包含以下内容的 `./setup/routes.ts` 文件：
-
-
-```ts twoslash
+```ts twoslash [./setup/routes.ts]
 import { defineRoutesSetup } from '@slidev/types'
 
 export default defineRoutesSetup((routes) => {
@@ -27,4 +25,4 @@ export default defineRoutesSetup((routes) => {
 })
 ```
 
-请参考 [Vue Router 文档](https://router.vuejs.org/) 来了解关于路由的更多细节。
+Learn more about routes in the [Vue Router documentation](https://router.vuejs.org/).

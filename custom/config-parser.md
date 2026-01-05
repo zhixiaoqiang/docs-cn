@@ -1,36 +1,32 @@
-# 配置预解析器
+# Configure Pre-Parser
 
 ::: info
-
-自定义的预解析器应尽可能少地使用。通常，你可以使用 [Transformers](./config-transformers) 进行自定义语法。
-
+Custom pre-parsers are not supposed to be used too often. Usually you can use [Transformers](./config-transformers) for custom syntaxes.
 :::
 
-Slidev 通过三步解析演示文档(如 `slides.md`) :
+Slidev parses your presentation file (e.g. `slides.md`) in three steps:
 
-1. 执行一个“预解析”步骤: 使用 `---` 分隔符将 markdown 文件分割成若干幻灯片，并考虑可能的扉页块。 
-2. 每张幻灯片都用一个外部库进行解析。 
-3. Slidev 解析特殊的扉页属性 `src: ....`，该属性允许包含其他 md 文件。
+1. A "preparsing" step is carried out: the file is split into slides using the `---` separator, and considering the possible frontmatter blocks.
+2. Each slide is parsed with an external library.
+3. Slidev resolves the special frontmatter property `src: ....`, which allows to include other md files.
 
-## Markdown 解析器
+## Markdown Parser
 
-配置步骤2中使用的markdown解析器可以通过 [配置Vite内部插件](/custom/config-vite#configure-internal-plugins) 完成。
+Configuring the markdown parser used in step 2 can be done by [configuring Vite internal plugins](/custom/config-vite#configure-internal-plugins).
 
-## 预解析器扩展
+## Preparser Extensions
 
-> 自 v0.37.0 起可用。
+> Available since v0.37.0.
 
 ::: warning
-
-重要：当你修改预解析器配置时，需要停止并重新启动 slidev。
-
+Important: when modifying the preparser configuration, you need to stop and start Slidev again (restart might not be sufficient).
 :::
 
-预解析器(上面的步骤 1)是高度可扩展的，并且允许为 md 文件实现自定义语法。扩展预解析器是一个**高级特性**，由于语法的隐式更改，它很容易破坏[编辑器集成](../features/side-editor)。
+The preparser (step 1 above) is highly extensible and allows you to implement custom syntaxes for your md files. Extending the preparser is considered **an advanced feature** and is susceptible to breaking [editor integrations](../features/side-editor) due to implicit changes in the syntax.
 
-要自定义它，请创建一个 `./setup/prepareser.ts` 文件，内容如下：
+To customize it, create a `./setup/preparser.ts` file with the following content:
 
-```ts twoslash
+```ts twoslash [./setup/preparser.ts]
 import { definePreparserSetup } from '@slidev/types'
 
 export default definePreparserSetup(({ filepath, headmatter, mode }) => {
@@ -47,21 +43,22 @@ export default definePreparserSetup(({ filepath, headmatter, mode }) => {
 })
 ```
 
-这个例子系统地将任何 `@@@` 行替换为 `hello` 行。它说明了预解析器配置文件的结构以及其涉及的一些主要概念：
+This example systematically replaces any `@@@` line with a line with `hello`. It illustrates the structure of a preparser configuration file and some of the main concepts the preparser involves:
 
-- 必须使用函数调用 `definePreparerSetup` 作为参数。
-- 该函数接收（根演示文稿的）文件路径、headatter（来自相应的 md 文件）以及自 v0.48.0 起，一种模式（dev、build 或 export）。它可以使用这些信息（例如，根据演示文稿文件，或者我们是否正在导出PDF，来启用扩展）。
-- 该函数必须返回一个预解析器扩展列表。
-- 一个扩展可以包含以下内容:
-  - 一个 `transformRawLines(lines)` 函数，在解析 md 文件的 headmatter 后运行，并接收所有行的列表（来自 md 文件）。该函数可以任意修改列表。
-  - 一个 `transformSlide(content，frontmatter)`函数，在分割文件后，为每张幻灯片调用该函数，并将幻灯片内容作为字符串接收，将幻灯片的 frontmatter 作为对象接收。该函数可以修改 frontmatter，并且必须返回内容字符串（可能已修改，如果没有进行修改，则可能为 `undefined`）。
-  - 一个 `name`
+- `definePreparserSetup` must be called with a function as parameter.
+- The function receives the file path (of the root presentation file), the headmatter (from the md file) and, since v0.48.0, a mode (dev, build or export). It could use this information (e.g., enable extensions based on the presentation file or whether we are exporting a PDF).
+- The function must return a list of preparser extensions.
+- An extension can contain:
+  - a `transformRawLines(lines)` function that runs just after parsing the headmatter of the md file and receives a list of all lines (from the md file). The function can mutate the list arbitrarily.
+  - a `transformSlide(content, frontmatter)` function that is called for each slide, just after splitting the file, and receives the slide content as a string and the frontmatter of the slide as an object. The function can mutate the frontmatter and must return the content string (possibly modified, possibly `undefined` if no modifications have been done).
+  - a `transformNote(note, frontmatter)` function that is called for each slide, just after splitting the file, and receives the slide note as a string or undefined and the frontmatter of the slide as an object. The function can mutate the frontmatter and must return the note string (possibly modified, possibly `undefined` if no modifications have been done).
+  - a `name`
 
-## 预解析器扩展示例
+## Example Preparser Extensions
 
-### 用例1: 紧凑语法顶层表示
+### Use case 1: compact syntax top-level presentation
 
-设想一种情况，你的演示文稿(部分)主要显示封面图片，并包括其他 md 文件。你可能希望有一种紧凑的符号表示法，其中的实例（部分）`slides.md` 如下所示:
+Imagine a situation where (part of) your presentation is mainly showing cover images and including other md files. You might want a compact notation where for instance (part of) `slides.md` is as follows:
 
 <!-- eslint-skip -->
 
@@ -77,10 +74,9 @@ export default definePreparserSetup(({ filepath, headmatter, mode }) => {
 see you next time
 ```
 
-要允许这些 `@src:` 和 `@cover:` 语法，请创建一个 `/setup/prepareser.ts`文件，内容如下：
+To allow these `@src:` and `@cover:` syntaxes, create a `./setup/preparser.ts` file with the following content:
 
-
-```ts twoslash
+```ts twoslash [./setup/preparser.ts]
 import { definePreparserSetup } from '@slidev/types'
 
 export default definePreparserSetup(() => {
@@ -121,11 +117,12 @@ export default definePreparserSetup(() => {
 })
 ```
 
-就是这样。
+And that's it.
 
-### 用例2：使用自定义 frontmatter 来包装幻灯片
+### Use case 2: using custom frontmatter to wrap slides
 
-设想一种情况，你经常想要缩放您的一些幻灯片，但是仍然想要使用各种现有的布局，因此创建一个新的布局将不适合。例如，你可能希望按如下方式编写 `slides.md`：
+Imagine a case where you often want to scale some of your slides but still want to use a variety of existing layouts so creating a new layout would not be suited.
+For instance, you might want to write your `slides.md` as follows:
 
 <!-- eslint-skip -->
 
@@ -156,11 +153,11 @@ _scale: 2.5
 see you next time
 ```
 
-在这里，我们在 `_scale` 处使用了下划线，以避免与现有的 frontmatter 属性发生可能的冲突（事实上，没有下划线的 `scale` 的情况会导致潜在的问题）。
+Here we used an underscore in `_scale` to avoid possible conflicts with existing frontmatter properties (indeed, the case of `scale`, without underscore would cause potential problems).
 
-要处理这个 `_scale: ...`语法，在 frontmatter 中创建一个 `./setup/preparser.ts` 文件，内容如下：
+To handle this `_scale: ...` syntax in the frontmatter, create a `./setup/preparser.ts` file with the following content:
 
-```ts twoslash
+```ts twoslash [./setup/preparser.ts]
 import { definePreparserSetup } from '@slidev/types'
 
 export default definePreparserSetup(() => {
@@ -176,6 +173,58 @@ export default definePreparserSetup(() => {
             '</Transform>'
           ].join('\n')
         }
+      },
+    },
+  ]
+})
+```
+
+And that's it.
+
+### Use case 3: using custom frontmatter to transform note
+
+Imagine a case where you want to replace the slides default notes with custom notes.
+For instance, you might want to write your `slides.md` as follows:
+
+<!-- eslint-skip -->
+
+```md
+---
+layout: quote
+_note: notes/note.md
+---
+
+# Welcome
+
+> great!
+
+<!--
+Default slide notes
+-->
+```
+
+Here we used an underscore in `_note` to avoid possible conflicts with existing frontmatter properties.
+
+To handle this `_note: ...` syntax in the frontmatter, create a `./setup/preparser.ts` file with the following content:
+
+```ts twoslash [./setup/preparser.ts]
+import fs, { promises as fsp } from 'node:fs'
+import { definePreparserSetup } from '@slidev/types'
+
+export default definePreparserSetup(() => {
+  return [
+    {
+      async transformNote(note, frontmatter) {
+        if ('_note' in frontmatter && fs.existsSync(frontmatter._note)) {
+          try {
+            const newNote = await fsp.readFile(frontmatter._note, 'utf8')
+            return newNote
+          }
+          catch (err) {
+          }
+        }
+
+        return note
       },
     },
   ]

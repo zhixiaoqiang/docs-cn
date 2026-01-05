@@ -1,19 +1,19 @@
 ---
 relates:
-  - Mermaid: http://mermaid.js.org/
+  - Mermaid: https://mermaid.js.org/
   - Mermaid Live Editor: https://mermaid.live/
   - Demo Slide: https://sli.dev/demo/starter/12
   - features/plantuml
-tags: [图表]
+tags: [diagram]
 description: |
-  在 Mermaid 的驱动下，通过文本描述创建图表。
+  Create diagrams/graphs from textual descriptions, powered by Mermaid.
 ---
 
-# Mermaid.js 图表
+# Mermaid Diagrams
 
-你可以基于 [Mermaid](https://mermaid-js.github.io/mermaid)，使用文本描述创建图表/图形。
+You can also create diagrams/graphs from textual descriptions in your Markdown, powered by [Mermaid](https://mermaid.js.org/).
 
-被标记为 `mermaid` 的代码块将被转换为图表，例如：
+Code blocks marked as `mermaid` will be converted to diagrams, for example:
 
 ````md
 ```mermaid
@@ -23,7 +23,7 @@ sequenceDiagram
 ```
 ````
 
-你还可以传递选项对象给 Mermaid，以指定缩放和主题。此处的语法是 JavaScript 对象字面量，你需要为字符串添加引号(`'`)，并在键之间使用逗号(`,`)。
+You can further pass an options object to it to specify the scaling and theming. The syntax of the object is a JavaScript object literal, you will need to add quotes (`'`) for strings and use comma (`,`) between keys.
 
 ````md
 ```mermaid {theme: 'neutral', scale: 0.8}
@@ -34,4 +34,4 @@ C -->|Two| E[Result 2]
 ```
 ````
 
-参阅 [Mermaid 官网](http://mermaid.js.org/) 以获取更多细节。
+Visit the [Mermaid Website](https://mermaid.js.org/) for more information.

@@ -4,16 +4,16 @@ depends:
 relates:
   - Monaco Editor: https://microsoft.github.io/monaco-editor/
   - Configure Monaco Editor: /custom/config-monaco
-tags: [代码块, 编辑器]
+tags: [codeblock, editor]
 description: |
-  将代码块变为功能齐全的编辑器，或者在两个代码块间生成 diff。
+  Turn code blocks into fully-featured editors, or generate a diff between two code blocks.
 ---
 
-# Monaco 编辑器
+# Monaco Editor
 
 <video src="https://github.com/slidevjs/slidev/assets/11247099/0c6ce681-80d3-4555-93bf-9288ee533462" controls rounded shadow w-full></video>
 
-每当你想在演示文稿中做一些修改时，只需在 语言id 后添加 `{monaco}` ——它就会把这个块变成一个功能齐全的 Monaco 编辑器！
+Whenever you want to do some modification in the presentation, simply add `{monaco}` after the language id — it turns the block into a fully-featured Monaco editor!
 
 ````md
 ```ts {monaco}
@@ -21,11 +21,11 @@ console.log('HelloWorld')
 ```
 ````
 
-了解有关 [配置 Monaco](/custom/config-monaco) 的更多信息。
+Learn more about [Configuring Monaco](/custom/config-monaco).
 
 ## Diff Editor
 
-Monaco 还可以在两个代码快间生成差异。你可以用 `{monaco-diff}` 将代码块变为一个 [Monaco diff 编辑器](https://microsoft.github.io/monaco-editor/playground.html?source=v0.36.1#example-creating-the-diffeditor-multi-line-example)。你需要用 `~~~` 来分隔原始代码与修改后的代码。
+Monaco can also generate a diff between two code blocks. Use `{monaco-diff}` to turn the block into a [Monaco diff editor](https://microsoft.github.io/monaco-editor/playground.html?source=v0.36.1#example-creating-the-diffeditor-multi-line-example) and use `~~~` to separate the original and modified code!
 
 ````md
 ```ts {monaco-diff}
@@ -34,3 +34,16 @@ console.log('Original text')
 console.log('Modified text')
 ```
 ````
+
+## Editor Height
+
+By default, the Monaco editor has a fixed height based on the initial content. If you start with an empty or small code block and want the editor to automatically grow as you type more code, you can set `{height:'auto'}`.
+
+````md
+```ts {monaco} {height:'auto'}
+// The editor will automatically grow as you type more code
+console.log('Hello, World!')
+```
+````
+
+You can also set a specific height using CSS units like `{height:'300px'}` or `{height:'100%'}`.

@@ -1,10 +1,10 @@
-# 配置 Mermaid {#configure-mermaid}
+# Configure Mermaid
 
 <Environment type="client" />
 
-创建一份包含以下内容的 `./setup/mermaid.ts` 文件：
+Create `./setup/mermaid.ts` with the following content:
 
-```ts twoslash
+```ts twoslash [setup/mermaid.ts]
 import { defineMermaidSetup } from '@slidev/types'
 
 export default defineMermaidSetup(() => {
@@ -14,11 +14,11 @@ export default defineMermaidSetup(() => {
 })
 ```
 
-返回值应该是 [Marimaid.js](https://mermaid.js.org/) 的自定义配置。完整配置列表请参考其类型定义及 [Mermaid 的文档](http://mermaid.js.org/config/schema-docs/config.html)。
+The return value should be the custom configs for [Mermaid](https://mermaid.js.org/). Refer to the [Mermaid documentation](https://mermaid.js.org/config/schema-docs/config.html) or the type definition for the full config list.
 
-## 自定义主题/样式 {#custom-theme-styles}
+## Custom theme/styles
 
-如果你想要创建自定义的 Mermaid 主题或样式，可以通过定义 `themeVariables` 实现，如下例所示:
+In case you want to create your custom Mermaid themes or styles, you can do this by defining `themeVariables` like in the following example:
 
 ```ts twoslash
 import { defineMermaidSetup } from '@slidev/types'
@@ -27,12 +27,12 @@ export default defineMermaidSetup(() => {
   return {
     theme: 'base',
     themeVariables: {
-      // 主题变量
+      // General theme variables
       noteBkgColor: '#181d29',
       noteTextColor: '#F3EFF5cc',
       noteBorderColor: '#404551',
 
-      // 序列图变量
+      // Sequence diagram variables
       actorBkg: '#0E131F',
       actorBorder: '#44FFD2',
       actorTextColor: '#F3EFF5',
@@ -44,4 +44,4 @@ export default defineMermaidSetup(() => {
 })
 ```
 
-你可以在 [Mermaid 主题配置](https://mermaid.js.org/config/theming.html) 上找到全部的主题变量。
+You can find all theme variables on the [Mermaid Theme Configuration](https://mermaid.js.org/config/theming.html) page.

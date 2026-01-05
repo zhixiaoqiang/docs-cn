@@ -1,19 +1,18 @@
 ---
 relates:
-  - Vue 的 Scoped CSS: https://vue-loader.vuejs.org/guide/scoped-css.html
+  - Vue's Scoped CSS: https://vuejs.org/api/sfc-css-features.html#scoped-css
   - UnoCSS directives: https://unocss.dev/transformers/directives
-tags: [样式, 语法]
+tags: [styling, syntax]
 description: |
-  定义仅在当前幻灯片生效的样式。
+  Define styles for only the current slide.
 ---
 
-# 幻灯片专属样式
+# Slide Scope Styles
 
-你可以在 markdown 中使用 `<style>` 标签，仅为**当前幻灯片**定义样式。
-
+You can use the `<style>` tag in your Markdown to define styles for **only the current slide**.
 
 ```md
-# 这是红色的
+# This is Red
 
 <style>
 h1 {
@@ -23,12 +22,12 @@ h1 {
 
 ---
 
-# 其他幻灯片不会受到影响
+# Other slides are not affected
 ```
 
-markdown中的 `<style>` 标签始终是 [scope](https://cn.vuejs.org/api/sfc-css-features.html#scoped-css) 的。因此，带有子组合器（`.a>.b`）的选择器本身是不可用的；请参阅上一个链接。要具有全局样式，请查看[自定义部分](/custom/directory-structure#style)。
+The `<style>` tag in Markdown is always [scoped](https://vuejs.org/api/sfc-css-features.html#scoped-css). As a result, a selector with a child combinator (`.a > .b`) is unusable as such; see the previous link. To have global styles, check out the [customization section](/custom/directory-structure#style).
 
-在 [UnoCSS](/custom/config-unocss) 驱动下, 你可以直接适用嵌套的 CSS 以及 [指令](https://unocss.dev/transformers/directives):
+Powered by [UnoCSS](/custom/config-unocss), you can directly use nested css and [directives](https://unocss.dev/transformers/directives):
 
 ```md
 # Slidev

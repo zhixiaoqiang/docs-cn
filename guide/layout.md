@@ -1,10 +1,10 @@
-# 幻灯片布局
+# Slide Layout
 
-Slidev 中的布局用于定义每张幻灯片的结构。它们是包装幻灯片内容的 Vue 组件。
+Layouts in Slidev are used to define the structure for each slide. They are Vue components that wrap the content of the slides.
 
-## 使用布局 {#use}
+## Using Layouts {#use}
 
-要使用布局，你可以在幻灯片的 frontmatter 中指定它：
+To use a layout, you can specify it in the frontmatter of the slide:
 
 ```md
 ---
@@ -14,19 +14,19 @@ layout: quote
 A quote from someone
 ```
 
-第一张幻灯片的默认布局是 `cover`，其余的是 `default`。
+By default, the layout of the first slide is `cover`, and the rest are `default`.
 
-布局按以下顺序加载，最后加载的会覆盖之前的：
+The layouts are loaded in the following order, and the last one loaded will override the previous ones:
 
-1. 默认布局。参见 [内置布局](../builtin/layouts)。
-2. 主题提供的布局
-3. 插件提供的布局
-4. `layouts` 目录中的自定义布局
+1. default layouts. See [Built-in Layouts](../builtin/layouts).
+2. layouts provided by the theme
+3. layouts provided by the addons
+4. custom layouts in the `layouts` directory
 
 <SeeAlso :links="[
   'features/slot-sugar',
 ]" />
 
-## 编写布局 {#write}
+## Writing Layouts {#write}
 
 <LinkCard link="guide/write-layout" />

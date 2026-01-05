@@ -1,107 +1,107 @@
 export const Guides = [
   {
-    text: '为什么选 Slidev',
+    text: 'Why Slidev',
     link: '/guide/why',
   },
   {
-    text: '快速上手',
+    text: 'Getting Started',
     link: '/guide/',
   },
   {
-    text: '语法',
+    text: 'Syntax Guide',
     link: '/guide/syntax',
   },
   {
-    text: '用户界面',
+    text: 'User Interface',
     link: '/guide/ui',
   },
   {
-    text: '动画',
+    text: 'Animations',
     link: '/guide/animations',
   },
   {
-    text: '主题和插件',
+    text: 'Theme & Addons',
     link: '/guide/theme-addon',
   },
   {
-    text: '组件',
+    text: 'Components',
     link: '/guide/component',
   },
   {
-    text: '布局',
+    text: 'Layouts',
     link: '/guide/layout',
   },
   {
-    text: '导出',
+    text: 'Exporting',
     link: '/guide/exporting',
   },
   {
-    text: '部署',
+    text: 'Hosting',
     link: '/guide/hosting',
   },
   {
-    text: '常见问答',
+    text: 'FAQ',
     link: '/guide/faq',
   },
 ]
 
 export const BuiltIn = [
   {
-    text: '命令行工具',
+    text: 'CLI',
     link: '/builtin/cli',
   },
   {
-    text: '内置组件',
+    text: 'Components',
     link: '/builtin/components',
   },
   {
-    text: '内置布局',
+    text: 'Layouts',
     link: '/builtin/layouts',
   },
 ]
 
 export const Advanced = [
   {
-    text: '全局上下文',
+    text: 'Global Context',
     link: '/guide/global-context',
   },
   {
-    text: '编写布局',
+    text: 'Writing Layouts',
     link: '/guide/write-layout',
   },
   {
-    text: '编写主题',
+    text: 'Writing Themes',
     link: '/guide/write-theme',
   },
   {
-    text: '编写插件',
+    text: 'Writing Addons',
     link: '/guide/write-addon',
   },
 ]
 
 export const Resources = [
   {
-    text: '案例展示',
+    text: 'Showcases',
     link: '/resources/showcases',
   },
   {
-    text: '主题合集',
+    text: 'Theme Gallery',
     link: '/resources/theme-gallery',
   },
   {
-    text: '插件合集',
+    text: 'Addon Gallery',
     link: '/resources/addon-gallery',
   },
   {
-    text: '学习资源',
+    text: 'Learning Resources',
     link: '/resources/learning',
   },
   {
-    text: '精选封面',
+    text: 'Curated Covers',
     link: '/resources/covers',
   },
   {
-    text: '更新日志',
+    text: 'Release Notes',
     link: 'https://github.com/slidevjs/slidev/releases',
   },
 ]

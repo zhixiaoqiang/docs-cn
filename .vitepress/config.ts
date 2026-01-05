@@ -1,44 +1,45 @@
-import { fileURLToPath } from 'node:url'
 import type { DefaultTheme } from 'vitepress'
-import { defineConfig } from 'vitepress'
+import { fileURLToPath } from 'node:url'
 import { transformerTwoslash } from '@shikijs/vitepress-twoslash'
+import { defineConfig } from 'vitepress'
+import { groupIconMdPlugin } from 'vitepress-plugin-group-icons'
 import { version } from '../package.json'
-import { getSidebarObject } from './sidebar-gen'
-import { Advanced, BuiltIn, Guides, Resources } from './pages'
 import Customizations from './customizations'
+import { Advanced, BuiltIn, Guides, Resources } from './pages'
+import { getSidebarObject } from './sidebar-gen'
 
-const slidebars: DefaultTheme.SidebarItem[] = [
+export const slidebars: DefaultTheme.SidebarItem[] = [
   {
-    text: '指南',
+    text: 'Guide',
     items: Guides,
   },
   {
-    text: '进阶',
+    text: 'Advanced',
     items: Advanced,
   },
   {
-    text: '定制',
+    text: 'Customizations',
     items: Customizations,
   },
   {
-    text: '内置',
+    text: 'Built-in',
     items: BuiltIn,
   },
   {
-    text: '资源',
+    text: 'Resources',
     items: Resources,
   },
 ]
 
 export default defineConfig({
   title: 'Slidev',
-  description: '为开发者打造的演示文稿工具',
+  description: 'Presentation slides for developers',
   head: [
     ['link', { rel: 'icon', type: 'image/png', href: '/favicon.png' }],
     ['meta', { name: 'author', content: 'Anthony Fu' }],
-    ['meta', { property: 'og:title', content: 'Slidev 中文文档' }],
+    ['meta', { property: 'og:title', content: 'Slidev' }],
     ['meta', { property: 'og:image', content: 'https://sli.dev/og-image.png' }],
-    ['meta', { property: 'og:description', content: '为开发者打造的演示文稿工具' }],
+    ['meta', { property: 'og:description', content: 'Presentation slides for developers' }],
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
     ['meta', { name: 'twitter:creator', content: '@slidevjs' }],
     ['meta', { name: 'twitter:image', content: 'https://sli.dev/og-image.png' }],
@@ -68,20 +69,22 @@ export default defineConfig({
           vfsRoot: fileURLToPath(import.meta.url),
           compilerOptions: {
             resolveJsonModule: true,
+            moduleResolution: /* Bundler */ 100,
           },
         },
       }),
     ],
+    config(md) {
+      md.use(groupIconMdPlugin)
+    },
   },
   cleanUrls: true,
   themeConfig: {
     logo: '/logo.svg',
     editLink: {
-      pattern: 'https://github.com/slidevjs/docs-cn/edit/main/:path',
-      text: '改进翻译',
+      pattern: 'https://github.com/slidevjs/slidev/edit/main/docs/:path',
+      text: 'Suggest changes to this page',
     },
-
-    outlineTitle: '本页目录',
 
     search: {
       provider: 'local',
@@ -89,34 +92,34 @@ export default defineConfig({
 
     nav: [
       {
-        text: '📖 指南',
+        text: '📖 Guide',
         items: [
           ...Guides,
           {
-            text: '进阶',
+            text: 'Advanced',
             items: Advanced,
           },
         ],
       },
       {
-        text: '✨ 功能',
+        text: '✨ Features',
         link: '/features/',
       },
       {
-        text: '参考',
+        text: 'Reference',
         items: [
           {
-            text: '内置',
+            text: 'Built-in',
             items: BuiltIn,
           },
           {
-            text: '定制',
+            text: 'Customize',
             items: Customizations,
           },
         ],
       },
       {
-        text: '资源',
+        text: 'Resources',
         items: Resources,
       },
     ],
@@ -134,6 +137,7 @@ export default defineConfig({
       '/custom/': slidebars,
       '/builtin/': slidebars,
       '/resources/': slidebars,
+      // eslint-disable-next-line antfu/no-top-level-await
       ...await getSidebarObject(),
       '/features/': [],
       '/': slidebars,
@@ -141,17 +145,21 @@ export default defineConfig({
 
     footer: {
       message: 'Released under the MIT License.',
-      copyright: 'Copyright © 2020-2024 Anthony Fu.',
+      copyright: 'Copyright © 2020-2025 Anthony Fu.',
     },
   },
 
   locales: {
     root: {
-      label: `简体中文 (v${version})`,
+      label: `English (v${version})`,
     },
     zh: {
-      label: 'English',
-      link: 'https://sli.dev/',
+      label: '简体中文',
+      link: 'https://cn.sli.dev/',
+    },
+    ja: {
+      label: '日本語',
+      link: 'https://ja.sli.dev/',
     },
   },
 })

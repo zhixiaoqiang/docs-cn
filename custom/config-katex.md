@@ -1,10 +1,10 @@
-# 配置 KaTeX
+# Configure KaTeX
 
 <Environment type="node" />
 
-创建一份包含以下内容的 `./setup/katex.ts` 文件：
+Create `./setup/katex.ts` with the following content:
 
-```ts twoslash
+```ts twoslash [setup/katex.ts]
 import { defineKatexSetup } from '@slidev/types'
 
 export default defineKatexSetup(() => {
@@ -15,6 +15,4 @@ export default defineKatexSetup(() => {
 })
 ```
 
-返回值应当是 KaTeX 的自定义选项。
-
-请参阅 [KaTeX的文档](https://katex.org/docs/options.html) 或选项列表的类型定义。
+The return value should be the custom options for KaTeX. Refer to [KaTeX's documentation](https://katex.org/docs/options.html) or the type definition for the full options list.

@@ -3,16 +3,16 @@ depends:
   - guide/exporting
   - guide/hosting
 relates:
-  - CLI export 命令: /builtin/cli#export
-  - Headmatter: /custom/#headmatter
-tags: [导出, 构建]
+  - CLI export options: /builtin/cli#export
+  - Headmatter export options: /custom/#headmatter
+tags: [export, build]
 description: |
-  在构建时生成可供下载的 PDF。
+  Generate a downloadable PDF along with your slides build.
 ---
 
-# 在构建时生成 PDF
+# Generate PDF when Building
 
-你可以在 headmatter 中使用以下配置，在已构建的幻灯片中提供一个可下载的 PDF：
+You can provide a downloadable PDF in your built slides with the following config in headmatter:
 
 ```md
 ---
@@ -20,23 +20,23 @@ download: true
 ---
 ```
 
-Slidev 将在构建时生成一个 PDF 文件，并在构建的输出中显示一个下载按钮。
+Slidev will generate a PDF file along with the build, and a download button will be displayed in the build.
 
-你也可以提供一个 PDF 的链接，这样 Slidev 将跳过渲染过程。
+You can also provide a custom URL for the PDF. In that case, the rendering process will be skipped.
 
 ```md
 ---
-download: 'https://myslide.com/my-talk.pdf'
+download: 'https://myside.com/my-talk.pdf'
 ---
 ```
 
-这也可以通过 CLI 选项 `--download` (只接受 `boolean`值)来完成。
+This can also be done with the CLI option `--download` (`boolean` only).
 
 ```bash
 $ slidev build --download
 ```
 
-启用下载选项时，你还可以通过以下方式提供导出选项：
+When using the download option, you can also provide the export options via:
 
-- [CLI 导出选项](/builtin/cli#export)
-- [Headmatter 导出选项](/custom/#frontmatter-configures)
+- [CLI export options](/builtin/cli#export)
+- [Headmatter export options](/custom/#frontmatter-configures)

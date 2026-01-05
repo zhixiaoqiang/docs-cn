@@ -2,77 +2,85 @@
 outline: deep
 ---
 
-# 编译和部署
+# Building and Hosting
 
-Slidev 被设计为在编辑或展示幻灯片时作为 Web 服务器运行。然而，在展示之后，你可能希望与他人分享你的**交互式**幻灯片。本指南将向你展示如何构建和部署你的幻灯片。
+Slidev is designed to run as a web server when you are editing or presenting your slides. However, after the presentation, you may still want to share your **interactive** slides with others. This guide will show you how to build and host your slides.
 
-## 编译为静态网页 {#spa}
+## Build as a SPA {#spa}
 
-你可以通过以下命令将幻灯片构建为静态的 [单页应用 (SPA)](https://developer.mozilla.org/en-US/docs/Glossary/SPA)：
+You can build the slides into a static [Single-page application (SPA)](https://developer.mozilla.org/en-US/docs/Glossary/SPA) via the following command:
 
 ```bash
 $ slidev build
 ```
 
-默认情况下，生成的文件会被放在 `dist` 文件夹中。你可以通过运行 `npx vite preview` 或任何其他静态服务器来测试你的幻灯片的构建版本。
+By default, the generated files are placed in the `dist` folder. You can test the built version of you slides by running: `npx vite preview` or any other static server.
 
-### 基础路径 {#base}
+### Base Path {#base}
 
-若要将你的幻灯片部署在子目录下，你需要传递 `--base` 选项。`--base` 路径**必须以斜杠 `/` 开头和结尾**。例如：
+To deploy your slides under sub-routes, you need to pass the `--base` option. The `--base` path **must begin and end with a slash `/`**. For example:
 
 ```bash
 $ slidev build --base /talks/my-cool-talk/
 ```
 
-参阅 [Vite 文档](https://cn.vitejs.dev/guide/build.html#public-base-path) 了解更多细节。
+Refer to [Vite's documentation](https://vitejs.dev/guide/build.html#public-base-path) for more details.
 
-### 输出目录 {#output-directory}
+### Output directory {#output-directory}
 
-你可以通过 `--out` 选项更改输出目录：
+You can change the output directory using `--out`.
 
 ```bash
 $ slidev build --out my-build-folder
 ```
 
-### 多个幻灯片 {#multiple-slides}
+### Remove speaker notes {#without-notes}
 
-你可以通过传递多个 Markdown 文件作为参数一次性构建多个幻灯片：
+If you are sharing the built slides publicly and don't want to include your speaker notes, run the build with `--without-notes`:
+
+```bash
+$ slidev build --without-notes
+```
+
+### Multiple Builds {#multiple-builds}
+
+You can build multiple slide decks in one go by passing multiple markdown files as arguments:
 
 ```bash
 $ slidev build slides1.md slides2.md
 ```
 
-或者，如果你的 shell 支持，你可以使用通配符：
+Or if your shell supports it, you can use a glob pattern:
 
 ```bash
 $ slidev build *.md
 ```
 
-在上例中，每个输入文件将在输出目录中生成一个包含构建的文件夹。
+In this case, each input file will generate a folder containing the build in the output directory.
 
-### 例子 {#examples}
+### Examples {#examples}
 
-以下是一些导出的 SPA 的例子：
+Here are a few examples of the exported SPA:
 
 - [Demo Slides](https://sli.dev/demo/starter)
 - [Composable Vue](https://talks.antfu.me/2021/composable-vue) by [Anthony Fu](https://github.com/antfu)
-- 更多请查阅 [案例展示](../resources/showcases)
+- More in [Showcases](../resources/showcases)
 
-### 选项 {#options}
+### Options {#options}
 
 <LinkCard link="features/build-with-pdf" />
 <LinkCard link="features/bundle-remote-assets" />
 
-## 静态部署 {#hosting}
+## Hosting {#hosting}
 
-我们推荐使用 `npm init slidev@latest` 来初始化你的项目，它包含了一些常用的部署配置文件。
+We recommend using `npm init slidev@latest` to scaffold your project, which contains the necessary configuration files for hosting services out-of-the-box.
 
 ### GitHub Pages {#github-pages}
 
-要通过 GitHub Actions 在 [GitHub Pages](https://pages.github.com/) 上部署你的幻灯片，请按照以下步骤操作：
+To deploy your slides on [GitHub Pages](https://pages.github.com/) via GitHub Actions, follow these steps:
 
-1. 在你的仓库中上传所有项目文件（例如命名为 `name_of_repo`）。
-2. 创建 `.github/workflows/deploy.yml` 文件，内容如下，以通过 GitHub Actions 将你的幻灯片部署到 GitHub Pages。
+1. In your repository, go to `Settings` > `Pages`. Under `Build and deployment`, select `GitHub Actions`. (Do not choose `Deploy from a branch` and upload the `dist` directory, which is not recommended.)
+2. Create `.github/workflows/deploy.yml` with the following content to deploy your slides to GitHub Pages via GitHub Actions.
 
 ::: details deploy.yml
 
@@ -135,12 +143,12 @@ jobs:
 
 :::
 
-3. 在你的仓库中，转到 `Settings` > `Pages`。在 `Build and deployment` 下，选择 `GitHub Actions`。
-4. 最后，在工作流执行后，幻灯片的链接应该会出现在 `Settings` > `Pages` 下。
+3. Commit and push the changes to your repository. The GitHub Actions workflow will automatically deploy your slides to GitHub Pages every time you push to the `main` branch.
+4. You can access your slides at `https://<username>.github.io/<repository-name>/`.
 
 ### Netlify
 
-创建项目根目录下的 `netlify.toml` 文件，内容如下：
+Create `netlify.toml` in your project root with the following content:
 
 ::: details netlify.toml
 
@@ -160,11 +168,11 @@ status = 200
 
 :::
 
-然后，你可以在 [Netlify dashboard](https://netlify.com/) 中创建一个新站点，并将仓库与之关联。
+Then go to your [Netlify dashboard](https://netlify.com/) and create a new site with the repository.
 
 ### Vercel
 
-创建项目根目录下的 `vercel.json` 文件，内容如下：
+Create `vercel.json` in your project root with the following content:
 
 ::: details vercel.json
 
@@ -178,15 +186,15 @@ status = 200
 
 :::
 
-然后，你可以在 [Vercel dashboard](https://vercel.com/) 中创建一个新站点，并将仓库与之关联。
+Then go to your [Vercel dashboard](https://vercel.com/) and create a new site with the repository.
 
-### 在 Docker 上部署 {#docker}
+### Host on Docker {#docker}
 
-如果你需要一个快速的容器运行幻灯片的方式，你可以使用由 [tangramor](https://github.com/tangramor) 维护的预构建 [Docker Image](https://hub.docker.com/r/tangramor/slidev)，或者自己构建一个。
+If you need a rapid way to run a presentation with containers, you can use the prebuilt [docker image](https://hub.docker.com/r/tangramor/slidev) maintained by [tangramor](https://github.com/tangramor), or build your own.
 
-::: details 使用 Docker Image
+::: details Use the Docker Image
 
-只需在你的工作目录中运行以下命令：
+Just run the following command in your work folder:
 
 ```bash
 docker run --name slidev --rm -it \
@@ -197,11 +205,13 @@ docker run --name slidev --rm -it \
     tangramor/slidev:latest
 ```
 
-**_Note_**: 你可以使用 `NPM_MIRROR` 来指定一个 npm 镜像以加快安装过程。
+**_Note_**: You can use `NPM_MIRROR` to specify a npm mirror to speed up the installation process.
 
-如果你的工作目录为空，它将在你的工作目录下生成一个模板 `slides.md` 和其他相关文件，并在端口 `3030` 上启动服务器。然后，你可以从 `http://localhost:3030/` 访问你的幻灯片。
+If your work folder is empty, it will generate a template `slides.md` and other related files under your work folder, and launch the server on port `3030`.
 
-若要用你的幻灯片创建一个 Docker Image，你可以使用以下 Dockerfile：
+You can access your slides from `http://localhost:3030/`
+
+To create an Docker Image for your slides, you can use the following Dockerfile:
 
 ```Dockerfile
 FROM tangramor/slidev:latest
@@ -209,10 +219,10 @@ FROM tangramor/slidev:latest
 ADD . /slidev
 ```
 
-创建 Docker Image：`docker build -t myslides .`
+Create the docker image: `docker build -t myslides .`
 
-运行容器：`docker run --name myslides --rm --user node -p 3030:3030 myslides`
+And run the container: `docker run --name myslides --rm --user node -p 3030:3030 myslides`
 
-然后，你可以从 `http://localhost:3030/` 访问你的幻灯片。
+You can visit your slides at `http://localhost:3030/`
 
 :::

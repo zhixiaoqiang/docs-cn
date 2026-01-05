@@ -1,16 +1,16 @@
-# 配置代码运行器
+# Configure Code Runners
 
 <Environment type="client" />
 
-在 Monaco 代码运行器中运行自定义语言。
+Define code runners for custom languages in your Monaco Editor.
 
-Slidev 内置了对 JavaScript 与 TypeScript 运行器。 它们能直接在浏览器中运行，但 **没有** 沙盒环境的保护。 如果你想要更高级的集成, 你可以提供自己的代码运行器，将代码发送到远程服务器、在 Web Worker 中运行，或者以你希望的任何方式运行。
+By default, JavaScript, TypeScript runners are supported built-in. They run in the browser **without** a sandbox environment. If you want more advanced integrations, you can provide your own code runner that sends the code to a remote server, runs in a Web Worker, or anything, up to you.
 
-你需要创建含以下内容的 `./setup/code-runners.ts` 文件:
+Create `./setup/code-runners.ts` with the following content:
 
 <!-- eslint-disable import/first -->
 
-```ts twoslash
+```ts twoslash [setup/code-runners.ts]
 declare const executePythonCodeRemotely: (code: string) => Promise<string>
 declare const sanitizeHtml: (html: string) => string
 // ---cut---
@@ -19,7 +19,7 @@ import { defineCodeRunnersSetup } from '@slidev/types'
 export default defineCodeRunnersSetup(() => {
   return {
     async python(code, ctx) {
-      // 以某种方式执行代码并获取输出
+      // Somehow execute the code and return the result
       const result = await executePythonCodeRemotely(code)
       return {
         text: result
@@ -30,14 +30,14 @@ export default defineCodeRunnersSetup(() => {
         html: sanitizeHtml(code)
       }
     },
-    // 也可以添加其他语言。键是语言id，值是运行器函数
+    // or other languages, key is the language id
   }
 })
 ```
 
-## 运行上下文
+## Runner Context
 
-第二个传入参数 `ctx` 是运行的上下文, 包含了以下属性:
+The second argument `ctx` is the runner context, which contains the following properties:
 
 ```ts twoslash
 import type { CodeRunnerOutputs } from '@slidev/types'
@@ -45,27 +45,27 @@ import type { CodeToHastOptions } from 'shiki'
 // ---cut---
 export interface CodeRunnerContext {
   /**
-   * 通过 `runnerOptions` 属性传递给运行器的选项。
+   * Options passed to runner via the `runnerOptions` prop.
    */
   options: Record<string, unknown>
   /**
-   * 使用 Shiki 高亮代码。
+   * Highlight code with shiki.
    */
   highlight: (code: string, lang: string, options?: Partial<CodeToHastOptions>) => string
   /**
-   * 使用其他代码运行器运行代码。
+   * Use (other) code runner to run code.
    */
   run: (code: string, lang: string) => Promise<CodeRunnerOutputs>
 }
 ```
 
-## 运行器输出
+## Runner Output
 
-运行器可以返回文本或 HTML 输出，或者一个要挂载的 HTML 元素。更多详情请参考 [code-runner.ts](https://github.com/slidevjs/slidev/blob/main/packages/types/src/code-runner.ts) 的类型定义。
+The runner can either return a text or HTML output, or an element to be mounted. Refer to https://github.com/slidevjs/slidev/blob/main/packages/types/src/code-runner.ts for more details.
 
-## 附加运行依赖
+## Additional Runner Dependencies
 
-默认地，Slidev 将扫描 Markdown 源文件并自动为运行器导入必要的 JavaScript 依赖项。如果你希望手动指定依赖，你可以在 slide 的 frontmatter 中使用 `monacoRunAdditionalDeps` 选项: 
+By default, Slidev will scan the Markdown source and automatically import the necessary dependencies for the code runners. If you want to manually import dependencies, you can use the `monacoRunAdditionalDeps` option in the slide frontmatter:
 
 ```yaml
 monacoRunAdditionalDeps:
@@ -74,5 +74,5 @@ monacoRunAdditionalDeps:
 ```
 
 ::: tip
-这些路径是相对于 `snippets` 目录解析的。并且依赖项的名称应该与代码中导入的名称完全相同。
+The paths are resolved relative to the `snippets` directory. And the names of the deps should be exactly the same as the imported ones in the code.
 :::

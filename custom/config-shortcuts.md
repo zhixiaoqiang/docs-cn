@@ -1,18 +1,18 @@
-# 配置快捷键 {#configure-shortcuts}
+# Configure Shortcuts
 
 <Environment type="client" />
 
-## 开始使用 {#getting-started}
+## Getting started
 
-创建一份包含以下内容的 `./setup/shortcuts.ts` 文件：
+Create `./setup/shortcuts.ts` with the following content:
 
-```ts twoslash
+```ts twoslash [./setup/shortcuts.ts]
 import type { NavOperations, ShortcutOptions } from '@slidev/types'
 import { defineShortcutsSetup } from '@slidev/types'
 
 export default defineShortcutsSetup((nav: NavOperations, base: ShortcutOptions[]) => {
   return [
-    ...base, // 保留已有的快捷键
+    ...base, // keep the existing shortcuts
     {
       key: 'enter',
       fn: () => nav.next(),
@@ -27,10 +27,10 @@ export default defineShortcutsSetup((nav: NavOperations, base: ShortcutOptions[]
 })
 ```
 
-在配置时，你可以添加或者一些自定义的快捷键。例如，上面的配置为 <kbd>enter</kbd> 绑定了 `前进` 操作，为 <kbd>backspace</kbd> 绑定了 `后退` 操作。
+In the setup function, you can customize the keyboard shortcuts by returning a new array of shortcuts. The above example binds the `next` operation to <kbd>enter</kbd> and the `prev` operation to <kbd>backspace</kbd>.
 
-有关默认快捷键和导航操作，请参阅 [导航操作](../guide/ui#navigation-actions) 部分。
+Please refer to [Navigation Actions](../guide/ui#navigation-actions) section for the default shortcuts and navigation operations.
 
-## 键盘绑定格式
+## Key Binding Format
 
-每个快捷键的 `key` 可以是字符串（例如 `Shift+Ctrl+a`）或 Vue `computed` 形式的布尔值。请参考 VueUse 的 [`useMagicKeys`](https://vueuse.org/core/useMagicKeys/) 以获取更多细节。
+The `key` of each shortcut can be either a string (e.g. `'Shift+Ctrl+A'`) or a computed boolean. Please refer to [`useMagicKeys` from VueUse](https://vueuse.org/core/useMagicKeys/) for

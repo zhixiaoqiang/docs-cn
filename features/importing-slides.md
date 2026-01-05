@@ -1,37 +1,37 @@
 ---
 relates:
   - features/frontmatter-merging
-tags: [语法]
+tags: [syntax]
 description: |
-  将你的幻灯片分割成多个文件来获得更好的可复用性和组织性。
+  Split your `slides.md` into multiple files for better reusability and organization.
 ---
 
-# 引入幻灯片
+# Importing Slides
 
-你可以将`slides.md`拆分为多个文件，以提高可复用性和组织性。为此，你可以使用 frontmatter 中的 `src` 选项指定外部 Markdown 文件的路径。例如：
+You can split your `slides.md` into multiple files for better reusability and organization. To do this, you can use the `src` frontmatter option to specify the path to the external markdown file. For example:
 
 ::: code-group
 
 <!-- eslint-skip -->
 
 ```md [./slides.md]
-# 标题
+# Title
 
-这是一个普通的页面
+This is a normal page
 
 ---
 src: ./pages/toc.md // [!code highlight]
 ---
 
-<!-- 此页面将从 '/pages/toc.md' 加载 -->
+<!-- this page will be loaded from './pages/toc.md' -->
 
-这里的内容将被忽略
+Contents here are ignored
 
 ---
 
-# 第四页
+# Page 4
 
-另一个正常的页面
+Another normal page
 
 ---
 src: ./pages/toc.md   # Reuse the same file // [!code highlight]
@@ -39,22 +39,22 @@ src: ./pages/toc.md   # Reuse the same file // [!code highlight]
 ```
 
 ```md [./pages/toc.md]
-# 目录
+# Table of Contents
 
 Part 1
 
 ---
 
-# 目录
+# Table of Contents
 
 Part 2
 ```
 
 :::
 
-## 导入特定幻灯片
+## Importing Specific Slides
 
-要在另一个 Markdown 文件中复用一些幻灯片，你可以使用导入路径的哈希部分：
+To reuse some of the slides inside another Markdown file, you can use the hash part of the import path:
 
 ```md
 ---
@@ -62,8 +62,8 @@ src: ./another-presentation.md#2,5-7
 ---
 ```
 
-这会从 `./another-presentation.md` 中导入第 2,5,6,7 页。
+This will import the slides 2, 5, 6, and 7 from `./another-presentation.md`.
 
-## Frontmatter 合并
+## Frontmatter Merging
 
 <LinkCard link="features/frontmatter-merging" />

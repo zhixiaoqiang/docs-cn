@@ -2,13 +2,13 @@
 outline: deep
 ---
 
-# 快速上手 {#getting-started}
+# Getting Started
 
-Slidev <sup>(slide + dev, **/slaɪdɪv/**)</sup> 是一个为开发者设计的基于 Web 的幻灯片制作工具。它帮助您以 Markdown 的形式专注于编写幻灯片的内容，并制作出具有交互式演示功能的、高度可自定义的幻灯片。
+Slidev <sup>(slide + dev, **/slaɪdɪv/**)</sup> is a web-based slides maker and presenter. It's designed for developers to focus on writing content in Markdown. With the power of web technologies like Vue, you are able to deliver pixel-perfect designs with interactive demos to your presentation.
 
 ::: tip
 
-你可以在 <LinkInline link="guide/why" /> 部分了解更多关于本项目的设计初衷。
+You can learn more about the rationale behind this project in <LinkInline link="guide/why" />.
 
 :::
 
@@ -32,57 +32,80 @@ Slidev <sup>(slide + dev, **/slaɪdɪv/**)</sup> 是一个为开发者设计的�
 
 <!-- <FeaturesAnimation /> -->
 
-## 创建幻灯片 {#create-slides}
+## Create Slides
 
-### 在浏览器中创建 {#try-it-online}
+### Try it Online
 
-通过 StackBlitz 在浏览器中创建幻灯片: [sli.dev/new](https://sli.dev/new)
+Start Slidev right in your browser with StackBlitz: [sli.dev/new](https://sli.dev/new)
 
-### 在本地创建 {#create-locally}
+### Create Locally
 
-> 需要先安装 [Node.js](https://nodejs.org) >= 18.0
+> Requires [Node.js](https://nodejs.org) >= 18.0 installed.
 
-在终端运行以下命令来创建一个新的 Slidev 项目：
+Run the following command to create a new Slidev project locally:
 
 ::: code-group
 
-```bash [npm]
-npm init slidev@latest
+```bash [pnpm]
+# If you haven't installed pnpm
+npm i -g pnpm
+
+pnpm create slidev
 ```
 
-```bash [pnpm]
-pnpm create slidev
+```bash [npm]
+# Not recommended -
+# NPM will download the packages each time you create a new project,
+# which is slow and takes up a lot of space
+
+npm init slidev@latest
 ```
 
 ```bash [yarn]
 yarn create slidev
 ```
 
+```bash [bun]
+bun create slidev
+```
+
+```bash [deno]
+deno init --npm slidev
+```
+
 :::
 
-根据指引，输入项目名称并按照提示完成项目创建。幻灯片内容在 `slides.md` 文件中，初始内容包含了 Slidev 的大部分功能的演示。关于幻灯片 Markdown 语法的更多信息，请查看 <LinkInline link="guide/syntax" />。
+Follow the prompts to start your slides project. The slides content is in `slides.md`, which initially includes demos of most the Slidev features. For more information about the Markdown syntax, please check <LinkInline link="guide/syntax" />.
 
-:::: details 单文件模式 (不推荐)
+:::: details Single file usage (not recommended)
 
-如果你不想创建一个 Node.js 包来管理你的幻灯片，可以选择全局安装 Slidev CLI:
+If you prefer to have a single Markdown file as your slides, you can install the Slidev CLI globally:
 
 ::: code-group
 
-```bash [npm]
-npm i -g @slidev/cli
-```
-
 ```bash [pnpm]
 pnpm i -g @slidev/cli
+```
+
+```bash [npm]
+npm i -g @slidev/cli
 ```
 
 ```bash [yarn]
 yarn global add @slidev/cli
 ```
 
+```bash [bun]
+bun i -g @slidev/cli
+```
+
+```bash [deno]
+deno i -g npm:@slidev/cli
+```
+
 :::
 
-然后，你可以通过以下命令创建并启动幻灯片:
+Then, you can create and start a single file slides via:
 
 ```bash
 slidev slides.md
@@ -90,19 +113,19 @@ slidev slides.md
 
 ::::
 
-## 基本命令 {#basic-commands}
+## Basic Commands
 
-以下是 Slidev 的一些常用命令：
+Slidev provides a set of commands in its CLI. Here are some common ones:
 
-- `slidev` - 启动开发服务器。细节请参见 [dev 命令](../builtin/cli#dev)
-- `slidev export` - 将幻灯片导出为 PDF、PPTX 或 PNG 文件。细节请参见 <LinkInline link="guide/exporting" />
-- `slidev build` - 将幻灯片构建为静态网页。细节请参见 <LinkInline link="guide/hosting" />
-- `slidev format` - 将幻灯片格式化。细节请参见 [format 命令](../builtin/cli#format)
-- `slidev --help` - 显示帮助信息
+- `slidev` - Start the dev server. See [the dev command](../builtin/cli#dev).
+- `slidev export` - Export the slides to PDF, PPTX, or PNGs. See <LinkInline link="guide/exporting" />.
+- `slidev build` - Build the slides as a static web application. See <LinkInline link="guide/hosting" />.
+- `slidev format` - Format the slides. See [the format command](../builtin/cli#format).
+- `slidev --help` - Show the help message
 
-你可以将这些命令添加到你的 `package.json` 的 `scripts` 字段中，来更方便地运行它们（如果幻灯片项目是通过 `npm init slidev` 创建的，则可以跳过这一步）：
+To run these commands, you can add them to your `package.json` scripts (which has been done for you if the project was created via `npm init slidev`):
 
-```json
+```json [package.json]
 {
   "scripts": {
     "dev": "slidev --open",
@@ -112,35 +135,35 @@ slidev slides.md
 }
 ```
 
-这样，你就可以通过 `npm run dev`、`npm run build` 和 `npm run export` 来运行这些命令了。
+Then, you can simply run `npm run dev`, `npm run build`, and `npm run export`.
 
-关于 CLI 的更多信息，请查看 [CLI 指南](../builtin/cli)。
+For more information about the CLI, please check the [CLI guide](../builtin/cli).
 
-## 配置编辑器 {#editor}
+## Setup Your Editor {#editor}
 
-因为 Slidev 使用 Markdown 作为幻灯片的基本格式，你可以使用任何你喜欢的编辑器来开发你的幻灯片。我们也提供了一些工具来帮助你更方便地开发幻灯片：
+Since Slidev uses Markdown as the source entry, you can use any editor you prefer to create your slides. We also provide tools to help you edit you slides more conveniently:
 
 <LinkCard link="features/vscode-extension" />
 <LinkCard link="features/side-editor" />
 <LinkCard link="features/prettier-plugin" />
 
-## 加入社区 {#join-the-community}
+## Join the Community
 
-欢迎加入我们的 [Discord 服务器](https://chat.sli.dev/)，获取帮助、分享你的幻灯片，或者讨论关于 Slidev 的任何事情。
+It's recommended to join our official [Discord Server](https://chat.sli.dev/) to get help, share your slides, or discuss anything about Slidev.
 
-如果你遇到了疑似 bug 的问题，欢迎在 [GitHub](https://github.com/slidevjs/slidev/issues/new/choose) 上开一个 issue。
+If you're encountering bugs, feel free to open an issue on [GitHub](https://github.com/slidevjs/slidev/issues/new/choose).
 
-## 技术栈 {#tech-stack}
+## Tech Stack
 
-Slidev 基于以下工具和技术构建：
+Slidev is made possible by combining these tools and technologies.
 
-- [Vite](https://vitejs.dev) - 一款极速响应的下一代的前端工具链
-- [Vue 3](https://v3.vuejs.org/) powered [Markdown](https://daringfireball.net/projects/markdown/syntax) - 用于编写幻灯片内容
-- [UnoCSS](https://github.com/unocss/unocss) - 帮助快速构建幻灯片样式
-- [Shiki](https://github.com/shikijs/shiki), [Monaco Editor](https://github.com/Microsoft/monaco-editor) - 为在幻灯片中嵌入代码提供一流支持
-- [RecordRTC](https://recordrtc.org) - 内置的录制工具和摄像头视图
-- [VueUse](https://vueuse.org) 系列 - [`@vueuse/core`](https://github.com/vueuse/vueuse), [`@vueuse/head`](https://github.com/vueuse/head), [`@vueuse/motion`](https://github.com/vueuse/motion), 等等
-- [Iconify](https://iconify.design/) - 用图标集丰富你的幻灯片
-- [Drauu](https://github.com/antfu/drauu) - 用于在幻灯片上绘图和批注
-- [KaTeX](https://katex.org/) - 用于渲染 LaTeX 数学公式
-- [Mermaid](https://mermaid-js.github.io/mermaid) - 基于文本的图表绘制工具
+- [Vite](https://vitejs.dev) - An extremely fast frontend tooling
+- [Vue 3](https://v3.vuejs.org/) powered [Markdown](https://daringfireball.net/projects/markdown/syntax) - Focus on the content while having the power of HTML and Vue components whenever needed
+- [UnoCSS](https://github.com/unocss/unocss) - On-demand utility-first CSS framework, style your slides at ease
+- [Shiki](https://github.com/shikijs/shiki), [Monaco Editor](https://github.com/Microsoft/monaco-editor) - First-class code snippets support with live coding capability
+- [RecordRTC](https://recordrtc.org) - Built-in recording and camera view
+- [VueUse](https://vueuse.org) family - [`@vueuse/core`](https://github.com/vueuse/vueuse), [`@vueuse/head`](https://github.com/vueuse/head), [`@vueuse/motion`](https://github.com/vueuse/motion), etc.
+- [Iconify](https://iconify.design/) - Iconsets collection.
+- [Drauu](https://github.com/antfu/drauu) - Drawing and annotations support
+- [KaTeX](https://katex.org/) - LaTeX math rendering.
+- [Mermaid](https://mermaid-js.github.io/mermaid) - Textual Diagrams.

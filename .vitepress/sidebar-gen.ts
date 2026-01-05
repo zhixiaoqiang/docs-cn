@@ -1,10 +1,10 @@
-import { fileURLToPath } from 'node:url'
-import { join } from 'node:path'
-import fg from 'fast-glob'
 import type { DefaultTheme } from 'vitepress'
+import { join } from 'node:path'
+import { fileURLToPath } from 'node:url'
+import fg from 'fast-glob'
 import graymatter from 'gray-matter'
 
-const root = fileURLToPath(new URL('../', import.meta.url))
+const root = fileURLToPath(new URL('../../', import.meta.url))
 
 interface ParsedFile {
   filepath: string
@@ -15,7 +15,7 @@ interface ParsedFile {
 
 function parseFile(file: string) {
   const filepath = join(root, file)
-  const path = file.replace('.md', '')
+  const path = file.replace('docs/', '').replace('.md', '')
   const matter = graymatter.read(filepath)
   const title = matter.data.title || matter.content.match(/^#\s+(.*)/m)?.[1] || path
   return {
@@ -30,7 +30,7 @@ export async function getSidebarObject() {
   const map: Record<string, DefaultTheme.SidebarItem[]> = {}
 
   const parsedFeatures: ParsedFile[] = await fg([
-    'features/*.md',
+    'docs/features/*.md',
   ], {
     onlyFiles: true,
     cwd: root,
@@ -38,7 +38,7 @@ export async function getSidebarObject() {
     .then(files => files.map(parseFile))
 
   const parsedGuides: ParsedFile[] = await fg([
-    'guide/*.md',
+    'docs/guide/*.md',
   ], {
     onlyFiles: true,
     cwd: root,
@@ -48,10 +48,10 @@ export async function getSidebarObject() {
   parsedFeatures.forEach(({ matter, path }) => {
     const items: DefaultTheme.SidebarItem[] = [
       {
-        text: '返回',
+        text: 'Back to',
         items: [
           {
-            text: '功能列表',
+            text: 'All Features',
             link: '/features',
           },
         ],
@@ -108,14 +108,14 @@ export async function getSidebarObject() {
 
     if (matter.data.depends) {
       items.push({
-        text: '基于',
+        text: 'Depends on',
         items: matter.data.depends.flatMap(frontmatterToSidebarItem),
       })
     }
 
     if (matter.data.relates) {
       items.push({
-        text: '相关链接',
+        text: 'Related to',
         items: matter.data.relates.flatMap(frontmatterToSidebarItem),
       })
     }
@@ -125,7 +125,7 @@ export async function getSidebarObject() {
 
     if (derives.length) {
       items.push({
-        text: '派生功能',
+        text: 'Derives',
         items: derives.flatMap(frontmatterToSidebarItem),
       })
     }

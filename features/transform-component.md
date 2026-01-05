@@ -3,27 +3,27 @@ relates:
   - guide/faq#adjust-size
   - features/canvas-size
   - features/zoom-slide
-tags: [布局]
+tags: [layout]
 description: |
-  一个用于缩放元素的组件。
+  A component for scaling some elements.
 ---
 
-# `Transform` 组件
+# The `Transform` Component
 
-`Transform` 组件允许你缩放你幻灯片中的元素大小。
+The `Transform` component allows you to scale the size of the elements on your slides:
 
 ```md
-<Transform :scale="0.5">
+<Transform :scale="0.5" origin="top center">
   <YourElements />
 </Transform>
 ```
 
-这在你想要调整部分元素的大小又不希望改变整个幻灯片布局时很有帮助。
+This is useful when you want to adjust the size of some elements on your slides without affecting the layout of the entire slide.
 
-如要缩放所有的幻灯片，你可以设置幻灯片的 canvas 大小：
+To scale all the slides in your presentation, you can set the slide canvas size:
 
 <LinkCard link="features/canvas-size" />
 
-如要缩放多张幻灯片，你可以考虑使用 `zoom` 选项：
+To scale several slides in your presentation, you can use the `zoom` option:
 
 <LinkCard link="features/zoom-slide" />

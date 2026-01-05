@@ -2,91 +2,111 @@
 outline: deep
 ---
 
-# 导出幻灯片
+# Exporting
 
-通常幻灯片在浏览器中显示，但你也可以将它们导出为 PDF、PPTX、PNG 或 Markdown 文件以便分享或打印。这个功能通过 CLI 命令 [`slidev export`](../builtin/cli#export) 实现。
+Usually the slides are displayed in a web browser, but you can also export them to PDF, PPTX, PNG, or Markdown files for sharing or printing. This feature is available through the CLI command [`slidev export`](../builtin/cli#export).
 
-但是，幻灯片中的交互式功能在导出的文件中可能无法使用。你也可以构建和托管你的幻灯片作为 Web 应用程序以保留交互性。请参阅 [构建和托管](./hosting) 了解更多信息。
+However, interactive features in your slides may not be available in the exported files. You can build and host your slides as a web application to keep the interactivity. See [Building and Hosting](./hosting) for more information.
 
-## 准备工作 {#preparation}
+## The Browser Exporter <Badge> Recommended </Badge> {#browser}
 
-导出为 PDF、PPTX 或 PNG 依赖于 [Playwright](https://playwright.dev) 来渲染幻灯片。因此，你需要在你的项目中安装 [`playwright-chromium`](https://npmjs.com/package/playwright-chromium)：
+> Available since v0.50.0-beta.11
+
+Slidev provides a UI in the browser for exporting your slides. You can access it by clicking the "Export" button in "More options" menu in the [navigation bar](./ui#navigation-bar), or go to `http://localhost:<port>/export` directly.
+
+In the UI, you can export the slides as PDF, or capture the slides as images and download them as a PPTX or zip file.
+
+Note that browsers other than **modern Chromium-based browsers** may not work well with the exporting UI. If you encounter any issues, please try use the CLI instead.
+
+> The following content of this page is for the CLI only.
+
+## The CLI {#cli}
+
+Exporting to PDF, PPTX, or PNG relies on [Playwright](https://playwright.dev) for rendering the slides. Therefore [`playwright-chromium`](https://npmjs.com/package/playwright-chromium) is required to be installed in your project:
 
 ::: code-group
 
-```bash [npm]
-$ npm i -D playwright-chromium
-```
-
 ```bash [pnpm]
 $ pnpm add -D playwright-chromium
+```
+
+```bash [npm]
+$ npm i -D playwright-chromium
 ```
 
 ```bash [yarn]
 $ yarn add -D playwright-chromium
 ```
 
+```bash [bun]
+$ bun add -D playwright-chromium
+```
+
+```bash [deno]
+$ deno add -D npm:playwright-chromium
+```
+
 :::
 
-## 支持的格式 {#formats}
+## Formats
 
 ### PDF
 
-在安装了 `playwright-chromium` 之后，你可以使用以下命令将幻灯片导出为 PDF：
+After installing `playwright-chromium` as described above, you can export your slides to PDF using the following command:
 
 ```bash
 $ slidev export
 ```
 
-默认地，PDF 文件会被导出到 `./slides-export.pdf`。
+By default, the PDF will be placed at `./slides-export.pdf`.
 
 ### PPTX
 
-Slidev 也可以将你的幻灯片导出为 PPTX 文件：
+Slidev can also export your slides as a PPTX file:
 
 ```bash
 $ slidev export --format pptx
 ```
 
-需要注意的是，PPTX 文件中的所有幻灯片都会被导出为图片，因此文本不可选择。演讲者备注将以每张幻灯片为单位传递到 PPTX 文件中。
+Note that all the slides in the PPTX file will be exported as images, so the text will not be selectable. Presenter notes will be conveyed into the PPTX file on a per-slide basis.
 
-在此模式下，默认启用了 `--with-clicks` 选项。要禁用它，请传递 `--with-clicks false`。
+In this mode, the `--with-clicks` option is enabled by default. To disable it, pass `--with-clicks false`.
 
-### PNGs 或 Markdown {#pngs-and-markdown}
+### PNGs and Markdown
 
-当传递 `--format png` 选项时，Slidev 会为每张幻灯片导出 PNG 图像而不是 PDF：
+When passing in the `--format png` option, Slidev will export PNG images for each slide instead of a PDF:
 
 ```bash
 $ slidev export --format png
 ```
 
-你也可以使用 `--format md` 选项将幻灯片导出为 Markdown 文件：
+You can also compile a markdown file composed of compiled png using `--format md`:
 
 ```bash
 $ slidev export --format md
 ```
 
-## 选项 {#options}
+## Options
 
-以下是一些常用的 `slidev export` 命令选项。更多选项请参阅 [CLI 文档](../builtin/cli#export)。
+Here are some common options you can use with the `slidev export` command. For a full list of options, see the [CLI documentation](../builtin/cli#export).
 
-### 导出动画步骤 {#export-clicks-steps}
+### Export Clicks Steps
 
-默认地，Slidev 会将每张幻灯片导出为一个页面，不包含点击动画。如果你想要将幻灯片的多个步骤导出为多个页面，可以传递 `--with-clicks` 选项：
+By default, Slidev exports one page per slide with clicks animations disabled. If you want to export slides with multiple steps into multiple pages, pass the `--with-clicks` option:
 
 ```bash
 $ slidev export --with-clicks
 ```
 
-### 指定导出文件名 {#output-filename}
+### Output Filename
 
-你可以使用 `--output` 选项指定导出文件名：
+You can specify the output filename with the `--output` option:
 
 ```bash
 $ slidev export --output my-pdf-export
 ```
 
-或在 headmatter 中指定：
+Or in the headmatter configuration:
 
 ```yaml
 ---
@@ -94,105 +114,131 @@ exportFilename: my-pdf-export
 ---
 ```
 
-### 限定导出范围 {#export-with-range}
+### Export with Range
 
-默认情况下，会导出演示文稿中的所有幻灯片。如果你想要导出特定幻灯片或幻灯片范围，可以使用 `--range` 选项并指定你想要导出的幻灯片：
+By default, all slides in the presentation are exported. If you want to export a specific slide or a range of slides you can set the `--range` option and specify which slides you would like to export:
 
 ```bash
 $ slidev export --range 1,6-8,10
 ```
 
-该选项接收特定的幻灯片编号或范围。上例会导出第 1、6、7、8 和 10 张幻灯片。
+This option accepts both specific slide numbers and ranges. The example above would export slides 1,6,7,8 and 10.
 
-### 多个幻灯片 {#multiple-slides}
+### Multiple Exports
 
-你可以一次导出多个幻灯片：
+You can also export multiple slides at once:
 
 ```bash
 $ slidev export slides1.md slides2.md
 ```
 
-或者使用通配符（仅在部分 shell 下有效）：
+Or (only available in certain shells):
 
 ```bash
 $ slidev export *.md
 ```
 
-在这种情况下，每个输入文件都会生成自己的 PDF 文件。
+In this case, each input file will generate its own PDF file.
 
-### 暗色模式 {#dark-mode}
+### Dark Mode
 
-若要使用主题的暗色版本导出幻灯片，可以使用 `--dark` 选项：
+In case you want to export your slides using the dark version of the theme, use the `--dark` option:
 
 ```bash
 $ slidev export --dark
 ```
 
-### 超时 {#timeout}
+### Timeouts
 
-对于非常大的演示文稿，你可能需要增加 Playwright 的超时时间：
+For big presentations, you might want to increase the Playwright timeout with `--timeout`:
 
 ```bash
 $ slidev export --timeout 60000
 ```
 
-### 等待 {#wait}
+### Wait
 
-一些幻灯片可能需要更长的时间来加载和渲染。你可以使用 `--wait` 选项在导出之前等待一段时间：
+Some parts of your slides may require a longer time to render. You can use the `--wait` option to have an extra delay before exporting:
 
 ```bash
 $ slidev export --wait 10000
 ```
 
-此外，还有一个 `--wait-until` 选项，用于在导出每张幻灯片之前等待一个状态。如果你一直遇到超时问题，可以尝试设置此选项：
+There is also a `--wait-until` option to wait for a state before exporting each slide. If you keep encountering timeout issues, you can try setting this option:
 
 ```bash
 $ slidev export --wait-until none
 ```
 
-该选项接受以下值之一：
+Possible values:
 
-- `'networkidle'` - （_默认_）当没有网络连接至少 `500` 毫秒时，认为操作已完成。这是最安全的，但可能会导致超时。
-- `'domcontentloaded'` - 当 `DOMContentLoaded` 事件被触发时，认为操作已完成。
-- `'load'` - 当 `load` 事件被触发时，认为操作已完成。
-- `'none'` - 不等待任何事件。
+- `'networkidle'` - (_default_) consider operation to be finished when there are no network connections for at least `500` ms. This is the safest, but may cause timeouts.
+- `'domcontentloaded'` - consider operation to be finished when the `DOMContentLoaded` event is fired.
+- `'load'` - consider operation to be finished when the `load` event is fired.
+- `'none'` - do not wait for any event.
 
 ::: warning
-如果指定了 `'networkidle'` 之外的值，请确保打印的幻灯片是完整且正确的。如果某些内容丢失，你可能需要使用 `--wait` 选项。
+When specifying values other than `'networkidle'`, please make sure the printed slides are complete and correct. If some contents are missing, you may need to use the `--wait` option.
 :::
 
-### 可执行文件路径 {#executable-path}
+### Executable Path
 
-Chromium 可能缺少一些解码某些视频所需的编解码器等功能。你可以使用 `--executable-path` 选项将 Playwright 的浏览器可执行文件路径设置为 Chrome 或 Edge：
+Chromium may miss some features like codecs that are required to decode some videos. You can set the browser executable path for Playwright to your Chrome or Edge using `--executable-path`:
 
 ```bash
 $ slidev export --executable-path [path_to_chromium]
 ```
 
-### PDF 大纲 {#pdf-outline}
+### PDF Outline
 
-> 自 v0.36.10 起可用
+> Available since v0.36.10
 
-你可以通过传递 `--with-toc` 选项生成 PDF 大纲：
+You can generate the PDF outline by passing the `--with-toc` option:
 
 ```bash
 $ slidev export --with-toc
 ```
 
-### 去除背景
+### Omit Background
 
-在导出为 PNG图像时，你可以通过传递 `--omit-background` 选项去除默认的浏览器背景：
+When exporting to PNGs, you can remove the default browser background by passing `--omit-background`:
 
 ```bash
 $ slidev export --omit-background
 ```
 
-默认浏览器背景是所有浏览器窗口上可见的白色背景。它与在整个应用中使用CSS样式呈现的其他背景不同。请参阅 [Playwright 的文档](https://playwright.dev/docs/api/class-page#page-screenshot-option-omit-background)。此外，你需要应用额外的CSS样式以显示透明度。
+The default browser background is the white background visible on all browser windows and is different than other backgrounds applied throughout the application using CSS styling. [See Playwright docs](https://playwright.dev/docs/api/class-page#page-screenshot-option-omit-background). You will then need to apply additional CSS styling to the application to reveal the transparency.
 
-以下是一个示例，覆盖了应用中的所有背景：
+Here is a basic example that covers all backgrounds in the application:
 
 ```css
 * {
   background: transparent !important;
 }
 ```
+
+## Troubleshooting
+
+### Missing Content or Animation not Finished
+
+If you find that some content is missing or the animations are not finished in the exported PDF, you can try adding a wait time before exporting each slide:
+
+```bash
+$ slidev export --wait 1000
+```
+
+### Broken Emojis
+
+If the PDF or PNG are missing Emojis, you are likely missing required fonts (such as. e.g. [Google's _Noto Emoji_](https://fonts.google.com/noto/specimen/Noto+Emoji)) in your environment.
+
+This can affect e.g. CI/CD-like in-container sort of Linux environments. It can be fixed e.g. like this:
+
+```bash
+$ curl -L --output NotoColorEmoji.ttf https://github.com/googlefonts/noto-emoji/raw/main/fonts/NotoColorEmoji.ttf
+$ sudo mv NotoColorEmoji.ttf /usr/local/share/fonts/
+$ fc-cache -fv
+```
+
+### Wrong Context in Global Layers
+
+See the tip in https://sli.dev/features/global-layers.

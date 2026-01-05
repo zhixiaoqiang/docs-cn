@@ -1,17 +1,17 @@
-# 配置右键菜单
+# Configure Context Menu
 
 <Environment type="client" />
 
-自定义 Slidev 的右键菜单项。
+Customize the context menu items in Slidev.
 
-创建包含以下内容的 `./setup/context-menu.ts` 文件：
+Create `./setup/context-menu.ts` with the following content:
 
 <!-- eslint-disable import/first -->
 
-```ts twoslash
+```ts twoslash [./setup/context-menu.ts]
 // ---cut---
-import { defineContextMenuSetup } from '@slidev/types'
 import { useNav } from '@slidev/client'
+import { defineContextMenuSetup } from '@slidev/types'
 import { computed } from 'vue'
 // ---cut-start---
 // @ts-expect-error missing types
@@ -24,8 +24,8 @@ export default defineContextMenuSetup((items) => {
     ...items.value,
     {
       small: false,
-      icon: Icon3DCursor, // 当 `small` 为 `true` 时，仅显示图标
-      label: 'Custom Menu Item', // 也可以是 Vue 组件
+      icon: Icon3DCursor, // if `small` is `true`, only the icon is shown
+      label: 'Custom Menu Item', // or a Vue component
       action() {
         alert('Custom Menu Item Clicked!')
       },
@@ -35,6 +35,6 @@ export default defineContextMenuSetup((items) => {
 })
 ```
 
-以上代码将在右键菜单中添加一个新的菜单项。
+This will append a new menu item to the context menu.
 
-若要全局禁用右键菜单，请在 frontmatter 中设置 `contextMenu` 为 `false`。`contextMenu` 也可以设置为 `dev` 或 `build`，以仅在开发或构建模式下启用右键菜单。
+To disable context menu globally, set `contextMenu` to `false` in the frontmatter. `contextMenu` can also be set to `dev` or `build` to only enable the context menu in development or build mode.

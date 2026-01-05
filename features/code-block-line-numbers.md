@@ -1,16 +1,16 @@
 ---
 depends:
   - guide/syntax#code-block
-tags: [代码块]
+tags: [codeblock]
 description: |
-  显示代码块中的行号。你可以选择为所有或者特定的代码块启用此特性。
+  Enable line numbering for all code blocks across the slides or individually.
 ---
 
 # Line Numbers
 
-你可以通过在 headmatter 中设置 `lineNumbers: true` 来为幻灯片中的所有代码块启用行号，或者通过设置 `lines: true` 来单独为每个代码块启用行号。
+You can enable line numbering for all code blocks across the slides by setting `lineNumbers: true` in the headmatter, or enable each code block individually by setting `lines: true`.
 
-你还可以通过 `{startLine: number}` 设置每个代码块的起始行，并相应地高亮显示这些行，其默认值为 1。
+You can also set the starting line for each code block and highlight the lines accordingly via `{startLine: number}`, which defaults to 1.
 
 ````md
 ```ts {6,7}{lines:true,startLine:5}
@@ -23,7 +23,7 @@ function add(
 ```
 ````
 
-请注意你可以使用 `{*}` 作为 <LinkInline link="features/line-highlighting" /> 的占位符:
+Note that you can use `{*}` as a placeholder of <LinkInline link="features/line-highlighting" />:
 
 ````md
 ```ts {*}{lines:true,startLine:5}
