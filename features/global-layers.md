@@ -1,34 +1,34 @@
 ---
 tags: [navigation, layout]
 description: |
-  Create custom components that persist across slides.
+  创建跨幻灯片持久存在的自定义组件。
 ---
 
-# Global Layers
+# 全局图层
 
-Global layers allow you to have custom components that **persist** across slides. This could be useful for having footers, cross-slide animations, global effects, etc.
+全局图层允许你创建跨幻灯片**持久存在**的自定义组件。这对于添加页脚、跨幻灯片动画、全局效果等非常有用。
 
-Slidev provides three layers for this usage, create `global-top.vue`, `global-bottom.vue`, or `custom-nav-controls.vue` under your project root and it will pick up automatically.
+Slidev 为此提供了三个图层，在你的项目根目录下创建 `global-top.vue`、`global-bottom.vue` 或 `custom-nav-controls.vue`，它会自动被识别。
 
-There are also layers for **each** slide: `slide-top.vue` and `slide-bottom.vue`. The usage is similar to the global layers, but they are applied to every slide, so there may be more than one instance of them.
+还有针对**每张**幻灯片的图层：`slide-top.vue` 和 `slide-bottom.vue`。用法与全局图层类似，但它们会应用到每张幻灯片，因此可能有多个实例。
 
 ::: tip
-If you are using `global-top.vue` or `global-bottom.vue` depending on the current navigation state, when exporting, the `--per-slide` option should be used to ensure the correct state is applied to each slide. Or you can use `slide-top.vue` and `slide-bottom.vue` instead.
+如果你使用的 `global-top.vue` 或 `global-bottom.vue` 依赖于当前的导航状态，在导出时应该使用 `--per-slide` 选项来确保正确的状态应用到每张幻灯片。或者你可以改用 `slide-top.vue` 和 `slide-bottom.vue`。
 :::
 
-## Layers relationship
+## 图层关系
 
-At z-axis, from top to bottom:
+在 z 轴上，从上到下：
 
 - NavControls
-  - Customized Navigation Controls (`custom-nav-controls.vue`)
-- Global Top (`global-top.vue`) - single instance
-- Slide Top (`slide-top.vue`) - instance per slide
-- Slide Content
-- Slide Bottom (`slide-bottom.vue`) - instance per slide
-- Global Bottom (`global-bottom.vue`) - single instance
+  - 自定义导航控件 (`custom-nav-controls.vue`)
+- 全局顶层 (`global-top.vue`) - 单实例
+- 幻灯片顶层 (`slide-top.vue`) - 每张幻灯片一个实例
+- 幻灯片内容
+- 幻灯片底层 (`slide-bottom.vue`) - 每张幻灯片一个实例
+- 全局底层 (`global-bottom.vue`) - 单实例
 
-## Example
+## 示例
 
 ```html
 <!-- global-bottom.vue -->
@@ -37,7 +37,7 @@ At z-axis, from top to bottom:
 </template>
 ```
 
-The text `Your Name` will appear on all your slides.
+文本 `Your Name` 将出现在所有幻灯片上。
 
 ```html
 <!-- custom-nav-controls -->
@@ -48,12 +48,12 @@ The text `Your Name` will appear on all your slides.
 </template>
 ```
 
-The button `Next` will appear in NavControls.
+`Next` 按钮将出现在 NavControls 中。
 
-To enable it conditionally, you can use the <LinkInline link="guide/global-context" />
+要有条件地启用它，你可以使用 <LinkInline link="guide/global-context" />
 
 ```html
-<!-- hide the footer from Page 4 -->
+<!-- 从第 4 页隐藏页脚 -->
 <template>
   <footer
     v-if="$nav.currentPage !== 4"
@@ -65,7 +65,7 @@ To enable it conditionally, you can use the <LinkInline link="guide/global-conte
 ```
 
 ```html
-<!-- hide the footer from "cover" layout -->
+<!-- 从 "cover" 布局隐藏页脚 -->
 <template>
   <footer
     v-if="$nav.currentLayout !== 'cover'"
@@ -77,7 +77,7 @@ To enable it conditionally, you can use the <LinkInline link="guide/global-conte
 ```
 
 ```html
-<!-- an example footer for pages -->
+<!-- 页面页脚示例 -->
 <template>
   <footer
     v-if="$nav.currentLayout !== 'cover'"
@@ -90,7 +90,7 @@ To enable it conditionally, you can use the <LinkInline link="guide/global-conte
 
 ```html
 <!-- custom-nav-controls -->
-<!-- hide the button in Presenter model -->
+<!-- 在演讲者模式下隐藏按钮 -->
 <template>
   <button v-if="!$nav.isPresenter" class="icon-btn" title="Next" @click="$nav.next">
     <div class="i-carbon:arrow-right" />
