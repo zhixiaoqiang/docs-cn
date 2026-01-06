@@ -4,25 +4,24 @@ relates:
   - KaTeX: https://katex.org/
 tags: [codeblock, syntax]
 description: |
-  Slidev comes with LaTeX support out-of-box, powered by KaTeX.
+  Slidev 内置了由 KaTeX 驱动的 LaTeX 支持。
 ---
 
 # LaTeX
 
-Slidev comes with LaTeX support out-of-box, powered by [KaTeX](https://katex.org/).
+Slidev 内置了由 [KaTeX](https://katex.org/) 驱动的 LaTeX 支持。
 
-## Inline
+## 行内公式
 
-Surround your LaTeX with a single `$` on each side for inline rendering.
+用单个 `$` 包围你的 LaTeX 以进行行内渲染。
 
 ```md
 $\sqrt{3x-1}+(1+x)^2$
 ```
 
-## Block
+## 块级公式
 
-Use two (`$$`) for block rendering. This mode uses bigger symbols and centers
-the result.
+使用两个 `$$` 进行块级渲染。此模式使用更大的符号并将结果居中显示。
 
 ```latex
 $$
@@ -35,9 +34,9 @@ $$
 $$
 ```
 
-## Line Highlighting
+## 行高亮
 
-To highlight specific lines, simply add line numbers within bracket `{}`. Line numbers start counting from 1 by default.
+要高亮特定的行，只需在括号 `{}` 内添加行号。行号默认从 1 开始计数。
 
 ```latex
 $$ {1|3|all}
@@ -50,14 +49,13 @@ $$ {1|3|all}
 $$
 ```
 
-The `at` and `finally` options of [code blocks](#line-highlighting) are also available for LaTeX blocks.
+[代码块](#line-highlighting)的 `at` 和 `finally` 选项也适用于 LaTeX 块。
 
-## Chemical equations
+## 化学方程式
 
-To enable the rendering of chemical equations, the [mhchem](https://github.com/KaTeX/KaTeX/tree/main/contrib/mhchem)
-KaTeX extension needs to be loaded.
+要启用化学方程式的渲染，需要加载 [mhchem](https://github.com/KaTeX/KaTeX/tree/main/contrib/mhchem) KaTeX 扩展。
 
-Create `vite.config.ts` with the following content:
+创建包含以下内容的 `vite.config.ts`：
 
 ```ts
 import 'katex/contrib/mhchem'
@@ -65,7 +63,7 @@ import 'katex/contrib/mhchem'
 export default {}
 ```
 
-Now chemical equations can be rendered properly.
+现在化学方程式可以正确渲染了。
 
 ```latex
 $$
@@ -73,7 +71,7 @@ $$
 $$
 ```
 
-Learn more: [Syntax](https://mhchem.github.io/MathJax-mhchem)
+了解更多：[语法](https://mhchem.github.io/MathJax-mhchem)
 
 ---
 
