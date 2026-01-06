@@ -5,19 +5,19 @@ relates:
   - features/prettier-plugin
 tags: [syntax]
 description: |
-  Use a YAML code block as the frontmatter.
+  使用 YAML 代码块作为 frontmatter。
 ---
 
-# Block Frontmatter
+# 块级 Frontmatter
 
-The usual way to define frontmatters of slides is concise, but may lack of highlighting and formatter support. To solve this, you can use a YAML block at the very beginning of the slide content as the frontmatter of the slide:
+定义幻灯片 frontmatter 的常规方式很简洁，但可能缺乏高亮和格式化支持。为了解决这个问题，你可以在幻灯片内容的最开始使用 YAML 代码块作为幻灯片的 frontmatter：
 
 ````md
 ---
 theme: default
 ---
 
-# Slide 1
+# 幻灯片 1
 
 ---
 
@@ -25,15 +25,15 @@ theme: default
 layout: quote
 ```
 
-# Slide 2
+# 幻灯片 2
 
 ---
 
-# Slide 3
+# 幻灯片 3
 ````
 
-::: warning About headmatter
+::: warning 关于 headmatter
 
-Headmatter in Slidev is exactly the usual called "frontmatter" of the a Markdown file, which is supported by most of the Markdown editors and formatters. So you can't use a YAML block as the headmatter of the whole slide deck.
+Slidev 中的 headmatter 就是 Markdown 文件通常所说的 "frontmatter"，大多数 Markdown 编辑器和格式化工具都支持它。因此你不能使用 YAML 代码块作为整个幻灯片的 headmatter。
 
 :::
