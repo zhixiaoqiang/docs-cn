@@ -16,7 +16,7 @@ export const official: ThemeInfo[] = [
   {
     id: '@slidev/theme-default',
     name: 'Default',
-    description: 'The minimalism default theme for Slidev',
+    description: 'Slidev 的极简默认主题',
     author: {
       name: 'Anthony Fu',
       link: 'https://github.com/antfu',
@@ -29,16 +29,16 @@ export const official: ThemeInfo[] = [
       'https://cdn.jsdelivr.net/gh/slidevjs/themes@main/screenshots/theme-default/08.png',
     ],
     tags: [
-      'official',
-      'minimalism',
-      'dark',
-      'light',
+      '官方',
+      '极简',
+      '深色',
+      '浅色',
     ],
   },
   {
     id: '@slidev/theme-seriph',
     name: 'Seriph',
-    description: 'A more formal looking theme using Serif fonts',
+    description: '使用衬线字体的更正式主题',
     author: {
       name: 'Anthony Fu',
       link: 'https://github.com/antfu',
@@ -51,16 +51,16 @@ export const official: ThemeInfo[] = [
       'https://cdn.jsdelivr.net/gh/slidevjs/themes@main/screenshots/theme-seriph/08.png',
     ],
     tags: [
-      'official',
-      'minimalism',
-      'dark',
-      'light',
+      '官方',
+      '极简',
+      '深色',
+      '浅色',
     ],
   },
   {
     id: '@slidev/theme-apple-basic',
     name: 'Apple Basic',
-    description: 'Inspired by the Basic Black/White theme from Apple Keynote',
+    description: '灵感来自 Apple Keynote 的 Basic Black/White 主题',
     author: {
       name: 'Jeremy Meissner',
       link: 'https://github.com/JeremyMeissner',
@@ -74,15 +74,15 @@ export const official: ThemeInfo[] = [
       'https://cdn.jsdelivr.net/gh/slidevjs/themes@main/screenshots/theme-apple-basic/11.png',
     ],
     tags: [
-      'minimalism',
-      'dark',
-      'light',
+      '极简',
+      '深色',
+      '浅色',
     ],
   },
   {
     id: '@slidev/theme-bricks',
     name: 'Bricks',
-    description: 'Building bricks',
+    description: '积木风格主题',
     author: {
       name: 'iiiiiiinès',
       link: 'https://github.com/iiiiiiines',
@@ -95,13 +95,13 @@ export const official: ThemeInfo[] = [
       'https://cdn.jsdelivr.net/gh/slidevjs/themes@main/screenshots/theme-bricks/05.png',
     ],
     tags: [
-      'light',
+      '浅色',
     ],
   },
   {
     id: '@slidev/theme-shibainu',
     name: 'Shibainu',
-    description: 'Meow!',
+    description: '喵！',
     author: {
       name: 'iiiiiiinès',
       link: 'https://github.com/iiiiiiines',
@@ -114,7 +114,7 @@ export const official: ThemeInfo[] = [
       'https://cdn.jsdelivr.net/gh/slidevjs/themes@main/screenshots/theme-shibainu/09.png',
     ],
     tags: [
-      'dark',
+      '深色',
     ],
   },
 ]
@@ -123,7 +123,7 @@ export const community: ThemeInfo[] = [
   {
     id: 'slidev-theme-geist',
     name: 'Vercel',
-    description: 'A theme based on Vercel\'s design system.',
+    description: '基于 Vercel 设计系统的主题',
     author: {
       name: 'Nico Bachner',
       link: 'https://github.com/nico-bachner',
@@ -137,14 +137,14 @@ export const community: ThemeInfo[] = [
       'https://cdn.jsdelivr.net/gh/nico-bachner/slidev-theme-geist@main/example-export/05.png',
     ],
     tags: [
-      'dark',
-      'light',
+      '深色',
+      '浅色',
     ],
   },
   {
     id: 'slidev-theme-light-icons',
     name: 'Light Icons',
-    description: 'A simple, light and elegant theme for Slidev, combined together with creative layouts, custom components & fonts',
+    description: '一个简洁、明亮、优雅的 Slidev 主题，结合创意布局、自定义组件和字体',
     author: {
       name: 'Pulkit Aggarwal',
       link: 'https://github.com/BashCloud',
@@ -161,14 +161,14 @@ export const community: ThemeInfo[] = [
       'https://cdn.jsdelivr.net/gh/lightvue/slidev-theme-light-icons@master/screenshot/10-layout-left-image-light.png',
     ],
     tags: [
-      'dark',
-      'light',
+      '深色',
+      '浅色',
     ],
   },
   {
     id: 'slidev-theme-eloc',
     name: 'Eloc',
-    description: 'Focus on writing, present in a concise style.',
+    description: '专注于写作，以简洁风格呈现',
     author: {
       name: 'Amio',
       link: 'https://github.com/amio',
@@ -182,14 +182,14 @@ export const community: ThemeInfo[] = [
       'https://cdn.jsdelivr.net/gh/zthxxx/slides@master/packages/slidev-theme-eloc/screenshot/05.png',
     ],
     tags: [
-      'dark',
-      'light',
+      '深色',
+      '浅色',
     ],
   },
   {
     id: 'slidev-theme-purplin',
     name: 'Purplin',
-    description: 'Theme with bar bottom component. Based on purple color',
+    description: '带有底部栏组件的主题，基于紫色设计',
     author: {
       name: 'Mauricio Martínez',
       link: 'https://github.com/moudev',
@@ -202,14 +202,14 @@ export const community: ThemeInfo[] = [
       'https://i.imgur.com/m8eemKt.png',
     ],
     tags: [
-      'dark',
-      'light',
+      '深色',
+      '浅色',
     ],
   },
   {
     id: 'slidev-theme-unicorn',
     name: 'Unicorn',
-    description: 'Based on Dawntraoz website design',
+    description: '基于 Dawntraoz 网站设计',
     author: {
       name: 'Alba Silvente',
       link: 'https://github.com/dawntraoz',
@@ -222,14 +222,14 @@ export const community: ThemeInfo[] = [
       'https://cdn.jsdelivr.net/gh/Dawntraoz/slidev-theme-unicorn@master/screenshots/dark-theme-center-without-header-footer.png',
     ],
     tags: [
-      'dark',
-      'light',
+      '深色',
+      '浅色',
     ],
   },
   {
     id: 'slidev-theme-zhozhoba',
     name: 'Zhozhoba',
-    description: 'A zhozhoba theme for Slidev',
+    description: 'Slidev 的 Zhozhoba 主题',
     author: {
       name: 'Bogenbai Bayzharassov',
       link: 'https://github.com/thatoranzhevyy',
@@ -243,14 +243,14 @@ export const community: ThemeInfo[] = [
       'https://cdn.jsdelivr.net/gh/thatoranzhevyy/slidev-theme-zhozhoba@master/slides-export/04.png',
     ],
     tags: [
-      'dark',
-      'light',
+      '深色',
+      '浅色',
     ],
   },
   {
     id: 'slidev-theme-penguin',
     name: 'Penguin',
-    description: 'A Penguin theme for Slidev',
+    description: 'Slidev 的企鹅主题',
     author: {
       name: 'Alvaro Saburido',
       link: 'https://github.com/alvarosaburido',
@@ -263,14 +263,14 @@ export const community: ThemeInfo[] = [
       'https://cdn.jsdelivr.net/gh/alvarosaburido/slidev-theme-penguin@master/screenshots/light/05.png',
     ],
     tags: [
-      'dark',
-      'light',
+      '深色',
+      '浅色',
     ],
   },
   {
     id: 'slidev-theme-vuetiful',
     name: 'Vuetiful',
-    description: 'A Vue-inspired theme for Slidev',
+    description: 'Vue 风格的 Slidev 主题',
     author: {
       name: 'Thorsten Lünborg',
       link: 'https://github.com/LinusBorg',
@@ -283,14 +283,14 @@ export const community: ThemeInfo[] = [
       'https://cdn.jsdelivr.net/gh/LinusBorg/slidev-theme-vuetiful@main/screenshots/quote.png',
     ],
     tags: [
-      'dark',
-      'light',
+      '深色',
+      '浅色',
     ],
   },
   {
     id: 'slidev-theme-takahashi',
     name: 'Takahashi',
-    description: 'A simple theme for Slidev',
+    description: '一个简单的 Slidev 主题',
     author: {
       name: 'Percy M.',
       link: 'https://github.com/kecrily',
@@ -306,13 +306,13 @@ export const community: ThemeInfo[] = [
       'https://cdn.jsdelivr.net/gh/kecrily/slidev-theme-takahashi@master/screenshots/07.png',
     ],
     tags: [
-      'light',
+      '浅色',
     ],
   },
   {
     id: 'slidev-theme-academic',
     name: 'Academic',
-    description: 'Academic presentations with Slidev made simple',
+    description: '使用 Slidev 轻松创建学术演示',
     author: {
       name: 'Alexander Eble',
       link: 'https://github.com/alexanderdavide',
@@ -328,14 +328,14 @@ export const community: ThemeInfo[] = [
       'https://cdn.jsdelivr.net/gh/alexanderdavide/slidev-theme-academic@assets/example-export/07.png',
     ],
     tags: [
-      'dark',
-      'light',
+      '深色',
+      '浅色',
     ],
   },
   {
     id: 'slidev-theme-mokkapps',
     name: 'Mokkapps',
-    description: 'A theme for my personal brand "Mokkapps"',
+    description: '个人品牌 "Mokkapps" 的主题',
     author: {
       name: 'Michael Hoffmann',
       link: 'https://github.com/mokkapps',
@@ -355,14 +355,14 @@ export const community: ThemeInfo[] = [
       'https://cdn.jsdelivr.net/gh/mokkapps/slidev-theme-mokkapps@master/screenshots/dark/011.png',
     ],
     tags: [
-      'dark',
-      'light',
+      '深色',
+      '浅色',
     ],
   },
   {
     id: 'slidev-theme-the-unnamed',
     name: 'The unnamed',
-    description: 'A theme based on The unnamed VS Code theme',
+    description: '基于 The unnamed VS Code 主题',
     author: {
       name: 'Elio Struyf',
       link: 'https://elio.dev',
@@ -375,13 +375,13 @@ export const community: ThemeInfo[] = [
       'https://cdn.jsdelivr.net/gh/estruyf/slidev-theme-the-unnamed@main/assets/section.png',
     ],
     tags: [
-      'dark',
+      '深色',
     ],
   },
   {
     id: 'slidev-theme-dracula',
     name: 'Dracula',
-    description: 'One the best dark theme meets slidev',
+    description: '最佳深色主题之一与 Slidev 的结合',
     author: {
       name: 'JD Solanki',
       link: 'https://github.com/jd-solanki',
@@ -395,14 +395,14 @@ export const community: ThemeInfo[] = [
       'https://cdn.jsdelivr.net/gh/jd-solanki/slidev-theme-dracula/screenshots/screenshot-5.png',
     ],
     tags: [
-      'dark',
-      'minimalism',
+      '深色',
+      '极简',
     ],
   },
   {
     id: 'slidev-theme-frankfurt',
     name: 'Frankfurt',
-    description: 'Inspired by the Beamer theme Frankfurt',
+    description: '灵感来自 Beamer 的 Frankfurt 主题',
     author: {
       name: 'Mu-Tsun Tsai',
       link: 'https://github.com/MuTsunTsai',
@@ -415,14 +415,14 @@ export const community: ThemeInfo[] = [
       'https://cdn.jsdelivr.net/gh/MuTsunTsai/slidev-theme-frankfurt/screenshots/07.png',
     ],
     tags: [
-      'dark',
-      'light',
+      '深色',
+      '浅色',
     ],
   },
   {
     id: 'slidev-theme-hep',
     name: 'HEP',
-    description: 'Academic style for High Energy Physics',
+    description: '高能物理学的学术风格',
     author: {
       name: 'Yulei ZHANG',
       link: 'https://github.com/AvencastF',
@@ -435,13 +435,13 @@ export const community: ThemeInfo[] = [
       'https://cdn.jsdelivr.net/gh/avencastf/slidev-theme-hep/screenshot/008.png',
     ],
     tags: [
-      'light',
+      '浅色',
     ],
   },
   {
     id: 'slidev-theme-excali-slide',
     name: 'Excali-slide',
-    description: 'A theme based on Excalidraw with animated highlighter effect',
+    description: '基于 Excalidraw 的主题，带有动态高亮器效果',
     author: {
       name: 'Filip Hric',
       link: 'https://github.com/filiphric',
@@ -452,14 +452,14 @@ export const community: ThemeInfo[] = [
       'https://raw.githubusercontent.com/filiphric/excali-slide/main/images/intro_slide.png',
     ],
     tags: [
-      'dark',
-      'light',
+      '深色',
+      '浅色',
     ],
   },
   {
     id: 'slidev-theme-mint',
     name: 'mint',
-    description: 'Slidev Theme Mint',
+    description: 'Slidev 薄荷主题',
     author: {
       name: 'Alfatta Rezqa',
       link: 'https://github.com/alfatta',
@@ -477,16 +477,16 @@ export const community: ThemeInfo[] = [
       'https://cdn.jsdelivr.net/gh/alfatta/slidev-theme-mint/screenshot/9.png',
     ],
     tags: [
-      'light',
-      'mint',
-      'green',
-      'cool',
+      '浅色',
+      '薄荷',
+      '绿色',
+      '清爽',
     ],
   },
   {
     id: 'slidev-theme-neversink',
     name: 'neversink',
-    description: 'Slidev Theme Neversink',
+    description: 'Slidev Neversink 主题',
     author: {
       name: 'Todd M. Gureckis',
       link: 'https://github.com/gureckis',
@@ -506,15 +506,15 @@ export const community: ThemeInfo[] = [
       'https://gureckis.github.io/slidev-theme-neversink/screenshots/35.png',
     ],
     tags: [
-      'light',
-      'academic',
-      'education',
+      '浅色',
+      '学术',
+      '教育',
     ],
   },
   {
     id: 'slidev-theme-ktym4a',
     name: 'ktym4a',
-    description: 'Based on ktym4a website design',
+    description: '基于 ktym4a 网站设计',
     author: {
       name: 'ktym4a',
       link: 'https://github.com/ktym4a',
@@ -532,14 +532,14 @@ export const community: ThemeInfo[] = [
       'https://cdn.jsdelivr.net/gh/ktym4a/slidev-theme-ktym4a@main/example-export/single/4.png',
     ],
     tags: [
-      'dark',
+      '深色',
       'catppuccin',
     ],
   },
   {
     id: 'slidev-theme-nord',
     name: 'Nord',
-    description: 'Based on the Nord theme',
+    description: '基于 Nord 主题',
     author: {
       name: 'David Ollerhead',
       link: 'https://github.com/oller',
@@ -555,17 +555,17 @@ export const community: ThemeInfo[] = [
       'https://raw.githubusercontent.com/oller/slidev-theme-nord/HEAD/example-export/7.png',
     ],
     tags: [
-      'dark',
-      'light',
+      '深色',
+      '浅色',
       'nord',
     ],
   },
-  // Add yours here!
+  // 在此添加你的主题！
   {
     id: '',
     link: 'https://github.com/slidevjs/slidev/edit/main/docs/.vitepress/themes.ts',
-    name: 'Yours?',
-    description: 'Click here to submit your theme :)',
+    name: '你的主题？',
+    description: '点击此处提交你的主题 :)',
     author: {
       name: '',
     },
