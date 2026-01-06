@@ -322,13 +322,13 @@ export const showcases: ShowCaseInfo[] = [
     cover: 'https://raw.githubusercontent.com/momo5502/denuvo-slides/refs/heads/master/images/preview.png',
     datetime: '2025-10-03',
   },
-  // Add yours here!
+  // 在此添加你的展示！
   {
-    title: 'Yours?',
+    title: '你的演示？',
     author: {
       name: '',
     },
-    at: 'Submit your talk/presentation to be list here!',
+    at: '提交你的演讲/演示以在此列出！',
     slidesLink: 'https://github.com/slidevjs/slidev/edit/main/docs/.vitepress/showcases.ts',
     cover: `${import.meta.env.BASE_URL}theme-placeholder.png`,
     datetime: '2020-1-1',
