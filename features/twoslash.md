@@ -6,14 +6,14 @@ relates:
 since: v0.46.0
 tags: [codeblock]
 description: |
-  A powerful tool for rendering TypeScript code blocks with type information on hover or inlined.
+  渲染带有悬停或内联类型信息的 TypeScript 代码块的强大工具。
 ---
 
-# TwoSlash Integration
+# TwoSlash 集成
 
-[TwoSlash](https://twoslash.netlify.app/) is a powerful tool for rendering TypeScript code blocks with type information on hover or inlined. It's quite useful for preparing slides for JavaScript/TypeScript-related topics.
+[TwoSlash](https://twoslash.netlify.app/) 是一个强大的工具，用于渲染带有悬停或内联类型信息的 TypeScript 代码块。它对于准备 JavaScript/TypeScript 相关主题的幻灯片非常有用。
 
-To use it, you can add `twoslash` to the code block's language identifier:
+要使用它，你可以在代码块的语言标识符中添加 `twoslash`：
 
 ````md
 ```ts twoslash
@@ -24,7 +24,7 @@ const count = ref(0)
 ```
 ````
 
-It will be rendered as:
+它将被渲染为：
 
 ```ts twoslash
 import { ref } from 'vue'
