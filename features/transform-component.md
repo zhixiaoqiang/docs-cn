@@ -5,12 +5,12 @@ relates:
   - features/zoom-slide
 tags: [layout]
 description: |
-  A component for scaling some elements.
+  用于缩放某些元素的组件。
 ---
 
-# The `Transform` Component
+# `Transform` 组件
 
-The `Transform` component allows you to scale the size of the elements on your slides:
+`Transform` 组件允许你缩放幻灯片上元素的大小：
 
 ```md
 <Transform :scale="0.5" origin="top center">
@@ -18,12 +18,12 @@ The `Transform` component allows you to scale the size of the elements on your s
 </Transform>
 ```
 
-This is useful when you want to adjust the size of some elements on your slides without affecting the layout of the entire slide.
+当你想调整幻灯片上某些元素的大小而不影响整个幻灯片的布局时，这很有用。
 
-To scale all the slides in your presentation, you can set the slide canvas size:
+要缩放演示中的所有幻灯片，可以设置幻灯片画布大小：
 
 <LinkCard link="features/canvas-size" />
 
-To scale several slides in your presentation, you can use the `zoom` option:
+要缩放演示中的部分幻灯片，可以使用 `zoom` 选项：
 
 <LinkCard link="features/zoom-slide" />
