@@ -6,14 +6,14 @@ relates:
   - features/plantuml
 tags: [diagram]
 description: |
-  Create diagrams/graphs from textual descriptions, powered by Mermaid.
+  使用 Mermaid 从文本描述创建图表。
 ---
 
-# Mermaid Diagrams
+# Mermaid 图表
 
-You can also create diagrams/graphs from textual descriptions in your Markdown, powered by [Mermaid](https://mermaid.js.org/).
+你还可以在 Markdown 中使用 [Mermaid](https://mermaid.js.org/) 从文本描述创建图表。
 
-Code blocks marked as `mermaid` will be converted to diagrams, for example:
+标记为 `mermaid` 的代码块将被转换为图表，例如：
 
 ````md
 ```mermaid
@@ -23,7 +23,7 @@ sequenceDiagram
 ```
 ````
 
-You can further pass an options object to it to specify the scaling and theming. The syntax of the object is a JavaScript object literal, you will need to add quotes (`'`) for strings and use comma (`,`) between keys.
+你还可以传递一个选项对象来指定缩放和主题。对象的语法是 JavaScript 对象字面量，你需要为字符串添加引号（`'`），并在键之间使用逗号（`,`）。
 
 ````md
 ```mermaid {theme: 'neutral', scale: 0.8}
@@ -34,4 +34,4 @@ C -->|Two| E[Result 2]
 ```
 ````
 
-Visit the [Mermaid Website](https://mermaid.js.org/) for more information.
+访问 [Mermaid 网站](https://mermaid.js.org/) 了解更多信息。
