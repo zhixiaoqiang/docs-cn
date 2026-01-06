@@ -6,14 +6,14 @@ relates:
   - Configure Monaco Editor: /custom/config-monaco
 tags: [codeblock, editor]
 description: |
-  Turn code blocks into fully-featured editors, or generate a diff between two code blocks.
+  将代码块转换为功能完备的编辑器，或生成两个代码块之间的差异对比。
 ---
 
-# Monaco Editor
+# Monaco 编辑器
 
 <video src="https://github.com/slidevjs/slidev/assets/11247099/0c6ce681-80d3-4555-93bf-9288ee533462" controls rounded shadow w-full></video>
 
-Whenever you want to do some modification in the presentation, simply add `{monaco}` after the language id — it turns the block into a fully-featured Monaco editor!
+当你想在演示中进行一些修改时，只需在语言标识符后添加 `{monaco}` — 它会将代码块转换为功能完备的 Monaco 编辑器！
 
 ````md
 ```ts {monaco}
@@ -21,11 +21,11 @@ console.log('HelloWorld')
 ```
 ````
 
-Learn more about [Configuring Monaco](/custom/config-monaco).
+了解更多关于[配置 Monaco](/custom/config-monaco)。
 
-## Diff Editor
+## 差异编辑器
 
-Monaco can also generate a diff between two code blocks. Use `{monaco-diff}` to turn the block into a [Monaco diff editor](https://microsoft.github.io/monaco-editor/playground.html?source=v0.36.1#example-creating-the-diffeditor-multi-line-example) and use `~~~` to separate the original and modified code!
+Monaco 还可以生成两个代码块之间的差异对比。使用 `{monaco-diff}` 将代码块转换为 [Monaco 差异编辑器](https://microsoft.github.io/monaco-editor/playground.html?source=v0.36.1#example-creating-the-diffeditor-multi-line-example)，并使用 `~~~` 分隔原始代码和修改后的代码！
 
 ````md
 ```ts {monaco-diff}
@@ -35,15 +35,15 @@ console.log('Modified text')
 ```
 ````
 
-## Editor Height
+## 编辑器高度
 
-By default, the Monaco editor has a fixed height based on the initial content. If you start with an empty or small code block and want the editor to automatically grow as you type more code, you can set `{height:'auto'}`.
+默认情况下，Monaco 编辑器的高度是基于初始内容固定的。如果你从空的或较小的代码块开始，并希望编辑器随着输入更多代码自动增长，可以设置 `{height:'auto'}`。
 
 ````md
 ```ts {monaco} {height:'auto'}
-// The editor will automatically grow as you type more code
+// 编辑器会随着你输入更多代码自动增长
 console.log('Hello, World!')
 ```
 ````
 
-You can also set a specific height using CSS units like `{height:'300px'}` or `{height:'100%'}`.
+你也可以使用 CSS 单位设置特定高度，如 `{height:'300px'}` 或 `{height:'100%'}`。
