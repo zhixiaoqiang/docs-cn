@@ -6,7 +6,7 @@ export const official: AddonInfo[] = [
   {
     id: '',
     link: '#',
-    name: 'Work in Progress',
+    name: '正在开发中',
     description: '',
     tags: [],
     author: {
@@ -19,8 +19,8 @@ export const community: AddonInfo[] = [
   {
     id: 'slidev-addon-python-runner',
     name: 'Python Runner',
-    description: 'Run actual Python code in your slides',
-    tags: ['Code runner'],
+    description: '在幻灯片中运行真实的 Python 代码',
+    tags: ['代码运行器'],
     author: {
       name: '_Kerman',
       link: 'https://github.com/KermanX',
@@ -30,8 +30,8 @@ export const community: AddonInfo[] = [
   {
     id: 'slidev-addon-tldraw',
     name: 'tldraw',
-    description: 'Embed tldraw diagrams directly in Slidev, with in-slide editing support',
-    tags: ['Integration', 'Diagram'],
+    description: '在 Slidev 中直接嵌入 tldraw 图表，支持幻灯片内编辑',
+    tags: ['集成', '图表'],
     author: {
       name: 'Albert Brand',
       link: 'https://github.com/AlbertBrand',
@@ -41,8 +41,8 @@ export const community: AddonInfo[] = [
   {
     id: 'slidev-addon-typst',
     name: 'Typst',
-    description: 'Typst addon for Slidev',
-    tags: ['Integration', 'Diagram'],
+    description: 'Slidev 的 Typst 插件',
+    tags: ['集成', '图表'],
     author: {
       name: 'Shigma',
       link: 'https://github.com/shigma',
@@ -52,8 +52,8 @@ export const community: AddonInfo[] = [
   {
     id: 'slidev-addon-fancy-arrow',
     name: 'Fancy Arrow',
-    description: 'Hand drawn arrows with various styling and positioning options',
-    tags: ['Component'],
+    description: '手绘风格箭头，提供多种样式和定位选项',
+    tags: ['组件'],
     author: {
       name: 'whitphx',
       link: 'https://github.com/whitphx',
@@ -63,8 +63,8 @@ export const community: AddonInfo[] = [
   {
     id: 'slidev-addon-sync',
     name: 'Remote Sync',
-    description: 'Sync component for Slidev static build that uses a SSE or WS server',
-    tags: ['Remote control', 'Navigation'],
+    description: '使用 SSE 或 WS 服务器为 Slidev 静态构建提供同步组件',
+    tags: ['远程控制', '导航'],
     author: {
       name: 'Tony Cabaye',
       link: 'https://github.com/tonai',
@@ -74,8 +74,8 @@ export const community: AddonInfo[] = [
   {
     id: 'slidev-addon-tikzjax',
     name: 'tikzjax',
-    description: 'Compile TikZ/Chemfig/... to SVG and display them in Slidev',
-    tags: ['Integration', 'Diagram'],
+    description: '将 TikZ/Chemfig/... 编译为 SVG 并在 Slidev 中显示',
+    tags: ['集成', '图表'],
     author: {
       name: 'Ethan Goh',
       link: 'https://github.com/7086cmd',
@@ -85,8 +85,8 @@ export const community: AddonInfo[] = [
   {
     id: 'slidev-component-pager',
     name: 'Pager',
-    description: 'Show current page and total page number',
-    tags: ['Component', 'Navigation'],
+    description: '显示当前页码和总页数',
+    tags: ['组件', '导航'],
     author: {
       name: 'Tony Cabaye',
       link: 'https://github.com/tonai',
@@ -96,8 +96,8 @@ export const community: AddonInfo[] = [
   {
     id: 'slidev-component-poll',
     name: 'Poll and Quiz',
-    description: 'Poll and Quiz components for Slidev',
-    tags: ['Component'],
+    description: 'Slidev 的投票和问答组件',
+    tags: ['组件'],
     author: {
       name: 'Tony Cabaye',
       link: 'https://github.com/tonai',
@@ -107,8 +107,8 @@ export const community: AddonInfo[] = [
   {
     id: 'slidev-component-progress',
     name: 'Progress',
-    description: 'Show interactive progress bar for Slidev',
-    tags: ['Tool', 'Navigation'],
+    description: '为 Slidev 显示交互式进度条',
+    tags: ['工具', '导航'],
     author: {
       name: 'Tony Cabaye',
       link: 'https://github.com/tonai',
@@ -118,8 +118,8 @@ export const community: AddonInfo[] = [
   {
     id: 'slidev-component-scroll',
     name: 'Mouse Scroll',
-    description: 'Use mouse wheel for navigating',
-    tags: ['Navigation'],
+    description: '使用鼠标滚轮进行导航',
+    tags: ['导航'],
     author: {
       name: 'Tony Cabaye',
       link: 'https://github.com/tonai',
@@ -129,8 +129,8 @@ export const community: AddonInfo[] = [
   {
     id: 'slidev-component-spotlight',
     name: 'Spotlight',
-    description: 'Activate a spotlight to highlight a specific region by holding a key',
-    tags: ['Tool'],
+    description: '按住快捷键激活聚光灯以高亮特定区域',
+    tags: ['工具'],
     author: {
       name: 'Tony Cabaye',
       link: 'https://github.com/tonai',
@@ -140,8 +140,8 @@ export const community: AddonInfo[] = [
   {
     id: 'slidev-component-zoom',
     name: 'Zooming',
-    description: 'Allow zooming inside the slides',
-    tags: ['Tool'],
+    description: '允许在幻灯片内缩放',
+    tags: ['工具'],
     author: {
       name: 'Tony Cabaye',
       link: 'https://github.com/tonai',
@@ -151,8 +151,8 @@ export const community: AddonInfo[] = [
   {
     id: 'slidev-addon-rabbit',
     name: 'Rabbit',
-    description: 'Presentation time management for Slidev inspired by Rabbit',
-    tags: ['Tool', 'Navigation'],
+    description: '受 Rabbit 启发的 Slidev 演示时间管理工具',
+    tags: ['工具', '导航'],
     author: {
       name: 'kaakaa',
       link: 'https://github.com/kaakaa',
@@ -162,8 +162,8 @@ export const community: AddonInfo[] = [
   {
     id: 'slidev-addon-stem',
     name: 'STEM',
-    description: 'Slidev addon for scientific presentation',
-    tags: ['Component', 'Layout'],
+    description: '科学演示用的 Slidev 插件',
+    tags: ['组件', '布局'],
     author: {
       name: 'yutaka-shoji',
       link: 'https://github.com/yutaka-shoji',
@@ -173,8 +173,8 @@ export const community: AddonInfo[] = [
   {
     id: 'slidev-addon-naive',
     name: 'Naive UI',
-    description: 'Brings Naive UI components into Slidev',
-    tags: ['Component'],
+    description: '将 Naive UI 组件引入 Slidev',
+    tags: ['组件'],
     author: {
       name: 'Samuel Huang',
       link: 'https://sghuang.com',
@@ -184,8 +184,8 @@ export const community: AddonInfo[] = [
   {
     id: 'slidev-addon-hls-player',
     name: 'HLS player',
-    description: 'Add a basic hls.js powered video player on your slides to show HTTP Live Streaming videos',
-    tags: ['hls', 'video'],
+    description: '在幻灯片中添加基于 hls.js 的视频播放器，用于播放 HTTP Live Streaming 视频',
+    tags: ['hls', '视频'],
     author: {
       name: 'Albert Brand',
       link: 'https://github.com/AlbertBrand',
@@ -195,20 +195,20 @@ export const community: AddonInfo[] = [
   {
     id: 'slidev-addon-window-mockup',
     name: 'Window Mockup',
-    description: 'Styled window frames',
-    tags: ['Component'],
+    description: '样式化的窗口框架',
+    tags: ['组件'],
     author: {
       name: 'whitphx',
       link: 'https://github.com/whitphx',
     },
     repo: 'https://github.com/whitphx/slidev-addon-window-mockup',
   },
-  // Add yours here!
+  // 在此添加你的插件！
   {
     id: '',
     link: 'https://github.com/slidevjs/slidev/edit/main/docs/.vitepress/addons.ts',
-    name: 'Yours?',
-    description: 'Click here to submit your addon :)',
+    name: '你的插件？',
+    description: '点击此处提交你的插件 :)',
     tags: [],
     author: {
       name: '',
