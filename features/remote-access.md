@@ -5,75 +5,75 @@ relates:
   - Cloudflare Quick Tunnels: https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/do-more-with-tunnels/trycloudflare/
 tags: [remote, tool]
 description: |
-  Access your presentation remotely with Slidev's remote access feature.
+  使用 Slidev 的远程访问功能远程访问你的演示文稿。
 ---
 
-# Remote Access
+# 远程访问
 
-You can run your presentation with remote access by using the `--remote` flag:
+你可以使用 `--remote` 标志来运行支持远程访问的演示：
 
 ::: code-group
 
 ```bash [pnpm]
 pnpm dev --remote
-# i.e. slidev --remote
+# 即 slidev --remote
 ```
 
 ```bash [npm]
 npm run dev -- --remote
-# i.e. slidev --remote
+# 即 slidev --remote
 ```
 
 ```bash [yarn]
 yarn dev --remote
-# i.e. slidev --remote
+# 即 slidev --remote
 ```
 
 ```bash [bun]
 bun dev --remote
-# i.e. slidev --remote
+# 即 slidev --remote
 ```
 
 ```bash [deno]
 deno run dev --remote
-# i.e. slidev --remote
+# 即 slidev --remote
 ```
 
 :::
 
-## Password Protection
+## 密码保护
 
-If you want to share your slides but don't want other people to access the presenter mode, you can pass a password to the option, i.e. `--remote=your_password`. Then the password is required when accessing the presenter mode.
+如果你想分享幻灯片但不希望其他人访问演讲者模式，你可以为选项传递一个密码，即 `--remote=your_password`。然后访问演讲者模式时需要输入密码。
 
-## Remote Tunnel
+## 远程隧道
 
-You can open a [Cloudflare Quick Tunnels](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/do-more-with-tunnels/trycloudflare/) to expose your local server to the internet. This way, you can share your slides with others without setting up a server.
+你可以打开一个 [Cloudflare Quick Tunnels](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/do-more-with-tunnels/trycloudflare/) 将你的本地服务器暴露到互联网上。这样，你可以与他人分享你的幻灯片而无需设置服务器。
 
 ::: code-group
 
 ```bash [pnpm]
 pnpm dev --remote --tunnel
-# i.e. slidev --remote --tunnel
+# 即 slidev --remote --tunnel
 ```
 
 ```bash [npm]
 npm run dev -- --remote --tunnel
-# i.e. slidev --remote --tunnel
+# 即 slidev --remote --tunnel
 ```
 
 ```bash [yarn]
 yarn dev --remote --tunnel
-# i.e. slidev --remote --tunnel
+# 即 slidev --remote --tunnel
 ```
 
 ```bash [bun]
 bun dev --remote --tunnel
-# i.e. slidev --remote --tunnel
+# 即 slidev --remote --tunnel
 ```
 
 ```bash [deno]
 deno run dev --remote --tunnel
-# i.e. slidev --remote --tunnel
+# 即 slidev --remote --tunnel
 ```
 
 :::
