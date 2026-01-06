@@ -3,26 +3,26 @@ relates:
   - vite-plugin-remote-assets: https://github.com/antfu/vite-plugin-remote-assets
 tags: [build]
 description: |
-  Download and bundle remote assets when building your slides.
+  在构建幻灯片时下载并打包远程资源。
 ---
 
-# Bundle Remote Assets
+# 打包远程资源
 
-Just like you would do in markdown, you can use images pointing to a remote or local URL.
+就像在 markdown 中一样，你可以使用指向远程或本地 URL 的图片。
 
-For remote assets, the built-in [`vite-plugin-remote-assets`](https://github.com/antfu/vite-plugin-remote-assets) will cache them onto the disk at first run, ensuring instant loading even for large images later on.
+对于远程资源，内置的 [`vite-plugin-remote-assets`](https://github.com/antfu/vite-plugin-remote-assets) 会在首次运行时将它们缓存到磁盘，确保即使是大图片也能在之后即时加载。
 
 ```md
 ![Remote Image](https://sli.dev/favicon.png)
 ```
 
-For local assets, put them into the [`public` folder](/custom/directory-structure.html#public) and reference them with a **leading slash** (i.e., `/pic.png`, NOT `./pic.png`, which is relative to the working file).
+对于本地资源，将它们放在 [`public` 文件夹](/custom/directory-structure.html#public)中，并使用**前导斜杠**引用它们（即 `/pic.png`，而不是 `./pic.png`，后者是相对于工作文件的路径）。
 
 ```md
 ![Local Image](/pic.png)
 ```
 
-If you want to apply custom sizes or styles, you can convert them to the `<img>` tag:
+如果你想应用自定义大小或样式，可以将它们转换为 `<img>` 标签：
 
 ```html
 <img src="/pic.png" class="m-40 h-40 rounded shadow" />
