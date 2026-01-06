@@ -5,10 +5,10 @@ relates:
   - View in OVSX: https://open-vsx.org/extension/antfu/slidev
 tags: [editor]
 description: |
-  Help you better organize your slides and have a quick overview of them.
+  帮助你更好地组织幻灯片并快速预览。
 ---
 
-# VS Code Extension
+# VS Code 扩展
 
 <p align="center">
     <a href="https://github.com/slidevjs/slidev" target="_blank">
@@ -23,16 +23,16 @@ description: |
   <img inline src="https://img.shields.io/visual-studio-marketplace/d/antfu.slidev.svg?color=2B90B6" alt="Visual Studio Marketplace Downloads" />
 </a>
 
-The VS Code extension provides some features to help you better organize your slides and have a quick overview of them.
+VS Code 扩展提供了一些功能，帮助你更好地组织幻灯片并快速预览。
 
-### Features
+### 功能特性
 
-- Preview slides in the side panel
-- Slides tree view
-- Re-ordering slides
-- Folding for slide blocks
-- Multiple slides project support
-- Start the dev server with one click
+- 在侧边面板中预览幻灯片
+- 幻灯片树形视图
+- 重新排序幻灯片
+- 幻灯片块折叠
+- 多幻灯片项目支持
+- 一键启动开发服务器
 
 ![](https://github.com/slidevjs/slidev/assets/63178754/2c9ba01a-d21f-4b33-b6b6-4e249873f865)
 
@@ -40,23 +40,23 @@ The VS Code extension provides some features to help you better organize your sl
 
 <TheTweet id="1789684139152810151" />
 
-### Installation
+### 安装
 
-You can install the extension from the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=antfu.slidev) or the [Open VSX Registry](https://open-vsx.org/extension/antfu/slidev).
+你可以从 [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=antfu.slidev) 或 [Open VSX Registry](https://open-vsx.org/extension/antfu/slidev) 安装扩展。
 
-### Usage
+### 使用方法
 
-Click the `Slidev` icon in the activity bar to open the **Slidev panel**. In the Slidev panel, you can see the projects tree view, slides tree view, and the preview webview.
+点击活动栏中的 `Slidev` 图标打开 **Slidev 面板**。在 Slidev 面板中，你可以看到项目树形视图、幻灯片树形视图和预览 webview。
 
-In the **projects tree view**, you can see all the Slidev projects in your workspace. You can click the item to open the corresponding file, and click the <codicon-eye /> icon over it to switch the active project. The <codicon-add /> icon allows you to load a slides project that wasn't scanned automatically.
+在**项目树形视图**中，你可以看到工作区中的所有 Slidev 项目。你可以点击项目打开相应的文件，点击上方的 <codicon-eye /> 图标切换活动项目。<codicon-add /> 图标允许你加载未被自动扫描到的幻灯片项目。
 
-In the **slides tree view**, you can see all the slides in the active project. You can click the item to move your cursor to the slide in the editor, and drag and drop to reorder the slides.
+在**幻灯片树形视图**中，你可以看到活动项目中的所有幻灯片。你可以点击项目将光标移动到编辑器中的该幻灯片，并拖放来重新排序幻灯片。
 
-In the **preview webview**, you can click the <codicon-run-all /> icon to start the dev server and click the <codicon-globe /> icon to open the slides in the browser. Toggle <codicon-lock /> icon to sync/unsync the preview navigation with the editor cursor.
+在**预览 webview** 中，你可以点击 <codicon-run-all /> 图标启动开发服务器，点击 <codicon-globe /> 图标在浏览器中打开幻灯片。切换 <codicon-lock /> 图标来同步/取消同步预览导航与编辑器光标。
 
-There are also some **commands** you can use. Type `Slidev` in the command palette to see them.
+还有一些**命令**可以使用。在命令面板中输入 `Slidev` 来查看它们。
 
-You can add glob patterns to the `slidev.include` configuration to include files as Slidev entries. The default value is `["**/*.md"]`. Example:
+你可以在 `slidev.include` 配置中添加 glob 模式来将文件包含为 Slidev 入口。默认值是 `["**/*.md"]`。示例：
 
 ```json
 {
@@ -64,17 +64,17 @@ You can add glob patterns to the `slidev.include` configuration to include files
 }
 ```
 
-#### Dev Command {#dev-command}
+#### 开发命令 {#dev-command}
 
-You can customize the command to start dev server by setting the `slidev.dev-command` configuration. The default value is `npm exec -c 'slidev ${args}'`.
+你可以通过设置 `slidev.dev-command` 配置来自定义启动开发服务器的命令。默认值是 `npm exec -c 'slidev ${args}'`。
 
-The configured command can contain placeholders:
+配置的命令可以包含占位符：
 
-- `${args}`: All CLI arguments. e.g. `slides.md --port 3000 --remote`
-- `${port}`: The port number. e.g. `3000`
+- `${args}`：所有 CLI 参数。例如：`slides.md --port 3000 --remote`
+- `${port}`：端口号。例如：`3000`
 
-Examples:
+示例：
 
-- Global installation: `slidev ${args}`
-- For PNPM users, you can set it to `pnpm slidev ${args}`.
-- For [code-server](https://coder.com/docs/code-server/) users, you can set it to `pnpm slidev ${args} --base /proxy/${port}/`. This will make the dev server accessible at `http://localhost:8080/proxy/3000/`.
+- 全局安装：`slidev ${args}`
+- 对于 PNPM 用户，可以设置为 `pnpm slidev ${args}`。
+- 对于 [code-server](https://coder.com/docs/code-server/) 用户，可以设置为 `pnpm slidev ${args} --base /proxy/${port}/`。这将使开发服务器可以通过 `http://localhost:8080/proxy/3000/` 访问。
