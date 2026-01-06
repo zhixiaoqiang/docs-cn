@@ -6,27 +6,27 @@ aside: false
 import ThemeGallery from '../.vitepress/theme/components/ThemeGallery.vue'
 </script>
 
-# Theme Gallery
+# 主题库
 
-Browse awesome themes available for Slidev here.
+在此浏览 Slidev 可用的精彩主题。
 
-Read more about <LinkInline link="guide/theme-addon#use-theme" /> to use them, and <LinkInline link="guide/write-theme" /> to create your own theme.
+阅读更多关于 <LinkInline link="guide/theme-addon#use-theme" /> 来使用它们，以及 <LinkInline link="guide/write-theme" /> 来创建你自己的主题。
 
-## Official Themes {#official-themes}
+## 官方主题 {#official-themes}
 
 <ClientOnly>
   <ThemeGallery collection="official"/>
 </ClientOnly>
 
-## Community Themes {#community-themes}
+## 社区主题 {#community-themes}
 
-Here are the curated themes made by the community.
+以下是社区制作的精选主题。
 
 <!-- Edit in ./docs/.vitepress/themes.ts -->
 <ClientOnly>
   <ThemeGallery collection="community"/>
 </ClientOnly>
 
-## More Themes {#more-themes}
+## 更多主题 {#more-themes}
 
-Find all the [themes available on NPM](https://www.npmjs.com/search?q=keywords%3Aslidev-theme).
+查找所有 [NPM 上可用的主题](https://www.npmjs.com/search?q=keywords%3Aslidev-theme)。
