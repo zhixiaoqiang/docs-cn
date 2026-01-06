@@ -1,13 +1,13 @@
-# Learning Resources
+# 学习资源
 
-## English
+## 英文
 
-### Videos
+### 视频
 
 - [Slidev - one of the best presentation software and it is free!](https://www.youtube.com/watch?v=oSgM6GoSwyY) - by [Federico Tartarini](https://www.youtube.com/@FedericoTartarini)
 - [Slides + developers = slidev](https://www.youtube.com/watch?v=nleqgO38pPU) by Murilo Cunha
 
-### Articles
+### 文章
 
 - [Tips To Turn R Markdown Into Slidev Presentation](https://yutani.rbind.io/post/2021-06-05-tips-to-turn-r-markdown-into-slidev-presentation/) by Hiroaki Yutani
 
