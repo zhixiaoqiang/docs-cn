@@ -5,14 +5,14 @@ relates:
   - Prettier: https://prettier.io/
 tags: [editor]
 description: |
-  Use the Prettier plugin to format your slides.
+  使用 Prettier 插件格式化你的幻灯片。
 ---
 
-# Prettier Plugin
+# Prettier 插件
 
-The Slidev's syntax may be incompatible with the default Markdown parser of [Prettier](https://prettier.io/). To solve this, Slidev provides a Prettier plugin to format your slides. You can use it with your favorite editor that supports Prettier.
+Slidev 的语法可能与 [Prettier](https://prettier.io/) 的默认 Markdown 解析器不兼容。为了解决这个问题，Slidev 提供了一个 Prettier 插件来格式化你的幻灯片。你可以在支持 Prettier 的任何编辑器中使用它。
 
-## 1. Install
+## 1. 安装
 
 ::: code-group
 
@@ -38,9 +38,9 @@ deno add -D npm:prettier npm:prettier-plugin-slidev
 
 :::
 
-## 2. Activate the plugin
+## 2. 激活插件
 
-Create or modify your [prettier configuration file](https://prettier.io/docs/en/configuration) to activate the plugin:
+创建或修改你的 [prettier 配置文件](https://prettier.io/docs/en/configuration)来激活插件：
 
 ```json
 {
@@ -56,4 +56,4 @@ Create or modify your [prettier configuration file](https://prettier.io/docs/en/
 }
 ```
 
-Note that only specifying `plugins` is not enough, because Slidev and common Markdown files share the same file extension `.md`.
+注意，仅指定 `plugins` 是不够的，因为 Slidev 和普通 Markdown 文件共享相同的文件扩展名 `.md`。
