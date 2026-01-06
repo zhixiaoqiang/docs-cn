@@ -3,14 +3,14 @@ depends:
   - guide/syntax#code-block
 tags: [codeblock]
 description: |
-  Enable line numbering for all code blocks across the slides or individually.
+  为所有幻灯片的代码块启用行号，或单独启用。
 ---
 
-# Line Numbers
+# 行号
 
-You can enable line numbering for all code blocks across the slides by setting `lineNumbers: true` in the headmatter, or enable each code block individually by setting `lines: true`.
+你可以通过在 headmatter 中设置 `lineNumbers: true` 为所有幻灯片的代码块启用行号，或通过设置 `lines: true` 单独启用每个代码块。
 
-You can also set the starting line for each code block and highlight the lines accordingly via `{startLine: number}`, which defaults to 1.
+你还可以通过 `{startLine: number}` 为每个代码块设置起始行号并相应地高亮行，默认值为 1。
 
 ````md
 ```ts {6,7}{lines:true,startLine:5}
@@ -23,7 +23,7 @@ function add(
 ```
 ````
 
-Note that you can use `{*}` as a placeholder of <LinkInline link="features/line-highlighting" />:
+注意你可以使用 `{*}` 作为 <LinkInline link="features/line-highlighting" /> 的占位符：
 
 ````md
 ```ts {*}{lines:true,startLine:5}
