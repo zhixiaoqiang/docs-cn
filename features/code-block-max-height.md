@@ -3,12 +3,12 @@ depends:
   - guide/syntax#code-block
 tags: [codeblock, layout]
 description: |
-  Set a maximum height for a code block and enable scrolling.
+  为代码块设置最大高度并启用滚动。
 ---
 
-# Max Height
+# 最大高度
 
-If the code doesn't fit into one slide, you use the `maxHeight` to set a fixed height and enable scrolling:
+如果代码无法放入一张幻灯片中，你可以使用 `maxHeight` 设置固定高度并启用滚动：
 
 ````md
 ```ts {2|3|7|12}{maxHeight:'100px'}
@@ -18,12 +18,12 @@ function add(
 ) {
   return computed(() => unref(a) + unref(b))
 }
-/// ...as many lines as you want
+/// ...任意多行
 const c = add(1, 2)
 ```
 ````
 
-Note that you can use `{*}` as a placeholder of <LinkInline link="features/line-highlighting" />:
+注意你可以使用 `{*}` 作为 <LinkInline link="features/line-highlighting" /> 的占位符：
 
 ````md
 ```ts {*}{maxHeight:'100px'}
