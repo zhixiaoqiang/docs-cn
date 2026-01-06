@@ -25,7 +25,7 @@ description: |
 
 VS Code 扩展提供了一些功能，帮助你更好地组织幻灯片并快速预览。
 
-### 功能特性
+### 功能特性 {#features}
 
 - 在侧边面板中预览幻灯片
 - 幻灯片树形视图
@@ -40,11 +40,11 @@ VS Code 扩展提供了一些功能，帮助你更好地组织幻灯片并快速
 
 <TheTweet id="1789684139152810151" />
 
-### 安装
+### 安装 {#installation}
 
 你可以从 [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=antfu.slidev) 或 [Open VSX Registry](https://open-vsx.org/extension/antfu/slidev) 安装扩展。
 
-### 使用方法
+### 使用方法 {#usage}
 
 点击活动栏中的 `Slidev` 图标打开 **Slidev 面板**。在 Slidev 面板中，你可以看到项目树形视图、幻灯片树形视图和预览 webview。
 

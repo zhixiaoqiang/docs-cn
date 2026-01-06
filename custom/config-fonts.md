@@ -20,7 +20,7 @@ fonts:
 
 字体将**通过 CDN 从提供商自动导入，默认是 [Google Fonts](https://fonts.google.com/)**。这意味着你可以直接使用 Google Fonts 上可用的任何字体。
 
-## 本地字体
+## 本地字体 {#local-fonts}
 
 默认情况下，Slidev 假设通过 `fonts` 配置指定的所有字体都来自 Google Fonts。如果你想使用本地字体，请指定 `fonts.local` 来禁用自动导入。
 
@@ -34,7 +34,7 @@ fonts:
 ---
 ```
 
-## 字重和斜体
+## 字重和斜体 {#weights-italic}
 
 默认情况下，Slidev 为每种字体导入三种字重 `200`、`400`、`600`。你可以通过以下方式配置：
 
@@ -51,7 +51,7 @@ fonts:
 
 此配置适用于所有网络字体。要更精细地控制每种字体的字重，你需要手动通过 [HTML](/custom/directory-structure.html#index-html) 和 CSS 导入它们。
 
-## 备选字体
+## 备选字体 {#fallback-fonts}
 
 对于大多数场景，你只需要指定"特殊字体"，Slidev 会为你追加备选字体，例如：
 
@@ -90,7 +90,7 @@ fonts:
 ---
 ```
 
-## 提供商
+## 提供商 {#providers}
 
 - 选项：`google` | `coollabs` | `none`
 - 默认：`google`

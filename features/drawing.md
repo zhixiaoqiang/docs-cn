@@ -16,11 +16,11 @@ Slidev 内置了由 [drauu](https://github.com/antfu/drauu) 驱动的绘图和�
 
 <TheTweet id="1424027510342250499" />
 
-## 使用触控笔
+## 使用触控笔 {#use-with-stylus}
 
 在平板电脑上使用触控笔时（例如，iPad 配合 Apple Pencil），Slidev 会智能检测输入类型。你可以直接用笔在幻灯片上绘制，无需开启绘图模式，同时用手指或鼠标控制导航。
 
-## 持久化绘图
+## 持久化绘图 {#persist-drawings}
 
 以下 frontmatter 配置允许你将绘图作为 SVG 文件保存在 `.slidev/drawings` 目录下，并将它们包含在导出的 PDF 或托管的站点中。
 
@@ -31,7 +31,7 @@ drawings:
 ---
 ```
 
-## 禁用绘图
+## 禁用绘图 {#disable-drawings}
 
 完全禁用：
 
@@ -60,7 +60,7 @@ drawings:
 ---
 ```
 
-## 绘图同步
+## 绘图同步 {#drawing-sync}
 
 默认情况下，Slidev 会在所有实例之间同步你的绘图。如果你与他人共享幻灯片，你可能想要通过以下配置禁用同步：
 

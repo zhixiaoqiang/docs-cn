@@ -27,7 +27,7 @@ Slidev 还添加了一些快捷方式，可以在其[源代码](https://github.c
 </div>
 ```
 
-## 配置
+## 配置 {#configurations}
 
 你可以在项目根目录下创建 `uno.config.ts` 来扩展内置配置
 

@@ -15,23 +15,23 @@ Slidev 集成了 [Rough Notation](https://github.com/slidevjs/rough-notation)，
 
 ---
 
-### `v-mark` 指令
+### `v-mark` 指令 {#v-mark-directive}
 
 Rough Notation 集成附带了 `v-mark` 指令。
 
-#### 类型
+#### 类型 {#type}
 
 使用 `v-mark.underline` 表示下划线标记，`v-mark.circle` 表示圆圈标记等。（默认为 `underline`）。
 
-#### 颜色
+#### 颜色 {#color}
 
 `v-mark.red` 使标记变成 `red`。支持 UnoCSS 的内置颜色主题。对于自定义颜色，使用对象语法 `v-mark="{ color: '#234' }"`。
 
-#### 点击
+#### 点击 {#clicks}
 
 `v-mark` 的工作方式与 `v-click` 相同，会在点击后触发。与 `v-click` 相同，它允许你传递自定义点击值，如 `v-mark="5"` 或 `v-mark="'+1'"`。
 
-#### 选项
+#### 选项 {#options}
 
 可选地，你可以向 `v-mark` 传递一个对象来指定选项，例如：
 
@@ -41,6 +41,6 @@ Rough Notation 集成附带了 `v-mark` 指令。
 </span>
 ```
 
-#### 预览
+#### 预览 {#preview}
 
 <video src="https://github.com/slidevjs/slidev/assets/11247099/c840340c-0aa1-4cde-b228-e6c67e5f6879" rounded-lg shadow controls></video>

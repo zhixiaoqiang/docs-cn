@@ -32,13 +32,13 @@ Slidev <sup>(slide + dev, **/slaɪdɪv/**)</sup> 是一个基于 Web 的幻灯�
 
 <!-- <FeaturesAnimation /> -->
 
-## 创建幻灯片
+## 创建幻灯片 {#create-slides}
 
-### 在线体验
+### 在线体验 {#try-it-online}
 
 在浏览器中通过 StackBlitz 直接启动 Slidev：[sli.dev/new](https://sli.dev/new)
 
-### 本地创建
+### 本地创建 {#create-locally}
 
 > 需要安装 [Node.js](https://nodejs.org) >= 18.0。
 
@@ -113,7 +113,7 @@ slidev slides.md
 
 ::::
 
-## 基本命令
+## 基本命令 {#basic-commands}
 
 Slidev 在其 CLI 中提供了一组命令。以下是一些常用命令：
 
@@ -147,13 +147,13 @@ Slidev 在其 CLI 中提供了一组命令。以下是一些常用命令：
 <LinkCard link="features/side-editor" />
 <LinkCard link="features/prettier-plugin" />
 
-## 加入社区
+## 加入社区 {#join-the-community}
 
 推荐加入我们的官方 [Discord 服务器](https://chat.sli.dev/) 获取帮助、分享你的幻灯片，或讨论任何关于 Slidev 的话题。
 
 如果你遇到了 bug，欢迎在 [GitHub](https://github.com/slidevjs/slidev/issues/new/choose) 上提交 issue。
 
-## 技术栈
+## 技术栈 {#tech-stack}
 
 Slidev 由以下工具和技术驱动：
 

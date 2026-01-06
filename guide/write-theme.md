@@ -32,7 +32,7 @@ $ deno init --npm slidev-theme
 
 然后你可以修改并使用它。你也可以参考[官方主题](../resources/theme-gallery#official-themes)作为示例。
 
-## 能力范围
+## 能力范围 {#capability}
 
 主题可以贡献以下功能点：
 
@@ -63,7 +63,7 @@ $ deno init --npm slidev-theme
 }
 ```
 
-### 要求 Slidev 版本
+### 要求 Slidev 版本 {#require-slidev-version}
 
 如果主题依赖于 Slidev 新引入的特定功能，你可以设置使主题正常工作所需的最低 Slidev 版本：
 
@@ -77,7 +77,7 @@ $ deno init --npm slidev-theme
 
 当使用不兼容的版本时，将显示错误消息。
 
-### 主题元数据
+### 主题元数据 {#theme-metadata}
 
 默认情况下，Slidev 假设主题同时支持浅色模式和深色模式。如果你只希望主题以特定的颜色模式呈现，需要在 `package.json` 中明确指定：
 
@@ -89,7 +89,7 @@ $ deno init --npm slidev-theme
 }
 ```
 
-## 预览
+## 预览 {#previewing}
 
 在开发时，你可以使用演示幻灯片预览你的主题。为此，创建一个 `./slides.md` 文件，包含以下 headmatter：
 
@@ -101,7 +101,7 @@ theme: ./  # 使用当前目录中的主题
 
 然后你可以像往常一样启动演示幻灯片。
 
-## 发布
+## 发布 {#publishing}
 
 发布主题时，`.vue` 和 `.ts` 等非 JS 文件可以直接发布，无需编译。Slidev 在使用主题时会自动编译它们。
 

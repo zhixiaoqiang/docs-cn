@@ -22,7 +22,7 @@ function add(
 ```
 ````
 
-## 动态行高亮
+## 动态行高亮 {#dynamic-line-highlighting}
 
 要通过多次点击来更改高亮内容，你可以使用 `|` 分隔每个阶段：
 

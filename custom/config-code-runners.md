@@ -35,7 +35,7 @@ export default defineCodeRunnersSetup(() => {
 })
 ```
 
-## 运行器上下文
+## 运行器上下文 {#runner-context}
 
 第二个参数 `ctx` 是运行器上下文，包含以下属性：
 
@@ -59,11 +59,11 @@ export interface CodeRunnerContext {
 }
 ```
 
-## 运行器输出
+## 运行器输出 {#runner-output}
 
 运行器可以返回文本或 HTML 输出，或者返回一个要挂载的元素。有关更多详情，请参阅 https://github.com/slidevjs/slidev/blob/main/packages/types/src/code-runner.ts。
 
-## 额外的运行器依赖
+## 额外的运行器依赖 {#additional-runner-dependencies}
 
 默认情况下，Slidev 会扫描 Markdown 源代码并自动导入代码运行器所需的依赖项。如果你想手动导入依赖项，可以在幻灯片 frontmatter 中使用 `monacoRunAdditionalDeps` 选项：
 

@@ -21,11 +21,11 @@ seoMeta:
 
 了解更多关于 [SEO Meta 标签](./seo-meta)。
 
-## 本地图片
+## 本地图片 {#local-image}
 
 如果你的项目根目录中有 `./og-image.png`，Slidev 会自动将其作为 Open Graph 图片，无需任何配置。
 
-## 自动生成
+## 自动生成 {#auto-generate}
 
 自 v52.1.0 起，Slidev 支持从第一张幻灯片自动生成 Open Graph 图片。
 

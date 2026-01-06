@@ -146,7 +146,7 @@ jobs:
 3. 提交并推送更改到你的仓库。每次你推送到 `main` 分支时，GitHub Actions 工作流将自动将幻灯片部署到 GitHub Pages。
 4. 你可以在 `https://<username>.github.io/<repository-name>/` 访问你的幻灯片。
 
-### Netlify
+### Netlify {#netlify}
 
 在项目根目录创建 `netlify.toml`，内容如下：
 
@@ -170,7 +170,7 @@ status = 200
 
 然后进入你的 [Netlify dashboard](https://netlify.com/) 并使用该仓库创建一个新站点。
 
-### Vercel
+### Vercel {#vercel}
 
 在项目根目录创建 `vercel.json`，内容如下：
 

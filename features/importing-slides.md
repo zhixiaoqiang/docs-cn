@@ -52,7 +52,7 @@ src: ./pages/toc.md   # 复用同一个文件 // [!code highlight]
 
 :::
 
-## 导入特定幻灯片
+## 导入特定幻灯片 {#importing-specific-slides}
 
 要复用另一个 Markdown 文件中的部分幻灯片，你可以使用导入路径的 hash 部分：
 
@@ -64,6 +64,6 @@ src: ./another-presentation.md#2,5-7
 
 这将从 `./another-presentation.md` 导入第 2、5、6 和 7 张幻灯片。
 
-## Frontmatter 合并
+## Frontmatter 合并 {#frontmatter-merging}
 
 <LinkCard link="features/frontmatter-merging" />

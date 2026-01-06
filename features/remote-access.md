@@ -41,11 +41,11 @@ deno run dev --remote
 
 :::
 
-## 密码保护
+## 密码保护 {#password-protection}
 
 如果你想分享幻灯片但不希望其他人访问演讲者模式，你可以为选项传递一个密码，即 `--remote=your_password`。然后访问演讲者模式时需要输入密码。
 
-## 远程隧道
+## 远程隧道 {#remote-tunnel}
 
 你可以打开一个 [Cloudflare Quick Tunnels](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/do-more-with-tunnels/trycloudflare/) 将你的本地服务器暴露到互联网上。这样，你可以与他人分享你的幻灯片而无需设置服务器。
 

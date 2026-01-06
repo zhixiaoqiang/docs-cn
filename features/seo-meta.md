@@ -12,7 +12,7 @@ description: |
 
 Slidev 允许你在 headmatter 中配置 SEO meta 标签以改善社交媒体分享和搜索引擎优化。你可以设置 Open Graph 和 Twitter Card meta 标签来控制幻灯片在社交平台上分享时的显示方式。
 
-## 配置
+## 配置 {#configuration}
 
 将 `seoMeta` 配置添加到你的幻灯片 frontmatter：
 

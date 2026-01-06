@@ -11,7 +11,7 @@ description: |
 
 Slidev 内置了由 [KaTeX](https://katex.org/) 驱动的 LaTeX 支持。
 
-## 行内公式
+## 行内公式 {#inline}
 
 用单个 `$` 包围你的 LaTeX 以进行行内渲染。
 
@@ -19,7 +19,7 @@ Slidev 内置了由 [KaTeX](https://katex.org/) 驱动的 LaTeX 支持。
 $\sqrt{3x-1}+(1+x)^2$
 ```
 
-## 块级公式
+## 块级公式 {#block}
 
 使用两个 `$$` 进行块级渲染。此模式使用更大的符号并将结果居中显示。
 
@@ -34,7 +34,7 @@ $$
 $$
 ```
 
-## 行高亮
+## 行高亮 {#line-highlighting}
 
 要高亮特定的行，只需在括号 `{}` 内添加行号。行号默认从 1 开始计数。
 
@@ -51,7 +51,7 @@ $$
 
 [代码块](#line-highlighting)的 `at` 和 `finally` 选项也适用于 LaTeX 块。
 
-## 化学方程式
+## 化学方程式 {#chemical-equations}
 
 要启用化学方程式的渲染，需要加载 [mhchem](https://github.com/KaTeX/KaTeX/tree/main/contrib/mhchem) KaTeX 扩展。
 

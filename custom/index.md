@@ -172,13 +172,13 @@ dragPos: {} # type: Record<string, string>
 
 查看[类型定义](https://github.com/slidevjs/slidev/blob/main/packages/types/src/frontmatter.ts#L260)了解更多详情。
 
-## 目录结构
+## 目录结构 {#directory-structure}
 
 Slidev 使用目录结构约定来最小化配置并使功能扩展灵活直观。
 
 请参阅[目录结构](/custom/directory-structure)章节。
 
-## 配置工具
+## 配置工具 {#config-tools}
 
 <script setup>
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue'

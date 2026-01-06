@@ -2,7 +2,7 @@
 
 Slidev 使用 [Shiki](https://github.com/shikijs/shiki) 作为代码高亮器。它是一个由 TextMate Grammar 驱动的语法高亮器，与 VS Code 一样精确。它生成彩色标记，因此不需要额外的 CSS。Shiki 还自带[大量内置主题](https://shiki.style/themes)。在 Slidev 中，我们还提供了 [TwoSlash](#twoslash-integration) 支持。
 
-## 配置 Shiki
+## 配置 Shiki {#configure-shiki}
 
 <Environment type="both" />
 
@@ -65,7 +65,7 @@ export default defineShikiSetup(() => {
 目前，Shiki Magic Move 不支持 transformers。
 :::
 
-## 配置 Prism
+## 配置 Prism {#configure-prism}
 
 :::warning
 自 v0.50 起，Prism 支持已被移除。请改用 Shiki。

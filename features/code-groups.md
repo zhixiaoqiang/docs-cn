@@ -31,7 +31,7 @@ pnpm add @slidev/cli
 ::
 ````
 
-## 标题图标匹配
+## 标题图标匹配 {#title-icon-matching}
 
 `code groups`、`code block` 和 [`Shiki Magic Move`](/features/shiki-magic-move) 也支持根据标题名称自动匹配图标。
 
@@ -109,7 +109,7 @@ const builtinIcons = {
 
 :::
 
-## 自定义图标
+## 自定义图标 {#custom-icons}
 
 你可以使用 `~icon~` 语法使用 [iconify](https://icones.js.org) 集合中的任何名称，例如：
 

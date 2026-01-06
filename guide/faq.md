@@ -45,7 +45,7 @@ background: /image.png
 
 由于 Slidev 是基于 Web 的，CSS 是定位元素的主要方式。以下是一些定位元素的有用技巧：
 
-### 网格和 Flexbox
+### 网格和 Flexbox {#grid-and-flexbox}
 
 你可以使用 CSS Grid 创建复杂布局：
 
@@ -105,7 +105,7 @@ background: /image.png
 
 了解更多：[CSS Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)、[Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)，甚至 [Masonry](https://css-tricks.com/native-css-masonry-layout-in-css-grid/)。
 
-### 绝对定位
+### 绝对定位 {#absolute-positioning}
 
 你可以使用 UnoCSS 绝对定位元素：
 

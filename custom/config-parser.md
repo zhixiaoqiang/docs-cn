@@ -10,11 +10,11 @@ Slidev 通过三个步骤解析你的演示文件（例如 `slides.md`）：
 2. 使用外部库解析每张幻灯片。
 3. Slidev 解析特殊的 frontmatter 属性 `src: ....`，它允许包含其他 md 文件。
 
-## Markdown 解析器
+## Markdown 解析器 {#markdown-parser}
 
 配置步骤 2 中使用的 markdown 解析器可以通过[配置 Vite 内部插件](/custom/config-vite#configure-internal-plugins)完成。
 
-## 预解析器扩展
+## 预解析器扩展 {#preparser-extensions}
 
 > 自 v0.37.0 起可用。
 
@@ -54,9 +54,9 @@ export default definePreparserSetup(({ filepath, headmatter, mode }) => {
   - `transformNote(note, frontmatter)` 函数，在拆分文件后为每张幻灯片调用，并接收幻灯片备注作为字符串或 undefined 以及幻灯片的 frontmatter 作为对象。该函数可以修改 frontmatter 并必须返回备注字符串（可能已修改，如果没有修改则可能为 `undefined`）。
   - `name`
 
-## 预解析器扩展示例
+## 预解析器扩展示例 {#example-preparser-extensions}
 
-### 用例 1：顶层演示的紧凑语法
+### 用例 1：顶层演示的紧凑语法 {#use-case-1-compact-syntax-top-level-presentation}
 
 想象一种情况，你的演示（部分）主要是展示封面图片和包含其他 md 文件。你可能想要一种紧凑的表示法，例如（部分）`slides.md` 如下：
 
@@ -119,7 +119,7 @@ export default definePreparserSetup(() => {
 
 就这样。
 
-### 用例 2：使用自定义 frontmatter 包装幻灯片
+### 用例 2：使用自定义 frontmatter 包装幻灯片 {#use-case-2-using-custom-frontmatter-to-wrap-slides}
 
 想象一种情况，你经常想要缩放某些幻灯片，但仍然想使用各种现有布局，因此创建新布局不太合适。
 例如，你可能想要这样编写 `slides.md`：
@@ -181,7 +181,7 @@ export default definePreparserSetup(() => {
 
 就这样。
 
-### 用例 3：使用自定义 frontmatter 转换备注
+### 用例 3：使用自定义 frontmatter 转换备注 {#use-case-3-using-custom-frontmatter-to-transform-notes}
 
 想象一种情况，你想用自定义备注替换幻灯片的默认备注。
 例如，你可能想要这样编写 `slides.md`：

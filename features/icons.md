@@ -47,7 +47,7 @@ deno add jsr:@iconify-json/[the-collection-you-want]
 
 我们使用 [Iconify](https://iconify.design) 作为图标的数据源。你需要按照 `@iconify-json/*` 的模式在 `dependencies` 中安装相应的图标集。例如，`@iconify-json/mdi` 用于 [Material Design Icons](https://materialdesignicons.com/)，`@iconify-json/tabler` 用于 [Tabler](https://tabler-icons.io/)。你可以参考 [Icônes](https://icones.js.org/) 或 [Iconify](https://icon-sets.iconify.design/) 查看所有可用的图标集。
 
-### 图标样式
+### 图标样式 {#styling-icons}
 
 你可以像其他 HTML 元素一样为图标添加样式。例如：
 

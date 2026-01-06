@@ -16,7 +16,7 @@ Slidev 为此提供了三个图层，在你的项目根目录下创建 `global-t
 如果你使用的 `global-top.vue` 或 `global-bottom.vue` 依赖于当前的导航状态，在导出时应该使用 `--per-slide` 选项来确保正确的状态应用到每张幻灯片。或者你可以改用 `slide-top.vue` 和 `slide-bottom.vue`。
 :::
 
-## 图层关系
+## 图层关系 {#layers-relationship}
 
 在 z 轴上，从上到下：
 
@@ -28,7 +28,7 @@ Slidev 为此提供了三个图层，在你的项目根目录下创建 `global-t
 - 幻灯片底层 (`slide-bottom.vue`) - 每张幻灯片一个实例
 - 全局底层 (`global-bottom.vue`) - 单实例
 
-## 示例
+## 示例 {#example}
 
 ```html
 <!-- global-bottom.vue -->

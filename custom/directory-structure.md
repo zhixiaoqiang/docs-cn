@@ -19,25 +19,25 @@ your-slidev/
 
 以上都是可选的。
 
-## 组件
+## 组件 {#components}
 
 模式：`./components/*.{vue,js,ts,jsx,tsx,md}`
 
 <LinkCard link="guide/component" />
 
-## 布局
+## 布局 {#layouts}
 
 模式：`./layouts/*.{vue,js,ts,jsx,tsx}`
 
 <LinkCard link="guide/layout" />
 
-## Public
+## Public {#public}
 
 模式：`./public/*`
 
 此目录中的资源将在开发时以根路径 `/` 提供服务，并原样复制到 dist 目录的根目录。了解更多关于[资源处理](../guide/faq#assets-handling)。
 
-## 样式
+## 样式 {#style}
 
 模式：`./style.css` | `./styles/index.{css,js,ts}`
 
@@ -85,7 +85,7 @@ import './layouts.css'
 
 在[这里](https://unocss.dev/transformers/directives#apply)了解更多关于语法的信息。
 
-## `index.html`
+## `index.html` {#index-html}
 
 模式：`index.html`
 
@@ -126,7 +126,7 @@ import './layouts.css'
 </html>
 ```
 
-## 全局图层
+## 全局图层 {#global-layers}
 
 模式：`global-top.vue` | `global-bottom.vue` | `custom-nav-controls.vue` | `slide-top.vue` | `slide-bottom.vue`
 

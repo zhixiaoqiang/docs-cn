@@ -16,7 +16,7 @@ export default defineMermaidSetup(() => {
 
 返回值应该是 [Mermaid](https://mermaid.js.org/) 的自定义配置。有关完整配置列表，请参阅 [Mermaid 文档](https://mermaid.js.org/config/schema-docs/config.html)或类型定义。
 
-## 自定义主题/样式
+## 自定义主题/样式 {#custom-themes-styles}
 
 如果你想创建自定义 Mermaid 主题或样式，可以通过定义 `themeVariables` 来实现，如下例所示：
 

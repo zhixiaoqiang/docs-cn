@@ -23,7 +23,7 @@ console.log('HelloWorld')
 
 了解更多关于[配置 Monaco](/custom/config-monaco)。
 
-## 差异编辑器
+## 差异编辑器 {#diff-editor}
 
 Monaco 还可以生成两个代码块之间的差异对比。使用 `{monaco-diff}` 将代码块转换为 [Monaco 差异编辑器](https://microsoft.github.io/monaco-editor/playground.html?source=v0.36.1#example-creating-the-diffeditor-multi-line-example)，并使用 `~~~` 分隔原始代码和修改后的代码！
 
@@ -35,7 +35,7 @@ console.log('Modified text')
 ```
 ````
 
-## 编辑器高度
+## 编辑器高度 {#editor-height}
 
 默认情况下，Monaco 编辑器的高度是基于初始内容固定的。如果你从空的或较小的代码块开始，并希望编辑器随着输入更多代码自动增长，可以设置 `{height:'auto'}`。
 

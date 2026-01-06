@@ -4,7 +4,7 @@
 
 向 Slidev 应用添加自定义页面。
 
-## 使用方法
+## 使用方法 {#usage}
 
 创建 `./setup/routes.ts`，内容如下：
 

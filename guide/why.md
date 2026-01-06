@@ -14,47 +14,47 @@ Slidev 同样是**渐进式**的。你可以从一个超级简单的 Markdown �
 
 ![demo slide](/screenshots/cover.png) {#welcome}
 
-## 功能特性
+## 功能特性 {#features}
 
-### 📝 基于 Markdown
+### 📝 基于 Markdown {#markdown-based}
 
 Slidev 使用扩展的 Markdown 格式在单个纯文本文件中组织你的幻灯片。这帮助你专注于内容，同时允许你使用 Git 和任何你喜欢的编辑器。
 
 > 了解更多：<LinkInline link="guide/syntax"/>。
 
-### 🧑‍💻 开发者友好
+### 🧑‍💻 开发者友好 {#developer-friendly}
 
 Slidev 为开发者提供一流的代码片段支持。它使用 [Shiki](https://github.com/shikijs/shiki) 来获取最精确的语法高亮。Slidev 还支持 <LinkInline link="features/shiki-magic-move"/> 和 <LinkInline link="features/twoslash"/>。这些使 Slidev 成为技术演讲的最佳选择。
 
-### 🎨 主题化
+### 🎨 主题化 {#themable}
 
 Slidev 的主题可以通过 npm 包分享。只需一行代码即可应用主题。
 
 查看[主题库](../resources/theme-gallery)，浏览由官方团队和社区制作的精美主题。
 
-### ⚡ 极速
+### ⚡ 极速 {#fast}
 
 得益于 [Vite 的 HMR 功能](https://vitejs.dev/guide/features.html#hot-module-replacement)，你在编辑器中所做的每一个更改都会**即时**更新到浏览器中的幻灯片，无需重新加载。
 
-### 🤹 交互性与表现力
+### 🤹 交互性与表现力 {#interactive-expressive}
 
 你可以编写 Vue 组件并在幻灯片中使用它们，然后在演示过程中与之互动，以更有趣、更直观的方式表达你的想法。
 
 Slidev 还内置支持 <LinkInline link="features/monaco-editor"/>，让你能够在演示中进行实时编码，具备自动补全和悬停提示功能。
 
-### 🎥 录制支持
+### 🎥 录制支持 {#recording-support}
 
 Slidev 提供内置的录制和摄像头视图功能。你可以分享带有摄像头画面的演示文稿，或者分别录制和保存屏幕与摄像头内容。
 
 > 了解更多：<LinkInline link="features/recording"/>。
 
-### 📤 便携性
+### 📤 便携性 {#portable}
 
 你可以通过一条命令将幻灯片导出为 PDF、PPTX、PNG，甚至是单页应用 (SPA)。然后你可以在任何地方分享或托管它。
 
 > 了解更多：<LinkInline link="guide/exporting"/> 和 <LinkInline link="guide/hosting"/>。
 
-### 🛠 可扩展
+### 🛠 可扩展 {#hackable}
 
 因为 Slidev 是基于 Web 的，所以普通 Web 应用能做的一切都可以应用到你的幻灯片中。例如，WebGL、API 请求、iframe，甚至实时共享。一切取决于你的想象力！
 
@@ -103,7 +103,7 @@ Slidev 提供内置的录制和摄像头视图功能。你可以分享带有摄�
 
 :::
 
-## 立即体验
+## 立即体验 {#give-it-a-try}
 
 亲自尝试 Slidev 比千言万语更有说服力。查看 <LinkInline link="guide/"/> 指南，一键或一条命令创建你的第一个 Slidev 项目。
 

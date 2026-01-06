@@ -12,13 +12,13 @@ import AddonGallery from '../.vitepress/theme/components/AddonGallery.vue'
 
 阅读更多关于 <LinkInline link="guide/theme-addon#use-addon" /> 来使用它们，以及 <LinkInline link="guide/write-addon" /> 来创建你自己的插件。
 
-## 官方插件
+## 官方插件 {#official-addons}
 
 <ClientOnly>
   <AddonGallery collection="official"/>
 </ClientOnly>
 
-## 社区插件
+## 社区插件 {#community-addons}
 
 以下是社区制作的精选插件。
 
@@ -27,6 +27,6 @@ import AddonGallery from '../.vitepress/theme/components/AddonGallery.vue'
   <AddonGallery collection="community"/>
 </ClientOnly>
 
-## 更多插件
+## 更多插件 {#more-addons}
 
 查找所有 [NPM 上可用的插件](https://www.npmjs.com/search?q=keywords%3Aslidev-addon)。
