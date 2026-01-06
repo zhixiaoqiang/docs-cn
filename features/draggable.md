@@ -1,16 +1,16 @@
 ---
 tags: [layout]
 description: |
-  Move, resize, and rotate elements by dragging them with the mouse.
+  通过鼠标拖动来移动、调整大小和旋转元素。
 ---
 
-# Draggable Elements
+# 可拖动元素
 
-Draggable elements give you the ability to move, resize, and rotate elements by dragging them with the mouse. This is useful for creating floating elements in your slides.
+可拖动元素让你能够通过鼠标拖动来移动、调整大小和旋转元素。这对于在幻灯片中创建浮动元素非常有用。
 
-## Directive Usage
+## 指令用法
 
-### Data from the frontmatter
+### 从 frontmatter 获取数据
 
 ```md
 ---
@@ -21,19 +21,19 @@ dragPos:
 <img v-drag="'square'" src="https://sli.dev/logo.png">
 ```
 
-### Data from the directive value
+### 从指令值获取数据
 
 ::: warning
-Slidev use regex to update the position value in the slide content. If you meet problems, please use the frontmatter to define the values instead.
+Slidev 使用正则表达式来更新幻灯片内容中的位置值。如果遇到问题，请改用 frontmatter 来定义值。
 :::
 
 ```md
 <img v-drag="[Left,Top,Width,Height,Rotate]" src="https://sli.dev/logo.png">
 ```
 
-## Component Usage
+## 组件用法
 
-### Data from the frontmatter
+### 从 frontmatter 获取数据
 
 ```md
 ---
@@ -43,40 +43,40 @@ dragPos:
 
 <v-drag pos="foo" text-3xl>
   <div class="i-carbon:arrow-up" />
-  Use the `v-drag` component to have a draggable container!
+  使用 `v-drag` 组件创建一个可拖动容器！
 </v-drag>
 ```
 
-### Data from props
+### 从 props 获取数据
 
 ```md
 <v-drag pos="Left,Top,Width,Height,Rotate" text-3xl>
   <div class="i-carbon:arrow-up" />
-  Use the `v-drag` component to have a draggable container!
+  使用 `v-drag` 组件创建一个可拖动容器！
 </v-drag>
 ```
 
-## Create a Draggable Element
+## 创建可拖动元素
 
-When you create a new draggable element, you don't need to specify the position value (but you need to specify the position name if you want to use the frontmatter). Slidev will automatically generate the initial position value for you.
+当你创建一个新的可拖动元素时，不需要指定位置值（但如果你想使用 frontmatter，需要指定位置名称）。Slidev 会自动为你生成初始位置值。
 
-## Automatic Height
+## 自动高度
 
-You can set `Height` to `NaN` (in) or `_` (if you use the component) to make the height of the draggable element automatically adjust to its content.
+你可以将 `Height` 设置为 `NaN`（在指令中）或 `_`（如果使用组件）来使可拖动元素的高度自动适应其内容。
 
-## Controls
+## 控制方式
 
-- Double-click the draggable element to start dragging it.
-- You can also use the arrow keys to move the element.
-- Hold `Shift` while dragging to preserve its aspect ratio.
-- Click outside the draggable element to stop dragging it.
+- 双击可拖动元素开始拖动。
+- 你也可以使用方向键移动元素。
+- 拖动时按住 `Shift` 键可保持宽高比。
+- 点击可拖动元素外部停止拖动。
 
-## Draggable Arrow
+## 可拖动箭头
 
-The `<v-drag-arrow>` component creates a draggable arrow element. Simply use it like this:
+`<v-drag-arrow>` 组件创建一个可拖动的箭头元素。简单地像这样使用：
 
 ```md
 <v-drag-arrow />
 ```
 
-And you will get a draggable arrow element. Other props are the same as [the `Arrow` component](/builtin/components#arrow).
+你会得到一个可拖动的箭头元素。其他属性与 [Arrow 组件](/builtin/components#arrow)相同。
