@@ -3,14 +3,14 @@ relates:
   - Vue's Named Slots: https://v3.vuejs.org/guide/component-slots.html
 tags: [layout, syntax]
 description: |
-  A syntax sugar for named slots in layouts.
+  布局中具名插槽的语法糖。
 ---
 
-# Slot Sugar for Layouts
+# 布局的插槽语法糖
 
-Some layouts can provide multiple contributing points using [Vue's named slots](https://vuejs.org/guide/components/slots.html).
+某些布局可以使用 [Vue 的具名插槽](https://vuejs.org/guide/components/slots.html)提供多个内容插入点。
 
-For example, in [`two-cols` layout](https://github.com/slidevjs/slidev/blob/main/packages/client/layouts/two-cols.vue), you can have two columns left (`default` slot) and right (`right` slot) side by side.
+例如，在 [`two-cols` 布局](https://github.com/slidevjs/slidev/blob/main/packages/client/layouts/two-cols.vue)中，你可以并排显示左侧（`default` 插槽）和右侧（`right` 插槽）两列。
 
 ```md
 ---
@@ -19,50 +19,50 @@ layout: two-cols
 
 <template v-slot:default>
 
-# Left
+# 左侧
 
-This is shown on the left
+这显示在左侧
 
 </template>
 <template v-slot:right>
 
-# Right
+# 右侧
 
-This is shown on the right
+这显示在右侧
 
 </template>
 ```
 
 <div class="grid grid-cols-2 rounded border border-gray-400 border-opacity-50 px-10 pb-4">
 <div>
-<h3>Left</h3>
-<p>This shows on the left</p>
+<h3>左侧</h3>
+<p>这显示在左侧</p>
 </div>
 <div>
-<h3>Right</h3>
-<p>This shows on the right</p>
+<h3>右侧</h3>
+<p>这显示在右侧</p>
 </div>
 </div>
 
-We also provide a shorthand syntactical sugar `::name::` for slot name. The following works exactly the same as the previous example.
+我们还提供了插槽名称的简写语法糖 `::name::`。以下与前面的示例完全相同。
 
 ```md
 ---
 layout: two-cols
 ---
 
-# Left
+# 左侧
 
-This is shown on the left
+这显示在左侧
 
 ::right::
 
-# Right
+# 右侧
 
-This is shown on the right
+这显示在右侧
 ```
 
-You can also explicitly specify the default slot and provide it in the custom order.
+你也可以明确指定默认插槽并以自定义顺序提供。
 
 ```md
 ---
@@ -71,13 +71,13 @@ layout: two-cols
 
 ::right::
 
-# Right
+# 右侧
 
-This shows on the right
+这显示在右侧
 
 ::default::
 
-# Left
+# 左侧
 
-This is shown on the left
+这显示在左侧
 ```
