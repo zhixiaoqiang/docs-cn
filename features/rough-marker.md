@@ -6,41 +6,41 @@ relates:
 since: v0.48.0
 tags: [drawing, animation]
 description: |
-  Integrate Rough Notation to allow marking or highlighting elements in your slides.
+  集成 Rough Notation，允许在幻灯片中标记或高亮元素。
 ---
 
-# Rough Markers
+# Rough 标记
 
-Slidev integrates [Rough Notation](https://github.com/slidevjs/rough-notation) to allow marking or highlighting elements in your slides.
+Slidev 集成了 [Rough Notation](https://github.com/slidevjs/rough-notation)，允许在幻灯片中标记或高亮元素。
 
 ---
 
-### `v-mark` directive
+### `v-mark` 指令
 
-Rough Notation integration comes with the `v-mark` directive.
+Rough Notation 集成附带了 `v-mark` 指令。
 
-#### Type
+#### 类型
 
-Use `v-mark.underline` for the underline mark, `v-mark.circle` for the circle mark, etc. (defaults to `underline`).
+使用 `v-mark.underline` 表示下划线标记，`v-mark.circle` 表示圆圈标记等。（默认为 `underline`）。
 
-#### Color
+#### 颜色
 
-`v-mark.red` makes the notation `red`. Supported built-in color themes from UnoCSS. For custom colors, use object syntax `v-mark="{ color: '#234' }"`.
+`v-mark.red` 使标记变成 `red`。支持 UnoCSS 的内置颜色主题。对于自定义颜色，使用对象语法 `v-mark="{ color: '#234' }"`。
 
-#### Clicks
+#### 点击
 
-`v-mark` works like `v-click` and will trigger after a click. Same as `v-click`, it allows you to pass a custom click value, like `v-mark="5"` or `v-mark="'+1'"`.
+`v-mark` 的工作方式与 `v-click` 相同，会在点击后触发。与 `v-click` 相同，它允许你传递自定义点击值，如 `v-mark="5"` 或 `v-mark="'+1'"`。
 
-#### Options
+#### 选项
 
-Optionally, you can pass an object to `v-mark` to specify the options, for example:
+可选地，你可以向 `v-mark` 传递一个对象来指定选项，例如：
 
 ```vue
 <span v-mark="{ at: 5, color: '#234', type: 'circle' }">
-Important text
+重要文本
 </span>
 ```
 
-#### Preview
+#### 预览
 
 <video src="https://github.com/slidevjs/slidev/assets/11247099/c840340c-0aa1-4cde-b228-e6c67e5f6879" rounded-lg shadow controls></video>
