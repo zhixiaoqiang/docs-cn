@@ -82,8 +82,8 @@ function play() {
       setTimeout(() => completed.value = true, 300)
     },
   })
-    .type('<br><span class="token title"># Welcome to Slidev!</span><br><br>', { delay: 400 })
-    .type('Presentation Slides for Developers', { delay: 400 })
+    .type('<br><span class="token title"># 欢迎使用 Slidev！</span><br><br>', { delay: 400 })
+    .type('面向开发者的演示幻灯片', { delay: 400 })
     .move(null, { to: 'START', speed: 0 })
     .type('<br>')
     .move(null, { to: 'START' })
@@ -109,10 +109,10 @@ function play() {
     .type('<br><br><span class="token punctuation">---</span><br><br>', { delay: 400 })
     .exec(resume)
     .exec(() => setTimeout(() => page.value = 1))
-    .type('<span class="token title"># Page 2</span><br><br>', { delay: 400 })
-    .type('- 📄 Write slides in a single Markdown file<br>', { delay: 800 })
-    .type('- 🌈 Themes, code blocks, interactive components<br>', { delay: 800 })
-    .type('- 😎 Read the docs to learn more!', { delay: 800 })
+    .type('<span class="token title"># 第二页</span><br><br>', { delay: 400 })
+    .type('- 📄 在单个 Markdown 文件中编写幻灯片<br>', { delay: 800 })
+    .type('- 🌈 主题、代码块、交互式组件<br>', { delay: 800 })
+    .type('- 😎 阅读文档了解更多！', { delay: 800 })
     .exec(() => setTimeout(() => page.value = 0))
     .go()
 }
@@ -127,7 +127,7 @@ onMounted(play)
         ./slides.md
       </div>
 
-      <div v-if="completed" class="absolute text-xs right-1 top-1 icon-btn opacity-50" title="Replay" @click="play()">
+      <div v-if="completed" class="absolute text-xs right-1 top-1 icon-btn opacity-50" title="重新播放" @click="play()">
         <div class="i-carbon:reset" />
       </div>
 

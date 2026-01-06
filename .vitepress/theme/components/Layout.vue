@@ -15,16 +15,16 @@ const route = useRoute()
       <a @click.prevent>
         <Dropdown :triggers="['hover', 'click']" :popper-triggers="['hover']" theme="twoslash" popper-class="z-1000">
           <Badge class="scale-80 translate-x--1 select-none">
-            New Docs!
+            新文档！
           </Badge>
           <template #popper>
             <div class="p3 text-sm">
               <p>
-                You are viewing the new Slidev documentation.
+                你正在查看新版 Slidev 文档。
               </p>
               <p>
-                The old one is available
-                <a href="https://docs-legacy.sli.dev/" class="underline text-primary" target="_blank">here</a>.
+                旧版文档可在
+                <a href="https://docs-legacy.sli.dev/" class="underline text-primary" target="_blank">这里</a>访问。
               </p>
             </div>
           </template>
@@ -35,7 +35,7 @@ const route = useRoute()
       <div flex="~ col gap-2">
         <div v-if="route.data?.frontmatter?.tags" class="bg-$vp-c-bg-soft p4 rounded-lg" flex="~ col gap-2">
           <div font-bold text-sm op75>
-            Tags
+            标签
           </div>
           <div flex="~ wrap gap-2">
             <FeatureTag v-for="tag in route.data.frontmatter.tags" :key="tag" :tag="tag" />
@@ -43,7 +43,7 @@ const route = useRoute()
         </div>
         <div v-if="route.data?.frontmatter?.since" class="bg-$vp-c-bg-soft px2 pb2 rounded-lg" flex="~ col gap-1">
           <div font-bold text-sm op75 px2 pt4>
-            Since
+            起始版本
           </div>
           <VPMenuLink
             :item="{
