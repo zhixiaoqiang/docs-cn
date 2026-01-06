@@ -3,12 +3,12 @@ relates:
   - features/seo-meta
 tags: ['SEO', head]
 description: |
-  Set the Open Graph image for your slides.
+  为你的幻灯片设置 Open Graph 图片。
 ---
 
-# Open Graph Image
+# Open Graph 图片
 
-Slidev allows you to set the Open Graph image via the `seoMeta.ogImage` option in the headmatter:
+Slidev 允许你通过 headmatter 中的 `seoMeta.ogImage` 选项设置 Open Graph 图片：
 
 ```md
 ---
@@ -16,20 +16,20 @@ seoMeta:
   ogImage: https://url.to.your.image.png
 ---
 
-# Your slides here
+# 你的幻灯片内容
 ```
 
-Learn more about [SEO Meta Tags](./seo-meta).
+了解更多关于 [SEO Meta 标签](./seo-meta)。
 
-## Local Image
+## 本地图片
 
-If you have `./og-image.png` in your project root, Slidev will grab it as the Open Graph image automatically without any configuration.
+如果你的项目根目录中有 `./og-image.png`，Slidev 会自动将其作为 Open Graph 图片，无需任何配置。
 
-## Auto-generate
+## 自动生成
 
-Since v52.1.0, Slidev supports auto-generating the Open Graph image from the first slide.
+自 v52.1.0 起，Slidev 支持从第一张幻灯片自动生成 Open Graph 图片。
 
-You can set `seoMeta.ogImage` to `auto` to enable this feature.
+你可以将 `seoMeta.ogImage` 设置为 `auto` 来启用此功能。
 
 ```md
 ---
@@ -38,4 +38,4 @@ seoMeta:
 ---
 ```
 
-It will use [playwright](https://playwright.dev/) to capture the first slide and save it as `./og-image.png` (same as `slidev export`). You may also commit the generated image to your repository to avoid the auto-generation. Or if you generate it on CI, you might also want to setup the playwright environment.
+它会使用 [playwright](https://playwright.dev/) 捕获第一张幻灯片并保存为 `./og-image.png`（与 `slidev export` 相同）。你也可以将生成的图片提交到仓库以避免自动生成。或者如果你在 CI 上生成，你可能还需要设置 playwright 环境。
