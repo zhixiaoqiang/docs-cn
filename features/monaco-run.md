@@ -7,12 +7,12 @@ relates:
 since: v0.48.0
 tags: [codeblock, editor]
 description: |
-  Run code directly in the editor and see the result.
+  直接在编辑器中运行代码并查看结果。
 ---
 
-# Monaco Runner
+# Monaco 运行器
 
-Slidev also provides the Monaco Runner Editor, which allows you to run the code directly in the editor and see the result. Use `{monaco-run}` to turn the block into a Monaco Runner Editor.
+Slidev 还提供了 Monaco 运行器编辑器，允许你直接在编辑器中运行代码并查看结果。使用 `{monaco-run}` 将代码块转换为 Monaco 运行器编辑器。
 
 ````md
 ```ts {monaco-run}
@@ -23,22 +23,22 @@ console.log(distance(3, 4))
 ```
 ````
 
-It provides the editor with a "Run" button, and shows the result of the code execution right below the code block. You may also modify the code and the result will be re-evaluated on the fly.
+它在编辑器中提供一个"运行"按钮，并在代码块下方显示代码执行的结果。你也可以修改代码，结果会即时重新计算。
 
-By default it will automatically run the code when the slide is loaded; if you want to instead explicitly trigger the run, you can set `{autorun:false}`.
+默认情况下，当幻灯片加载时会自动运行代码；如果你想手动触发运行，可以设置 `{autorun:false}`。
 
 ````md
 ```ts {monaco-run} {autorun:false}
-console.log('Click the play button to run me')
+console.log('点击播放按钮运行我')
 ```
 ````
 
-If you want to only show the output in certain clicks, you can use the `showOutputAt` prop. The value is the same as `v-click`.
+如果你只想在某些点击时显示输出，可以使用 `showOutputAt` 属性。值与 `v-click` 相同。
 
 ````md
 ```ts {monaco-run} {showOutputAt:'+1'}
-console.log('Shown after 1 click')
+console.log('1次点击后显示')
 ```
 ````
 
-Currently, Slidev supports running JavaScript and TypeScript code out-of-box. Refer to [Custom Code Runners](/custom/config-code-runners) for custom language support.
+目前，Slidev 开箱即用支持运行 JavaScript 和 TypeScript 代码。有关自定义语言支持，请参阅[配置代码运行器](/custom/config-code-runners)。
