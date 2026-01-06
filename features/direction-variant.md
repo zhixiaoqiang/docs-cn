@@ -4,15 +4,15 @@ relates:
 since: v0.48.0
 tags: [navigation, styling]
 description: |
-  Apply different styles and animations based on the navigation direction.
+  根据导航方向应用不同的样式和动画。
 ---
 
-# Navigation Direction Variants
+# 导航方向变体
 
-You may want to apply different classes based on whether it's navigating forward or backward. The `.slidev-nav-go-forward` or `.slidev-nav-go-backward` class will be applied to the slide container when navigating, and you can use them to apply different styles or animations:
+你可能想根据前进或后退的导航方向应用不同的类。在导航时，`.slidev-nav-go-forward` 或 `.slidev-nav-go-backward` 类会应用到幻灯片容器上，你可以使用它们应用不同的样式或动画：
 
 ```css
-/* example: delay on only forward but not backward */
+/* 示例：仅在前进时延迟，后退时不延迟 */
 .slidev-nav-go-forward .slidev-vclick-target {
   transition-delay: 500ms;
 }
@@ -21,11 +21,11 @@ You may want to apply different classes based on whether it's navigating forward
 }
 ```
 
-To make it easier, we also provided some [UnoCSS variants](https://github.com/slidevjs/slidev/blob/6adcf2016b8fb0cab65cf150221f1f67a76a2dd8/packages/client/uno.config.ts#L32-L38) for this. You can use the `forward:` or `backward:` prefix to any UnoCSS classes to only enable them in the specific navigation direction:
+为了更方便，我们还为此提供了一些 [UnoCSS 变体](https://github.com/slidevjs/slidev/blob/6adcf2016b8fb0cab65cf150221f1f67a76a2dd8/packages/client/uno.config.ts#L32-L38)。你可以使用 `forward:` 或 `backward:` 前缀到任何 UnoCSS 类，使它们仅在特定的导航方向上启用：
 
 ```html
 <div v-click class="transition delay-300">Element</div> // [!code --]
 <div v-click class="transition forward:delay-300">Element</div> // [!code ++]
 ```
 
-In the above example, the animation is only delayed when navigating forward.
+在上面的示例中，动画仅在前进导航时延迟。
