@@ -3,12 +3,12 @@ depends:
   - guide/global-context
 tags: [client-api]
 description: |
-  Hooks to manage the slide lifecycle.
+  管理幻灯片生命周期的 hooks。
 ---
 
-# Slide Hooks
+# 幻灯片 Hooks
 
-Slidev provides a set of hooks to help you manage the slide lifecycle:
+Slidev 提供了一组 hooks 来帮助你管理幻灯片生命周期：
 
 ```ts twoslash
 import { onSlideEnter, onSlideLeave, useIsSlideActive } from '@slidev/client'
@@ -16,18 +16,18 @@ import { onSlideEnter, onSlideLeave, useIsSlideActive } from '@slidev/client'
 const isActive = useIsSlideActive()
 
 onSlideEnter(() => {
-  /* Called whenever the slide becomes active */
+  /* 每当幻灯片变为活动状态时调用 */
 })
 
 onSlideLeave(() => {
-  /* Called whenever the slide becomes inactive */
+  /* 每当幻灯片变为非活动状态时调用 */
 })
 ```
 
-You can also use <LinkInline link="guide/global-context" /> to access other useful context information.
+你也可以使用 <LinkInline link="guide/global-context" /> 来访问其他有用的上下文信息。
 
 ::: warning
 
-In the slide component, `onMounted` and `onUnmounted` hooks are not available, because the component instance is preserved even when the slide is not active. Use `onSlideEnter` and `onSlideLeave` instead.
+在幻灯片组件中，`onMounted` 和 `onUnmounted` hooks 不可用，因为即使幻灯片不活动，组件实例也会被保留。请改用 `onSlideEnter` 和 `onSlideLeave`。
 
 :::
