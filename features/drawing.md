@@ -5,24 +5,24 @@ relates:
   - drauu: https://github.com/antfu/drauu
 tags: [drawing]
 description: |
-  Draw and annotate your slides with ease.
+  轻松绘制和标注你的幻灯片。
 ---
 
-# Drawing & Annotations
+# 绘图与标注
 
-Slidev comes with a built-in drawing and annotation feature powered by [drauu](https://github.com/antfu/drauu). It allows you to draw and annotate your slides with ease.
+Slidev 内置了由 [drauu](https://github.com/antfu/drauu) 驱动的绘图和标注功能。它让你可以轻松地在幻灯片上绘制和标注。
 
-To start, click the <carbon-pen class="inline-icon-btn"/> icon in the [navigation bar](../guide/ui#navigation-bar) to open the drawing toolbar. It's also available in the [Presenter Mode](/guide/ui#presenter-mode). Drawings and annotations you created will be **synced** automatically across all instances in real-time.
+要开始使用，点击[导航栏](../guide/ui#navigation-bar)中的 <carbon-pen class="inline-icon-btn"/> 图标打开绘图工具栏。它在[演讲者模式](/guide/ui#presenter-mode)中也可用。你创建的绘图和标注将自动**实时同步**到所有实例。
 
 <TheTweet id="1424027510342250499" />
 
-## Use with Stylus Pen
+## 使用触控笔
 
-When using a stylus pen on a tablet (for example, iPad with Apple Pencil), Slidev will intelligently detect the input type. You can directly draw on your slides with the pen without turning on the drawing mode while having your fingers or mouse control the navigation.
+在平板电脑上使用触控笔时（例如，iPad 配合 Apple Pencil），Slidev 会智能检测输入类型。你可以直接用笔在幻灯片上绘制，无需开启绘图模式，同时用手指或鼠标控制导航。
 
-## Persist Drawings
+## 持久化绘图
 
-The following frontmatter configuration allows you to persist your drawings as SVGs under `.slidev/drawings` directory and have them inside your exported PDF or hosted site.
+以下 frontmatter 配置允许你将绘图作为 SVG 文件保存在 `.slidev/drawings` 目录下，并将它们包含在导出的 PDF 或托管的站点中。
 
 ```md
 ---
@@ -31,9 +31,9 @@ drawings:
 ---
 ```
 
-## Disable Drawings
+## 禁用绘图
 
-Entirely:
+完全禁用：
 
 ```md
 ---
@@ -42,7 +42,7 @@ drawings:
 ---
 ```
 
-Only in Development:
+仅在开发模式下启用：
 
 ```md
 ---
@@ -51,7 +51,7 @@ drawings:
 ---
 ```
 
-Only in Presenter Mode:
+仅在演讲者模式下启用：
 
 ```md
 ---
@@ -60,9 +60,9 @@ drawings:
 ---
 ```
 
-## Drawing Syncing
+## 绘图同步
 
-By default, Slidev syncs up your drawings across all instances. If you are sharing your slides with others, you might want to disable the syncing via:
+默认情况下，Slidev 会在所有实例之间同步你的绘图。如果你与他人共享幻灯片，你可能想要通过以下配置禁用同步：
 
 ```md
 ---
@@ -71,4 +71,4 @@ drawings:
 ---
 ```
 
-With this config, only the drawing from the presenter instance will be able to sync with others.
+使用此配置，只有演讲者实例的绘图能够与其他人同步。
