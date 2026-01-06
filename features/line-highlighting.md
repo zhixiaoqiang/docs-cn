@@ -4,12 +4,12 @@ depends:
   - guide/animations
 tags: [codeblock, animation]
 description: |
-  Highlight specific lines in code blocks based on clicks.
+  根据点击高亮代码块中的特定行。
 ---
 
-# Line Highlighting
+# 行高亮
 
-To highlight specific lines, simply add line numbers within brackets `{}`. Line numbers start counting from 1 by default.
+要高亮特定的行，只需在括号 `{}` 内添加行号。行号默认从 1 开始计数。
 
 ````md
 ```ts {2,3}
@@ -22,9 +22,9 @@ function add(
 ```
 ````
 
-## Dynamic Line Highlighting
+## 动态行高亮
 
-To change what's highlighted with multiple clicks, you can use `|` to separate each stage:
+要通过多次点击来更改高亮内容，你可以使用 `|` 分隔每个阶段：
 
 ````md
 ```ts {2-3|5|all}
@@ -37,9 +37,9 @@ function add(
 ```
 ````
 
-This will first highlight `a: Ref<number> | number` and `b: Ref<number> | number`, and then `return computed(() => unref(a) + unref(b))` after one click, and lastly, the whole block.
+这将首先高亮 `a: Ref<number> | number` 和 `b: Ref<number> | number`，然后在一次点击后高亮 `return computed(() => unref(a) + unref(b))`，最后高亮整个代码块。
 
-You can set the line number to `hide` to hide the code block or `none` to not highlight any line:
+你可以将行号设置为 `hide` 来隐藏代码块，或设置为 `none` 来不高亮任何行：
 
 ````md
 ```ts {hide|none}
@@ -53,5 +53,5 @@ function add(
 ````
 
 ::: tip
-Learn more in the [click animations guide](/guide/animations#positioning).
+在[点击动画指南](/guide/animations#positioning)中了解更多。
 :::
