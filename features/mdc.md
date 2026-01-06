@@ -5,27 +5,27 @@ relates:
 since: v0.43.0
 tags: [syntax, styling]
 description: |
-  A powerful syntax to enhance your markdown content with components and styles.
+  一种强大的语法，用于通过组件和样式增强你的 markdown 内容。
 ---
 
-# MDC Syntax
+# MDC 语法
 
-Slidev supports optional [MDC (Markdown Components) Syntax](https://content.nuxt.com/docs/files/markdown#mdc-syntax) powered by [`markdown-it-mdc`](https://github.com/antfu/markdown-it-mdc).
+Slidev 支持由 [`markdown-it-mdc`](https://github.com/antfu/markdown-it-mdc) 驱动的可选 [MDC (Markdown Components) 语法](https://content.nuxt.com/docs/files/markdown#mdc-syntax)。
 
-You can enable it by adding `mdc: true` to the frontmatter of your markdown file.
+你可以通过在 markdown 文件的 frontmatter 中添加 `mdc: true` 来启用它。
 
 ```mdc
 ---
 mdc: true
 ---
 
-This is a [red text]{style="color:red"} :inline-component{prop="value"}
+这是一段 [红色文本]{style="color:red"} :inline-component{prop="value"}
 
 ![](/image.png){width=500px lazy}
 
 ::block-component{prop="value"}
-The **default** slot
+**默认** 插槽
 ::
 ```
 
-Learn more about [MDC Syntax](https://content.nuxt.com/docs/files/markdown#mdc-syntax).
+了解更多关于 [MDC 语法](https://content.nuxt.com/docs/files/markdown#mdc-syntax)。
