@@ -6,12 +6,12 @@ relates:
   - features/mermaid
 tags: [diagram]
 description: |
-  Create diagrams from textual descriptions, powered by PlantUML.
+  从文本描述创建图表，由 PlantUML 驱动。
 ---
 
-# PlantUML Diagrams
+# PlantUML 图表
 
-You can create PlantUML diagrams easily in your slides, for example:
+你可以在幻灯片中轻松创建 PlantUML 图表，例如：
 
 ````md
 ```plantuml
@@ -21,6 +21,6 @@ Alice -> Bob : Hello!
 ```
 ````
 
-The source code will be sent to https://www.plantuml.com/plantuml to render the diagram by default. You can also set up your own server by setting the `plantUmlServer` in the [Slidev configuration](../custom/index#headmatter).
+默认情况下，源代码将发送到 https://www.plantuml.com/plantuml 来渲染图表。你也可以通过在 [Slidev 配置](../custom/index#headmatter)中设置 `plantUmlServer` 来搭建自己的服务器。
 
-Visit the [PlantUML Website](https://plantuml.com/) for more information.
+访问 [PlantUML 网站](https://plantuml.com/)了解更多信息。
