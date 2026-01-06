@@ -1,23 +1,23 @@
 ---
 tags: [presenter]
-description: Timer for the presenter mode.
+description: 演讲者模式的计时器。
 ---
 
-# Presenter Timer
+# 演讲者计时器
 
-Slidev provides a timer for the presenter mode. You can start, pause, and reset the timer.
+Slidev 为演讲者模式提供计时器。你可以启动、暂停和重置计时器。
 
-It will show a timer (in stopwatch or countdown mode), and a progress bar in the presenter mode.
+它会在演讲者模式下显示一个计时器（秒表或倒计时模式）和进度条。
 
-## Configuration
+## 配置
 
-You can set the duration of the presentation in the headmatter. Default is `30min`.
+你可以在 headmatter 中设置演示的时长。默认为 `30min`。
 
 ```yaml
 ---
-# duration of the presentation, default is '30min'
+# 演示时长，默认为 '30min'
 duration: 30min
-# timer mode, can be 'countdown' or 'stopwatch', default is 'stopwatch'
+# 计时器模式，可以是 'countdown' 或 'stopwatch'，默认为 'stopwatch'
 timer: stopwatch
 ---
 ```
