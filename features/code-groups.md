@@ -3,15 +3,15 @@ depends:
   - guide/syntax#code-block
 tags: [codeblock]
 description: |
-  Group multiple code blocks and automatically match icon by the title name.
+  分组多个代码块，并根据标题名称自动匹配图标。
 ---
 
-# Code Groups
+# 代码组
 
 > [!NOTE]
-> This feature requires [MDC Syntax](/features/mdc#mdc-syntax). Enable `mdc: true` to use it.
+> 此功能需要 [MDC 语法](/features/mdc#mdc-syntax)。启用 `mdc: true` 来使用它。
 
-You can group multiple code blocks like this:
+你可以像这样分组多个代码块：
 
 ````md
 ::code-group
@@ -31,29 +31,29 @@ pnpm add @slidev/cli
 ::
 ````
 
-## Title Icon Matching
+## 标题图标匹配
 
-`code groups`, `code block` and [`Shiki Magic Move`](/features/shiki-magic-move) also supports the automatically icon matching by the title name.
+`code groups`、`code block` 和 [`Shiki Magic Move`](/features/shiki-magic-move) 也支持根据标题名称自动匹配图标。
 
 ![code-groups-demo](/assets/code-groups-demo.png)
 
 ::: info
 
-By default, we provide some built-in icons, you can use them by install [@iconify-json/vscode-icons](https://www.npmjs.com/package/@iconify-json/vscode-icons).
+默认情况下，我们提供了一些内置图标，你可以通过安装 [@iconify-json/vscode-icons](https://www.npmjs.com/package/@iconify-json/vscode-icons) 来使用它们。
 
 :::
 
-::: details All built-in icons
+::: details 所有内置图标
 
 ```js
 const builtinIcons = {
-  // package managers
+  // 包管理器
   'pnpm': 'i-vscode-icons:file-type-light-pnpm',
   'npm': 'i-vscode-icons:file-type-npm',
   'yarn': 'i-vscode-icons:file-type-yarn',
   'bun': 'i-vscode-icons:file-type-bun',
   'deno': 'i-vscode-icons:file-type-deno',
-  // frameworks
+  // 框架
   'vue': 'i-vscode-icons:file-type-vue',
   'svelte': 'i-vscode-icons:file-type-svelte',
   'angular': 'i-vscode-icons:file-type-angular',
@@ -62,12 +62,12 @@ const builtinIcons = {
   'nuxt': 'i-vscode-icons:file-type-nuxt',
   'solid': 'logos:solidjs-icon',
   'astro': 'i-vscode-icons:file-type-light-astro',
-  // bundlers
+  // 打包工具
   'rollup': 'i-vscode-icons:file-type-rollup',
   'webpack': 'i-vscode-icons:file-type-webpack',
   'vite': 'i-vscode-icons:file-type-vite',
   'esbuild': 'i-vscode-icons:file-type-esbuild',
-  // configuration files
+  // 配置文件
   'package.json': 'i-vscode-icons:file-type-node',
   'tsconfig.json': 'i-vscode-icons:file-type-tsconfig',
   '.npmrc': 'i-vscode-icons:file-type-npm',
@@ -85,7 +85,7 @@ const builtinIcons = {
   'unocss.config': 'i-vscode-icons:file-type-unocss',
   '.oxlintrc': 'i-vscode-icons:file-type-oxlint',
   'vue.config': 'i-vscode-icons:file-type-vueconfig',
-  // filename extensions
+  // 文件扩展名
   '.mts': 'i-vscode-icons:file-type-typescript',
   '.cts': 'i-vscode-icons:file-type-typescript',
   '.ts': 'i-vscode-icons:file-type-typescript',
@@ -109,9 +109,9 @@ const builtinIcons = {
 
 :::
 
-## Custom Icons
+## 自定义图标
 
-You can use any name from the [iconify](https://icones.js.org) collection by using the `~icon~` syntax, for example:
+你可以使用 `~icon~` 语法使用 [iconify](https://icones.js.org) 集合中的任何名称，例如：
 
 ````md
 ```js [npm ~i-uil:github~]
@@ -119,9 +119,9 @@ console.log('Hello, GitHub!')
 ```
 ````
 
-To make it work, you need to:
+要使其工作，你需要：
 
-1. Install the icon's collection.
+1. 安装图标集合。
 
 :::code-group
 
@@ -143,7 +143,7 @@ bun add @iconify-json/uil
 
 :::
 
-2. Add the icon to the `uno.config.ts` file.
+2. 将图标添加到 `uno.config.ts` 文件中。
 
 ```ts [uno.config.ts] {4-6}
 import { defineConfig } from 'unocss'
