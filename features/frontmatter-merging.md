@@ -4,12 +4,12 @@ depends:
   - features/importing-slides
 tags: [syntax]
 description: |
-  Merge frontmatter from multiple markdown files.
+  从多个 markdown 文件合并 frontmatter。
 ---
 
-# Frontmatter Merging
+# Frontmatter 合并
 
-You can provide frontmatter instructions from both your main entry and external markdown pages. If there are duplicate keys in them, the ones from the **main entry have the higher priority**. For example:
+你可以从主入口和外部 markdown 页面提供 frontmatter 指令。如果其中有重复的键，**主入口的优先级更高**。例如：
 
 ::: code-group
 
@@ -27,14 +27,14 @@ layout: cover
 background: https://sli.dev/foo.png // [!code highlight]
 ---
 
-# Cover
+# 封面
 
-Cover Page
+封面页
 ```
 
 :::
 
-They will end up being equivalent to the following page:
+它们最终等同于以下页面：
 
 ```md
 ---
@@ -43,7 +43,7 @@ background: https://sli.dev/bar.png // [!code highlight]
 class: text-center
 ---
 
-# Cover
+# 封面
 
-Cover Page
+封面页
 ```
