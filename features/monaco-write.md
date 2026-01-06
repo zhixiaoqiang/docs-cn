@@ -8,15 +8,15 @@ relates:
 since: v0.49.5
 tags: [codeblock, editor]
 description: |
-  A monaco editor that allows you to write code directly in the slides and save the changes back to the file.
+  一个 Monaco 编辑器，允许你直接在幻灯片中编写代码并将更改保存回文件。
 ---
 
-# Writable Monaco Editor
+# 可写 Monaco 编辑器
 
-You can also use the [Import Code Snippets](#import-code-snippets) syntax combined with the `{monaco-write}` directive, to link your Monaco Editor with a file on your filesystem. This will allow you to edit the code directly in the editor and save the changes back to the file.
+你还可以使用[导入代码片段](#import-code-snippets)语法结合 `{monaco-write}` 指令，将你的 Monaco 编辑器与文件系统上的文件链接起来。这允许你直接在编辑器中编辑代码并将更改保存回文件。
 
 ```md
 <<< ./some-file.ts {monaco-write}
 ```
 
-When using this, be sure to back up your files beforehand, as the changes will be saved directly to the file.
+使用此功能时，请确保事先备份你的文件，因为更改将直接保存到文件中。
