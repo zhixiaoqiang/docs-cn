@@ -10,7 +10,7 @@ description: |
 
 ## 指令用法 {#directive-usage}
 
-### 从 frontmatter 获取数据 {#get-data-from-frontmatter}
+### 在 frontmatter 中设定
 
 ```md
 ---
@@ -21,7 +21,7 @@ dragPos:
 <img v-drag="'square'" src="https://sli.dev/logo.png">
 ```
 
-### 从指令值获取数据 {#get-data-from-directive-value}
+### 在指令值中设定
 
 ::: warning
 Slidev 使用正则表达式来更新幻灯片内容中的位置值。如果遇到问题，请改用 frontmatter 来定义值。
@@ -33,7 +33,7 @@ Slidev 使用正则表达式来更新幻灯片内容中的位置值。如果遇�
 
 ## 组件用法 {#component-usage}
 
-### 从 frontmatter 获取数据 {#get-data-from-frontmatter}
+### 在 frontmatter 中设定
 
 ```md
 ---
@@ -47,7 +47,7 @@ dragPos:
 </v-drag>
 ```
 
-### 从 props 获取数据 {#get-data-from-props}
+### 通过 props 设定
 
 ```md
 <v-drag pos="Left,Top,Width,Height,Rotate" text-3xl>
@@ -56,7 +56,7 @@ dragPos:
 </v-drag>
 ```
 
-## 创建可拖动元素 {#create-draggable-elements}
+## 创建一个可拖拽元素
 
 当你创建一个新的可拖动元素时，不需要指定位置值（但如果你想使用 frontmatter，需要指定位置名称）。Slidev 会自动为你生成初始位置值。
 
