@@ -1,12 +1,12 @@
 # 精选封面 {#curated-covers}
 
-我们精心挑选了一些封面图片，用以展示在我们的初始模板中。
+我们精选了一些封面图片来演示我们的入门模板。
 
 ![](/screenshots/covers.png)
 
 ```yaml
 ---
-# 来自精选集的随机图片
+# 从精选集合中随机选择图片
 background: https://cover.sli.dev
 ---
 ```

@@ -1,14 +1,14 @@
 export const Guides = [
   {
-    text: '为什么选 Slidev',
+    text: '为什么选择 Slidev',
     link: '/guide/why',
   },
   {
-    text: '快速上手',
+    text: '快速开始',
     link: '/guide/',
   },
   {
-    text: '语法',
+    text: '语法指南',
     link: '/guide/syntax',
   },
   {
@@ -40,14 +40,14 @@ export const Guides = [
     link: '/guide/hosting',
   },
   {
-    text: '常见问答',
+    text: '常见问题',
     link: '/guide/faq',
   },
 ]
 
 export const BuiltIn = [
   {
-    text: '命令行工具',
+    text: 'CLI',
     link: '/builtin/cli',
   },
   {

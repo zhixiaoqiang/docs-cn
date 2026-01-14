@@ -1,61 +1,59 @@
 # 配置字体
 
-虽然你可以使用 HTML 和 CSS 为你的幻灯片定制你想要的字体和样式，但 Slidev 提供了另一种较为便捷的方式让你更轻松地使用它们。
+虽然你可以使用 HTML 和 CSS 来自定义幻灯片的字体和样式，Slidev 也提供了一种便捷的方式来轻松使用它们。
 
-在你的 headmatter 中按如下方式配置:
+在你的 frontmatter 中，按如下方式配置：
 
 ```yaml
 ---
 fonts:
-  # 基础字体
+  # 基本文本字体
   sans: Robot
-  # 与 UnoCSS 的 `font-serif` css 类一同使用
+  # 配合 UnoCSS 的 `font-serif` css 类使用
   serif: Robot Slab
   # 用于代码块、内联代码等
   mono: Fira Code
 ---
 ```
 
-按上述修改即可完成配置。
+就这样。
 
-字体将**从 [Google Fonts](https://fonts.google.com/) 被自动**引入。这意味着你可以直接使用 Google Fonts 上的任何字体。
+字体将**通过 CDN 从提供商自动导入，默认是 [Google Fonts](https://fonts.google.com/)**。这意味着你可以直接使用 Google Fonts 上可用的任何字体。
 
-## 本地字体
+## 本地字体 {#local-fonts}
 
-默认情况下，Slidev 会认为 `fonts` 配置的所有字体均来自 Google Fonts。如果你想使用本地字体，可以指定 `fonts.local` 字段来选择不使用自动引入的字体。
+默认情况下，Slidev 假设通过 `fonts` 配置指定的所有字体都来自 Google Fonts。如果你想使用本地字体，请指定 `fonts.local` 来禁用自动导入。
 
 ```yaml
 ---
 fonts:
-  # 与 css 中的 font-family 一致，你可以使用 `,` 来分割字体名，便于回退
+  # 像 css 中的 font-family 一样，你可以使用 `,` 分隔多个字体作为备选
   sans: 'Helvetica Neue,Robot'
-  # 将 'Helvetica Neue' 作为本地字体
+  # 将 'Helvetica Neue' 标记为本地字体
   local: Helvetica Neue
 ---
 ```
 
-## 字重 & 斜体
+## 字重和斜体 {#weights-italic}
 
-默认情况下，Slidev 为每种字体引入了三种 weight 大小 200，400，600。你可以按如下方式配置它们：
+默认情况下，Slidev 为每种字体导入三种字重 `200`、`400`、`600`。你可以通过以下方式配置：
 
 ```yaml
 ---
 fonts:
   sans: Robot
-  # 默认为
+  # 默认
   weights: '200,400,600'
-  # 引入斜体字体，默认 `false`
+  # 导入斜体字体，默认 `false`
   italic: false
 ---
 ```
 
-这些配置适用于所有的网络字体。如果要对每种字体的 weight 进行更细粒度的控制，你需要用 [HTML](/custom/directory-structure.html#index-html) 和 CSS 手动引入它们。
+此配置适用于所有网络字体。要更精细地控制每种字体的字重，你需要手动通过 [HTML](/custom/directory-structure.html#index-html) 和 CSS 导入它们。
 
+## 备选字体 {#fallback-fonts}
 
-
-## 字体回退
-
-大多数情况下，只需指定 “特殊字体” 即可，Slidev 会为你提供可降级的字体。例如：
+对于大多数场景，你只需要指定"特殊字体"，Slidev 会为你追加备选字体，例如：
 
 ```yaml
 ---
@@ -66,7 +64,7 @@ fonts:
 ---
 ```
 
-其结果为：
+将产生
 
 <!-- eslint-skip -->
 
@@ -82,7 +80,7 @@ fonts:
 }
 ```
 
-如需禁用降级字体，请按如下方式配置：
+如果你想禁用备选字体，请按以下方式配置：
 
 ```yaml
 ---
@@ -92,12 +90,12 @@ fonts:
 ---
 ```
 
-## 字体源
+## 提供商 {#providers}
 
-- 选项: `google` | `none`
-- 默认值: `google`
+- 选项：`google` | `coollabs` | `none`
+- 默认：`google`
 
-目前，仅针对于 Google Fonts 进行了支持，我们计划在未来添加更多的字体服务整合。当此字段指定为 `none` 时，自动导入功能将被完全禁用，同时将所有字体视为本地字体。
+目前只支持 [Google Fonts](https://fonts.google.com/) 和 [coolLabs](https://fonts.coollabs.io/)，我们计划在未来添加更多提供商。指定为 `none` 将完全禁用自动导入功能并将所有字体视为本地字体。
 
 ```yaml
 ---

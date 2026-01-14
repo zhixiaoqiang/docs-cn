@@ -4,12 +4,12 @@ depends:
   - features/importing-slides
 tags: [语法]
 description: |
-  从不同的 Markdown 文件中合并 frontmatter。
+  从多个 markdown 文件合并 frontmatter。
 ---
 
-# 合并 Frontmatter
+# Frontmatter 合并
 
-你可以为主入口点和外部 Markdown 页面提供 frontmatter。如果其中有相同的 key，**主入口点的 key 拥有更高的优先级**。例如：
+你可以从主入口和外部 markdown 页面提供 frontmatter 指令。如果其中有重复的键，**主入口的优先级更高**。例如：
 
 ::: code-group
 
@@ -29,12 +29,13 @@ background: https://sli.dev/foo.png // [!code highlight]
 
 # 封面
 
-这是一个封面页
+封面页
 ```
 
 :::
 
-其效果最终与下述页面相同：
+它们最终等同于以下页面：
+
 ```md
 ---
 layout: cover
@@ -44,5 +45,5 @@ class: text-center
 
 # 封面
 
-这是一个封面页
+封面页
 ```

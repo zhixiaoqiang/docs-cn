@@ -8,9 +8,9 @@ import ThemeGallery from '../.vitepress/theme/components/ThemeGallery.vue'
 
 # 主题合集
 
-此处是 Slidev 超棒的主题合集。
+在此浏览 Slidev 可用的精彩主题。
 
-可以阅读 <LinkInline link="guide/theme-addon#use-theme" /> 来了解如何使用它们，或者阅读 <LinkInline link="guide/write-theme" /> 来创建你自己的主题。
+阅读更多关于 <LinkInline link="guide/theme-addon#use-theme" /> 来使用它们，以及 <LinkInline link="guide/write-theme" /> 来创建你自己的主题。
 
 ## 官方主题 {#official-themes}
 
@@ -20,7 +20,7 @@ import ThemeGallery from '../.vitepress/theme/components/ThemeGallery.vue'
 
 ## 社区主题 {#community-themes}
 
-下列是精选的社区主题。
+以下是社区制作的精选主题。
 
 <!-- Edit in ./docs/.vitepress/themes.ts -->
 <ClientOnly>

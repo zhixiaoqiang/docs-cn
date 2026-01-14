@@ -1,14 +1,14 @@
 ---
 tags: [布局]
 description: |
-  可以用鼠标拖动来移动、旋转和调整大小的元素。
+  通过鼠标拖动来移动、调整大小和旋转元素。
 ---
 
-# 可拖拽元素
+# 可拖动元素
 
-可拖动元素使你能够通过鼠标拖动来移动、调整大小和旋转元素。这对于在幻灯片中创建浮动元素非常有用。
+可拖动元素让你能够通过鼠标拖动来移动、调整大小和旋转元素。这对于在幻灯片中创建浮动元素非常有用。
 
-## 指令式用法
+## 指令用法 {#directive-usage}
 
 ### 在 frontmatter 中设定
 
@@ -24,14 +24,14 @@ dragPos:
 ### 在指令值中设定
 
 ::: warning
-Slidev 使用正则表达式来更新幻灯片内容中的位置值。如果你遇到问题，请使用 frontmatter 来定义值。
+Slidev 使用正则表达式来更新幻灯片内容中的位置值。如果遇到问题，请改用 frontmatter 来定义值。
 :::
 
 ```md
 <img v-drag="[Left,Top,Width,Height,Rotate]" src="https://sli.dev/logo.png">
 ```
 
-## 组件式用法
+## 组件用法 {#component-usage}
 
 ### 在 frontmatter 中设定
 
@@ -42,8 +42,8 @@ dragPos:
 ---
 
 <v-drag pos="foo" text-3xl>
-  <carbon:arrow-up />
-  使用`v-drag`组件来创建一个可拖动的容器！
+  <div class="i-carbon:arrow-up" />
+  使用 `v-drag` 组件创建一个可拖动容器！
 </v-drag>
 ```
 
@@ -51,34 +51,32 @@ dragPos:
 
 ```md
 <v-drag pos="Left,Top,Width,Height,Rotate" text-3xl>
-  <carbon:arrow-up />
-  使用`v-drag`组件来创建一个可拖动的容器！
+  <div class="i-carbon:arrow-up" />
+  使用 `v-drag` 组件创建一个可拖动容器！
 </v-drag>
 ```
 
 ## 创建一个可拖拽元素
 
-创建新的可拖动元素时，不需要指定位置值（但如果要将位置存储在 frontmatter，则需要指定位置名称）。Slidev 将帮你自动生成初始位置值。
+当你创建一个新的可拖动元素时，不需要指定位置值（但如果你想使用 frontmatter，需要指定位置名称）。Slidev 会自动为你生成初始位置值。
 
-## 自动调整高度
+## 自动高度 {#auto-height}
 
-你可以将 `Height` 设置为 `NaN`（in）或 `_`（如果使用组件），使可拖动元素的高度根据它的内容自动调整。
+你可以将 `Height` 设置为 `NaN`（在指令中）或 `_`（如果使用组件）来使可拖动元素的高度自动适应其内容。
 
+## 控制方式 {#controls}
 
-## 控制
+- 双击可拖动元素开始拖动。
+- 你也可以使用方向键移动元素。
+- 拖动时按住 `Shift` 键可保持宽高比。
+- 点击可拖动元素外部停止拖动。
 
-- 双击可拖动元素以开始拖动。
-- 你还可以使用箭头键移动元素。
-- 拖动时按住 `Shift` 键以保持其纵横比。
-- 单击可拖动元素以外区域以停止拖动。
+## 可拖动箭头 {#draggable-arrow}
 
-## 可拖动剪头
-
-`<v-drag-arrow>` 组件创建了一个可拖动的箭头元素。使用它只需要这样做：
+`<v-drag-arrow>` 组件创建一个可拖动的箭头元素。简单地像这样使用：
 
 ```md
 <v-drag-arrow />
 ```
 
-你会得到一个可拖动的箭头元素。其他 props 与 [`Arrow` 组件](/builtin/components#Arrow)相同。
-
+你会得到一个可拖动的箭头元素。其他属性与 [Arrow 组件](/builtin/components#arrow)相同。

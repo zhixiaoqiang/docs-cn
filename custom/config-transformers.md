@@ -1,12 +1,10 @@
-# 配置自定义语法
+# 配置 Transformers
 
 <Environment type="node" />
 
-Slidev 支持自定义 Markdown 语法。通过这种方式，你可以为你的幻灯片添加自定义的 Markdown 语法，以及自定义代码块的渲染。
+此 setup 函数允许你为**每张幻灯片**的 markdown 内容定义自定义转换器。当你想添加自定义 Markdown 语法和渲染自定义代码块时，这非常有用。首先，创建 `./setup/transformers.ts` 文件，内容如下：
 
-首先，创建一个 `/setup/transformers.ts` 文件，内容如下：
-
-````ts twoslash
+````ts twoslash [setup/transformers.ts]
 import type { MarkdownTransformContext } from '@slidev/types'
 import { defineTransformersSetup } from '@slidev/types'
 
@@ -30,16 +28,16 @@ export default defineTransformersSetup(() => {
 })
 ````
 
-返回值是包含 `pre`、`preCodeblock`、`postCodeblock` 和 `post` 四个可选字段，每个字段的值是函数数组，将被调用以转换 Markdown 内容。它们的调用顺序为：
+返回值应该是转换器的自定义选项。`pre`、`preCodeblock`、`postCodeblock` 和 `post` 是函数数组，将按顺序调用以转换 markdown 内容。转换器的顺序是：
 
-1. 来自你的项目的 `pre`
+1. 来自你项目的 `pre`
 2. 来自插件和主题的 `pre`
 3. 导入代码片段语法和 Shiki magic move
-4. 来自你的项目的 `preCodeblock`
+4. 来自你项目的 `preCodeblock`
 5. 来自插件和主题的 `preCodeblock`
-6. 内置的 Mermaid、Monaco 和 PlantUML 等特殊代码块
+6. 内置的特殊代码块，如 Mermaid、Monaco 和 PlantUML
 7. 来自插件和主题的 `postCodeblock`
-8.  来自你的项目的 `postCodeblock`
-9. 其他内置的自定义语法，如代码块包装
+8. 来自你项目的 `postCodeblock`
+9. 其他内置转换器，如代码块包装
 10. 来自插件和主题的 `post`
-11. 来自你的项目的 `post`
+11. 来自你项目的 `post`

@@ -46,24 +46,25 @@ function removeTag(tag: string) {
 
 如果你想按主题了解这些功能，也可以阅读 <LinkInline link="guide/index" />。
 
+<ClientOnly>
 <div flex items-center mt-6 gap-6>
   <div
     flex items-center rounded-md
     px3 py2 gap-2 border-2 border-solid border-transparent
     class="bg-$vp-c-bg-alt focus-within:border-color-$vp-c-brand"
   >
-    <carbon:search text-sm op-80 />
+    <div class="i-carbon:search" text-sm op-80 />
     <input
       v-model="search"
       type="search" text-base
-      placeholder="查找功能..."
+      placeholder="搜索功能..."
     />
   </div>
   <div
     v-if="tagsArr.length"
     flex items-center gap-1
   >
-    <carbon:tag text-sm mr-1 op-80 />
+    <div class="i-carbon:tag" text-sm mr-1 op-80 />
     <FeatureTag v-for="tag in tagsArr" :key="tag" :tag removable @remove="removeTag(tag)"/>
   </div>
 </div>
@@ -71,12 +72,13 @@ function removeTag(tag: string) {
 <FeaturesOverview :features="filteredFeatures" />
 
 <div v-if="filteredFeatures.length === 0" class="w-full mt-6 op-80 flex flex-col items-center">
-  找不到匹配的功能
+  未找到结果
   <button class="block select-button flex-inline gap-1 items-center px-2 py-1 hover:bg-gray-400/10 rounded" @click="resetFilters()">
-    <carbon:filter-remove />
-    清空搜索条件
+    <div class="i-carbon:filter-remove" />
+    清除筛选
   </button>
 </div>
+</ClientOnly>
 
 <style>
 .all-features-page .VPDoc > .container > .content {

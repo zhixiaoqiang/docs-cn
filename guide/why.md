@@ -2,7 +2,7 @@
 outline: deep
 ---
 
-# 为什么选 Slidev
+# 为什么选择 Slidev
 
 有许多功能丰富、所见即所得的幻灯片制作工具可供选择，比如 [Microsoft PowerPoint](https://www.microsoft.com/en-us/microsoft-365/powerpoint) 和 [Apple Keynote](https://www.apple.com/keynote/) _(参见 [与其他工具的比较](#comparisons))_。它们直观易学。那么为什么要选择 Slidev 呢？
 

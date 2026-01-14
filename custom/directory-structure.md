@@ -1,8 +1,8 @@
 # 目录结构 {#directory-structure}
 
-Slidev 对目录结构进行了一些约定，以尽量减少配置项，并使功能扩展更加灵活直观。
+Slidev 采用目录结构约定来最小化配置并使功能扩展灵活直观。
 
-基本结构如下所示：
+常规目录结构如下：
 
 ```bash
 your-slidev/
@@ -12,37 +12,36 @@ your-slidev/
   ├── setup/            # 自定义 setup / hooks
   ├── snippets/         # 代码片段
   ├── styles/           # 自定义样式
-  ├── index.html        # 注入的 index.html
-  ├── slides.md         # 幻灯片主入口
+  ├── index.html        # 注入到 index.html
+  ├── slides.md         # 主幻灯片入口
   └── vite.config.ts    # 扩展 vite 配置
 ```
 
-以上所有均为可选。
+以上都是可选的。
 
 ## 组件 {#components}
 
-约定路径: `./components/*.{vue,js,ts,jsx,tsx,md}`
+路径模式：`./components/*.{vue,js,ts,jsx,tsx,md}`
 
 <LinkCard link="guide/component" />
 
 ## 布局 {#layouts}
 
-约定路径: `./layouts/*.{vue,js,ts,jsx,tsx}`
+路径模式：`./layouts/*.{vue,js,ts,jsx,tsx}`
 
 <LinkCard link="guide/layout" />
 
-## 静态资源 {#public}
+## Public {#public}
 
-约定路径: `./public/*`
+路径模式：`./public/*`
 
-开发过程中，此目录中的资源文件将在 `/` 下提供，并会按原样复制到 dist 目录的根目录中。欲了解更多，请参阅 [处理静态资源](../guide/faq#assets-handling)。
+此目录中的资源将在开发时以根路径 `/` 提供服务，并原样复制到 dist 目录的根目录。了解更多关于[资源处理](../guide/faq#assets-handling)。
 
 ## 样式 {#style}
 
-约定路径: `./style.css` | `./styles/index.{css,js,ts}`
+路径模式：`./style.css` | `./styles/index.{css,js,ts}`
 
-遵循上述约定路径的文件将被注入到 App 的根目录中。如果需要引入多个 css 入口，可以按如下方式创建结构并自行管理引入顺序。
-
+遵循此约定的文件将被注入到 App 根部。如果你需要导入多个 CSS 入口，可以创建以下结构并自行管理导入顺序。
 
 ```bash
 your-slidev/
@@ -62,7 +61,7 @@ import './code.css'
 import './layouts.css'
 ```
 
-得益于 [UnoCSS](https://unocss.dev/) 和 [PostCSS](https://postcss.org/)，样式中可以使用 css 嵌套和 [at-directives](https://unocss.dev/transformers/directives#apply)。示例：
+样式将由 [UnoCSS](https://unocss.dev/) 和 [PostCSS](https://postcss.org/) 处理，因此你可以开箱即用地使用 CSS 嵌套和 [at-directives](https://unocss.dev/transformers/directives#apply) 以及嵌套 CSS。例如：
 
 <!-- eslint-skip -->
 
@@ -84,18 +83,17 @@ import './layouts.css'
 }
 ```
 
-[了解更多关于此语法的信息](https://unocss.dev/transformers/directives#apply)。
+在[这里](https://unocss.dev/transformers/directives#apply)了解更多关于语法的信息。
 
 ## `index.html` {#index-html}
 
-约定路径: `index.html`
+路径模式：`index.html`
 
-`index.html` 提供了向主 `index.html` 中注入 meta 标签以及 scripts 标签的能力。
+`index.html` 提供了向主 `index.html` 注入 meta 标签和/或脚本的能力。
 
-例如，对于以下自定义 `index.html` 来说：
+例如，对于以下自定义 `index.html`：
 
-```html
-<!-- ./index.html -->
+```html [index.html]
 <head>
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Nunito+Sans:wght@200;400;600&display=swap" rel="stylesheet">
@@ -106,7 +104,7 @@ import './layouts.css'
 </body>
 ```
 
-最终部署的 `index.html` 效果如下：
+最终托管的 `index.html` 将是：
 
 ```html
 <!DOCTYPE html>
@@ -122,7 +120,7 @@ import './layouts.css'
 <body>
   <div id="app"></div>
   <script type="module" src="__ENTRY__"></script>
-  <!-- 注入的 body -->
+  <!-- injected body -->
   <script src="./your-scripts"></script>
 </body>
 </html>
@@ -130,6 +128,6 @@ import './layouts.css'
 
 ## 全局图层 {#global-layers}
 
-约定路径: `global-top.vue` | `global-bottom.vue` | `custom-nav-controls.vue` | `layouts/slide-top.vue` | `layouts/slide-bottom.vue`
+路径模式：`global-top.vue` | `global-bottom.vue` | `custom-nav-controls.vue` | `slide-top.vue` | `slide-bottom.vue`
 
 <LinkCard link="features/global-layers" />

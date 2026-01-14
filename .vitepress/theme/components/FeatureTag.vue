@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { computed } from 'vue'
 import { useData, withBase } from 'vitepress'
+import { computed } from 'vue'
 
 const props = defineProps<{
   tag: string
@@ -54,13 +54,13 @@ const colors = computed(() => {
   <a v-if="props.removable" class="feature-tag flex gap-1 items-center">
     {{ formattedTag }}
     <button class="flex items-center op-70 hover:bg-gray-200/20 hover:op90 rounded-full mr--1" @click="emit('remove')">
-      <carbon:close />
+      <div class="i-carbon:close" />
     </button>
   </a>
   <span v-else-if="props.noclick" class="feature-tag">
     {{ formattedTag }}
   </span>
-  <a v-else class="feature-tag" :href="withBase(`/features/#tags=${tag}`)" target="_blank">
+  <a v-else class="feature-tag" :href="withBase(`/features/#tags=${tag}`)">
     {{ formattedTag }}
   </a>
 </template>

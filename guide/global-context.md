@@ -1,22 +1,18 @@
 # 全局上下文
 
-Slidev 注入了一些全局上下文。它们可用于高级导航控制。
+Slidev 注入了几个全局上下文值用于高级导航控制。
 
 ## 直接使用 {#direct-usage}
 
-你可以直接在你的幻灯片或组件中访问它们：
+你可以在幻灯片或组件中直接访问它们：
 
-```md
-<!-- slides.md -->
-
+```md [slides.md]
 # Page 1
 
-当前正在查看第 {{ $nav.currentPage }} 页
+Current page is: {{ $nav.currentPage }}
 ```
 
-```vue
-<!-- Foo.vue -->
-
+```vue [Foo.vue]
 <template>
   <div>Title: {{ $slidev.configs.title }}</div>
   <button @click="$nav.next">
@@ -32,7 +28,7 @@ Slidev 注入了一些全局上下文。它们可用于高级导航控制。
 
 > 自 v0.48.0 起可用
 
-如果你想以编程方式获取上下文（也是类型安全的），你可以从 `@slidev/client` 导入 composable：
+如果你想以编程方式（同时类型安全地）获取上下文，可以从 `@slidev/client` 导入组合式函数：
 
 ```vue
 <script setup>
@@ -49,17 +45,17 @@ onSlideLeave(() => { /* ... */ })
 ```
 
 > [!NOTE]
-> 之前，你可能看到过导入嵌套模块的用法，例如 `import { isDark } from '@slidev/client/logic/dark.ts'`，这是**不推荐**的，因为它们是内部实现细节，可能会在未来更改。如果可能的话，请始终使用 `@slidev/client` 中的公共 API。
+> 以前，你可能看到过从嵌套模块导入的用法，如 `import { isDark } from '@slidev/client/logic/dark.ts'`，这**不推荐**，因为它们是内部实现细节，可能在未来更改。请尽可能使用 `@slidev/client` 的公共 API。
 
 ::: warning
 
-当使用 `useSlideContext` 时，将禁用自动注入 `$slidev`。你需要手动从 `useSlideContext` 函数里获取 `$slidev`。
+当使用 `useSlideContext` 组合式函数时，`$slidev` 的自动注入将被禁用。你需要手动从 `useSlideContext` 函数获取 `$slidev` 对象。
 
 :::
 
 <SeeAlso :links="['features/slide-hook']" />
 
-## 注入的属性 {#properties}
+## 属性 {#properties}
 
 ### `$slidev` {#slidev}
 
@@ -67,61 +63,60 @@ onSlideLeave(() => { /* ... */ })
 
 ### `$frontmatter` {#frontmatter}
 
-当前幻灯片的 frontmatter 对象。注意这对于幻灯片之外的组件（如 <LinkInline link="features/global-layers" />）是空的。
+当前幻灯片的 frontmatter 对象。请注意，对于幻灯片之外的组件（如 <LinkInline link="features/global-layers" />），这是空的。
 
 ### `$clicks` {#clicks}
 
-该属性表示当前幻灯片上的点击次数。可以用于根据点击次数显示不同的内容：
+`$clicks` 保存当前幻灯片的点击次数。可用于根据点击有条件地显示不同内容。
 
 ```html
 <div v-if="$clicks > 3">Content</div>
 ```
 
-参阅 <LinkInline link="guide/animations" /> 了解更多关于点击动画的信息。
+有关更多信息，请参阅 <LinkInline link="guide/animations" /> 指南。
 
 ### `$nav` {#nav}
 
-一个响应式对象，包含幻灯片导航的属性和控制：
+一个响应式对象，包含幻灯片导航的属性和控制。例如：
 
 ```js
-$nav.next() // 下一步动画
-$nav.nextSlide() // 下一张幻灯片，跳过动画
-$nav.go(10) // 跳转到第 10 页
+$nav.next() // 下一步
+$nav.nextSlide() // 下一张幻灯片（跳过点击）
+$nav.go(10) // 跳转到第 10 张幻灯片
 
-$nav.currentPage // 当前页码
-$nav.currentLayout // 当前幻灯片的布局
+$nav.currentPage // 当前幻灯片编号
+$nav.currentLayout // 当前布局名称
 ```
 
-请参阅 [`SlidevContextNav` interface](https://github.com/slidevjs/slidev/blob/main/packages/client/composables/useNav.ts) 以了解更多细节。
+有关更多可用属性，请参阅 [`SlidevContextNav` 接口](https://github.com/slidevjs/slidev/blob/main/packages/client/composables/useNav.ts)。
 
 ### `$page` {#page}
 
-`$page` 保存当前页的页码，从 1 开始。
+`$page` 保存当前页面编号，从 1 开始。
 
 ```md
-这是第 {{ $page }} 页
+Page: {{ $page }}
 
-正在查看该页吗? {{ $page === $nav.currentPage }}
+Is current page active: {{ $page === $nav.currentPage }}
 ```
 
-> [!Note]
-> `$nav.clicks` 是全局导航状态，而 `$clicks` 是每张幻灯片的自己的点击次数。
+> [!Note] > `$nav.clicks` 是全局状态，而 `$clicks` 是每张幻灯片的本地点击次数。
 
 ### `$renderContext` {#render-context}
 
-`$renderContext` 保存当前的渲染上下文，可以是 `slide`, `overview`, `presenter` 或 `previewNext`。
+`$renderContext` 保存当前的渲染上下文，可以是 `slide`、`overview`、`presenter` 或 `previewNext`
 
 ```md
 <div v-if="['slide', 'presenter'].includes($renderContext)">
-  该内容仅在主幻灯片视图中呈现
+  此内容仅在主幻灯片视图中渲染
 </div>
 ```
 
-你还可以使用 [`<RenderWhen>` 组件](../builtin/components#renderwhen)。
+你也可以使用 [`<RenderWhen>` 组件](../builtin/components#renderwhen)。
 
 ### `$slidev.configs` {#configs}
 
-一个响应式对象，保存幻灯片项目的配置。例如：
+一个响应式对象，包含幻灯片项目的配置。例如：
 
 ```md
 ---
@@ -139,7 +134,7 @@ title: My First Slidev!
 
 ### `$slidev.themeConfigs` {#theme-configs}
 
-一个响应式对象，保存解析后的主题配置：
+一个响应式对象，包含解析后的主题配置：
 
 ```yaml
 ---
@@ -149,15 +144,15 @@ themeConfig:
 ---
 ```
 
-然后，主题可以像这样访问主要颜色：
+然后主题可以这样访问主色：
 
 ```md
 {{ $slidev.themeConfigs.primary }} // '#213435'
 ```
 
-## 类型支持 {#types}
+## 类型 {#types}
 
-可以从 `@slidev/types` 导入 `TocItem` 等类型信息：
+如果你想以编程方式获取类型，可以从 `@slidev/types` 导入类型，如 `TocItem`：
 
 ```vue
 <script setup>

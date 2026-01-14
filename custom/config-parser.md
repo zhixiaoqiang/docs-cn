@@ -1,36 +1,32 @@
 # 配置预解析器
 
 ::: info
-
-自定义的预解析器应尽可能少地使用。通常，你可以使用 [Transformers](./config-transformers) 进行自定义语法。
-
+自定义预解析器不应过于频繁使用。通常你可以使用 [Transformers](./config-transformers) 来实现自定义语法。
 :::
 
-Slidev 通过三步解析演示文档(如 `slides.md`) :
+Slidev 通过三个步骤解析你的演示文件（例如 `slides.md`）：
 
-1. 执行一个“预解析”步骤: 使用 `---` 分隔符将 markdown 文件分割成若干幻灯片，并考虑可能的扉页块。 
-2. 每张幻灯片都用一个外部库进行解析。 
-3. Slidev 解析特殊的扉页属性 `src: ....`，该属性允许包含其他 md 文件。
+1. 执行"预解析"步骤：使用 `---` 分隔符将文件拆分为幻灯片，并考虑可能的 frontmatter 块。
+2. 使用外部库解析每张幻灯片。
+3. Slidev 解析特殊的 frontmatter 属性 `src: ....`，它允许包含其他 md 文件。
 
-## Markdown 解析器
+## Markdown 解析器 {#markdown-parser}
 
-配置步骤2中使用的markdown解析器可以通过 [配置Vite内部插件](/custom/config-vite#configure-internal-plugins) 完成。
+配置步骤 2 中使用的 markdown 解析器可以通过[配置 Vite 内部插件](/custom/config-vite#configure-internal-plugins)完成。
 
-## 预解析器扩展
+## 预解析器扩展 {#preparser-extensions}
 
 > 自 v0.37.0 起可用。
 
 ::: warning
-
-重要：当你修改预解析器配置时，需要停止并重新启动 slidev。
-
+重要提示：修改预解析器配置时，你需要停止并重新启动 Slidev（重启可能不够）。
 :::
 
-预解析器(上面的步骤 1)是高度可扩展的，并且允许为 md 文件实现自定义语法。扩展预解析器是一个**高级特性**，由于语法的隐式更改，它很容易破坏[编辑器集成](../features/side-editor)。
+预解析器（上述步骤 1）是高度可扩展的，允许你为 md 文件实现自定义语法。扩展预解析器被视为**高级功能**，由于语法的隐式更改，可能会导致[编辑器集成](../features/side-editor)出现问题。
 
-要自定义它，请创建一个 `./setup/prepareser.ts` 文件，内容如下：
+要自定义它，请创建 `./setup/preparser.ts` 文件，内容如下：
 
-```ts twoslash
+```ts twoslash [./setup/preparser.ts]
 import { definePreparserSetup } from '@slidev/types'
 
 export default definePreparserSetup(({ filepath, headmatter, mode }) => {
@@ -47,21 +43,22 @@ export default definePreparserSetup(({ filepath, headmatter, mode }) => {
 })
 ```
 
-这个例子系统地将任何 `@@@` 行替换为 `hello` 行。它说明了预解析器配置文件的结构以及其涉及的一些主要概念：
+此示例系统地将任何 `@@@` 行替换为包含 `hello` 的行。它说明了预解析器配置文件的结构以及预解析器涉及的一些主要概念：
 
-- 必须使用函数调用 `definePreparerSetup` 作为参数。
-- 该函数接收（根演示文稿的）文件路径、headatter（来自相应的 md 文件）以及自 v0.48.0 起，一种模式（dev、build 或 export）。它可以使用这些信息（例如，根据演示文稿文件，或者我们是否正在导出PDF，来启用扩展）。
-- 该函数必须返回一个预解析器扩展列表。
-- 一个扩展可以包含以下内容:
-  - 一个 `transformRawLines(lines)` 函数，在解析 md 文件的 headmatter 后运行，并接收所有行的列表（来自 md 文件）。该函数可以任意修改列表。
-  - 一个 `transformSlide(content，frontmatter)`函数，在分割文件后，为每张幻灯片调用该函数，并将幻灯片内容作为字符串接收，将幻灯片的 frontmatter 作为对象接收。该函数可以修改 frontmatter，并且必须返回内容字符串（可能已修改，如果没有进行修改，则可能为 `undefined`）。
-  - 一个 `name`
+- `definePreparserSetup` 必须以函数作为参数调用。
+- 该函数接收文件路径（根演示文件的路径）、headmatter（来自 md 文件）以及自 v0.48.0 起的 mode（dev、build 或 export）。它可以使用此信息（例如，根据演示文件或是否正在导出 PDF 来启用扩展）。
+- 该函数必须返回预解析器扩展的列表。
+- 扩展可以包含：
+  - `transformRawLines(lines)` 函数，在解析 md 文件的 headmatter 后立即运行，并接收所有行的列表（来自 md 文件）。该函数可以任意修改列表。
+  - `transformSlide(content, frontmatter)` 函数，在拆分文件后为每张幻灯片调用，并接收幻灯片内容作为字符串和幻灯片的 frontmatter 作为对象。该函数可以修改 frontmatter 并必须返回内容字符串（可能已修改，如果没有修改则可能为 `undefined`）。
+  - `transformNote(note, frontmatter)` 函数，在拆分文件后为每张幻灯片调用，并接收幻灯片备注作为字符串或 undefined 以及幻灯片的 frontmatter 作为对象。该函数可以修改 frontmatter 并必须返回备注字符串（可能已修改，如果没有修改则可能为 `undefined`）。
+  - `name`
 
-## 预解析器扩展示例
+## 预解析器扩展示例 {#example-preparser-extensions}
 
-### 用例1: 紧凑语法顶层表示
+### 用例 1：顶层演示的紧凑语法 {#use-case-1-compact-syntax-top-level-presentation}
 
-设想一种情况，你的演示文稿(部分)主要显示封面图片，并包括其他 md 文件。你可能希望有一种紧凑的符号表示法，其中的实例（部分）`slides.md` 如下所示:
+想象一种情况，你的演示（部分）主要是展示封面图片和包含其他 md 文件。你可能想要一种紧凑的表示法，例如（部分）`slides.md` 如下：
 
 <!-- eslint-skip -->
 
@@ -77,10 +74,9 @@ export default definePreparserSetup(({ filepath, headmatter, mode }) => {
 see you next time
 ```
 
-要允许这些 `@src:` 和 `@cover:` 语法，请创建一个 `/setup/prepareser.ts`文件，内容如下：
+要允许这些 `@src:` 和 `@cover:` 语法，请创建 `./setup/preparser.ts` 文件，内容如下：
 
-
-```ts twoslash
+```ts twoslash [./setup/preparser.ts]
 import { definePreparserSetup } from '@slidev/types'
 
 export default definePreparserSetup(() => {
@@ -121,11 +117,12 @@ export default definePreparserSetup(() => {
 })
 ```
 
-就是这样。
+就这样。
 
-### 用例2：使用自定义 frontmatter 来包装幻灯片
+### 用例 2：使用自定义 frontmatter 包装幻灯片 {#use-case-2-using-custom-frontmatter-to-wrap-slides}
 
-设想一种情况，你经常想要缩放您的一些幻灯片，但是仍然想要使用各种现有的布局，因此创建一个新的布局将不适合。例如，你可能希望按如下方式编写 `slides.md`：
+想象一种情况，你经常想要缩放某些幻灯片，但仍然想使用各种现有布局，因此创建新布局不太合适。
+例如，你可能想要这样编写 `slides.md`：
 
 <!-- eslint-skip -->
 
@@ -156,11 +153,11 @@ _scale: 2.5
 see you next time
 ```
 
-在这里，我们在 `_scale` 处使用了下划线，以避免与现有的 frontmatter 属性发生可能的冲突（事实上，没有下划线的 `scale` 的情况会导致潜在的问题）。
+这里我们在 `_scale` 中使用下划线来避免与现有 frontmatter 属性的可能冲突（事实上，不带下划线的 `scale` 可能会导致潜在问题）。
 
-要处理这个 `_scale: ...`语法，在 frontmatter 中创建一个 `./setup/preparser.ts` 文件，内容如下：
+要处理 frontmatter 中的 `_scale: ...` 语法，请创建 `./setup/preparser.ts` 文件，内容如下：
 
-```ts twoslash
+```ts twoslash [./setup/preparser.ts]
 import { definePreparserSetup } from '@slidev/types'
 
 export default definePreparserSetup(() => {
@@ -176,6 +173,58 @@ export default definePreparserSetup(() => {
             '</Transform>'
           ].join('\n')
         }
+      },
+    },
+  ]
+})
+```
+
+就这样。
+
+### 用例 3：使用自定义 frontmatter 转换备注 {#use-case-3-using-custom-frontmatter-to-transform-notes}
+
+想象一种情况，你想用自定义备注替换幻灯片的默认备注。
+例如，你可能想要这样编写 `slides.md`：
+
+<!-- eslint-skip -->
+
+```md
+---
+layout: quote
+_note: notes/note.md
+---
+
+# Welcome
+
+> great!
+
+<!--
+Default slide notes
+-->
+```
+
+这里我们在 `_note` 中使用下划线来避免与现有 frontmatter 属性的可能冲突。
+
+要处理 frontmatter 中的 `_note: ...` 语法，请创建 `./setup/preparser.ts` 文件，内容如下：
+
+```ts twoslash [./setup/preparser.ts]
+import fs, { promises as fsp } from 'node:fs'
+import { definePreparserSetup } from '@slidev/types'
+
+export default definePreparserSetup(() => {
+  return [
+    {
+      async transformNote(note, frontmatter) {
+        if ('_note' in frontmatter && fs.existsSync(frontmatter._note)) {
+          try {
+            const newNote = await fsp.readFile(frontmatter._note, 'utf8')
+            return newNote
+          }
+          catch (err) {
+          }
+        }
+
+        return note
       },
     },
   ]

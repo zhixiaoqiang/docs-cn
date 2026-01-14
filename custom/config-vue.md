@@ -1,15 +1,16 @@
-# 配置 Vue 实例
+# 配置 Vue 应用
 
 <Environment type="client" />
 
-Slidev 基于 [Vue 3](https://v3.vuejs.org/) 来渲染应用。你可以针对应用进行扩展，添加自定义插件或自定义配置等操作。
+Slidev 使用 [Vue 3](https://v3.vuejs.org/) 在客户端渲染应用。你可以扩展应用以添加自定义插件或配置。
 
-创建 `./setup/main.ts` 文件，其内容如下：
+创建 `./setup/main.ts`，内容如下：
 
 <!-- eslint-disable import/first -->
 
-```ts twoslash
+```ts twoslash [setup/main.ts]
 import type { Plugin } from 'vue'
+
 declare const YourPlugin: Plugin
 // ---cut---
 import { defineAppSetup } from '@slidev/types'
@@ -20,6 +21,6 @@ export default defineAppSetup(({ app, router }) => {
 })
 ```
 
-这也可以作为你 Slidev 应用程序的主入口，用于在应用启动前做一些初始化操作。
+这也可以用作 Slidev 应用的主入口，在应用启动前进行一些初始化操作。
 
-了解更多：[Vue 应用实例 API](https://v3.vuejs.org/api/application-api.html#component)。
+了解更多：[Vue 应用 API](https://v3.vuejs.org/api/application-api.html#component)。

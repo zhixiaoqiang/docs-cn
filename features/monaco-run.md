@@ -7,12 +7,12 @@ relates:
 since: v0.48.0
 tags: [代码块, 编辑器]
 description: |
-  直接在编辑器中运行代码并获取结果。
+  直接在编辑器中运行代码并查看结果。
 ---
 
-# Monaco 代码运行器
+# Monaco 运行器
 
-Slidev 还提供了 Monaco Runner 编辑器，它允许你直接在编辑器中运行代码并查看结果。使用`{monaco-run}`将块转换为 Monaco Runner 编辑器。
+Slidev 还提供了 Monaco 运行器编辑器，允许你直接在编辑器中运行代码并查看结果。使用 `{monaco-run}` 将代码块转换为 Monaco 运行器编辑器。
 
 ````md
 ```ts {monaco-run}
@@ -23,23 +23,22 @@ console.log(distance(3, 4))
 ```
 ````
 
-它为编辑器提供了一个 “运行” 按钮，并在代码块正下方显示代码执行的结果。你也可以修改代码，结果将实时更新。
+它在编辑器中提供一个"运行"按钮，并在代码块下方显示代码执行的结果。你也可以修改代码，结果会即时重新计算。
 
-默认情况下，加载幻灯片时，它将自动运行代码；如果你想显式触发运行，你可以设置`{autorun:false}`。
-
+默认情况下，当幻灯片加载时会自动运行代码；如果你想手动触发运行，可以设置 `{autorun:false}`。
 
 ````md
 ```ts {monaco-run} {autorun:false}
-console.log('请点击右上角的运行按钮')
+console.log('点击播放按钮运行我')
 ```
 ````
 
-如果你只想在某些点击中显示输出，你可以使用 `showOutputAt` prop。该值与`v-click` 相同。
+如果你只想在某些点击时显示输出，可以使用 `showOutputAt` 属性。值与 `v-click` 相同。
 
 ````md
 ```ts {monaco-run} {showOutputAt:'+1'}
-console.log('一步动画后后显示该结果')
+console.log('1次点击后显示')
 ```
 ````
 
-目前，Slidev 内置支持运行 JavaScript 和 TypeScript 代码。若要运行自定义语言，请参阅 [自定义代码运行程序](/custom/config-code-runners)。
+目前，Slidev 开箱即用支持运行 JavaScript 和 TypeScript 代码。有关自定义语言支持，请参阅[配置代码运行器](/custom/config-code-runners)。

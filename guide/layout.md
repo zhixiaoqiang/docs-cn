@@ -14,11 +14,11 @@ layout: quote
 A quote from someone
 ```
 
-第一张幻灯片的默认布局是 `cover`，其余的是 `default`。
+默认情况下，第一张幻灯片的布局是 `cover`，其余是 `default`。
 
-布局按以下顺序加载，最后加载的会覆盖之前的：
+布局按以下顺序加载，后加载的将覆盖之前的：
 
-1. 默认布局。参见 [内置布局](../builtin/layouts)。
+1. 默认布局。参见[内置布局](../builtin/layouts)。
 2. 主题提供的布局
 3. 插件提供的布局
 4. `layouts` 目录中的自定义布局

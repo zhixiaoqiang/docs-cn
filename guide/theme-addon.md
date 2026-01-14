@@ -14,14 +14,14 @@ theme: seriph
 # The first slide
 ```
 
-你可以在 [主题合集](../resources/theme-gallery) 中找到官方主题和社区主题。
+你可以在[主题合集](../resources/theme-gallery)中找到官方主题和社区主题列表。
 
-::: info 主题名称的规范
+::: info 主题名称约定
 
-- 你可以使用相对或绝对路径指定本地主题文件夹，例如 `../my-theme`
-- 你也可以直接使用完整的包名作为主题名称
-- 如果主题是[官方主题](../resources/theme-gallery#official-themes)或者命名为 `slidev-theme-name`，你可以省略 `slidev-theme-` 前缀
-- 对于作用域包，如 `@org/slidev-theme-name`，需要使用完整的包名
+- 你也可以传递本地主题文件夹的相对或绝对路径，如 `../my-theme`
+- 你始终可以使用完整包名作为主题名
+- 如果主题是[官方的](../resources/theme-gallery#official-themes)或命名为 `slidev-theme-name`，你可以省略 `slidev-theme-` 前缀
+- 对于作用域包如 `@org/slidev-theme-name`，需要使用完整包名
 
 :::
 
@@ -47,7 +47,7 @@ $ npm install @slidev/theme-seriph
 
 ## 使用插件 {#use-addon}
 
-插件和主题类似，但更加灵活，可以用来为你的幻灯片项目添加额外的功能。你可以为你的项目添加多个插件，它们可以用来添加额外的功能。
+插件类似于主题，但更加灵活，可用于为你的幻灯片项目添加额外功能。你可以向项目添加多个插件，它们可以用来为幻灯片项目添加额外功能。
 
 要使用插件，你可以在 [headmatter](../custom/index#headmatter) 中添加 `addons` 选项：
 
@@ -59,4 +59,4 @@ addons:
 ---
 ```
 
-你可以在 [插件合集](../resources/addon-gallery) 中找到官方插件和社区插件。
+你可以在[插件合集](../resources/addon-gallery)中找到官方插件和社区插件。

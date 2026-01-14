@@ -1,13 +1,14 @@
-import { fileURLToPath } from 'node:url'
 import type { DefaultTheme } from 'vitepress'
-import { defineConfig } from 'vitepress'
+import { fileURLToPath } from 'node:url'
 import { transformerTwoslash } from '@shikijs/vitepress-twoslash'
+import { defineConfig } from 'vitepress'
+import { groupIconMdPlugin } from 'vitepress-plugin-group-icons'
 import { version } from '../package.json'
-import { getSidebarObject } from './sidebar-gen'
-import { Advanced, BuiltIn, Guides, Resources } from './pages'
 import Customizations from './customizations'
+import { Advanced, BuiltIn, Guides, Resources } from './pages'
+import { getSidebarObject } from './sidebar-gen'
 
-const slidebars: DefaultTheme.SidebarItem[] = [
+export const slidebars: DefaultTheme.SidebarItem[] = [
   {
     text: '指南',
     items: Guides,
@@ -68,10 +69,14 @@ export default defineConfig({
           vfsRoot: fileURLToPath(import.meta.url),
           compilerOptions: {
             resolveJsonModule: true,
+            moduleResolution: /* Bundler */ 100,
           },
         },
       }),
     ],
+    config(md) {
+      md.use(groupIconMdPlugin)
+    },
   },
   cleanUrls: true,
   themeConfig: {
@@ -134,6 +139,7 @@ export default defineConfig({
       '/custom/': slidebars,
       '/builtin/': slidebars,
       '/resources/': slidebars,
+      // eslint-disable-next-line antfu/no-top-level-await
       ...await getSidebarObject(),
       '/features/': [],
       '/': slidebars,
@@ -141,17 +147,39 @@ export default defineConfig({
 
     footer: {
       message: 'Released under the MIT License.',
-      copyright: 'Copyright © 2020-2024 Anthony Fu.',
+      copyright: 'Copyright © 2020-2026 Anthony Fu.',
     },
+
+    outline: {
+      label: '本页目录',
+    },
+
+    docFooter: {
+      prev: '上一页',
+      next: '下一页',
+    },
+
+    lastUpdated: {
+      text: '最后更新于',
+    },
+
+    darkModeSwitchLabel: '外观',
+    sidebarMenuLabel: '菜单',
+    returnToTopLabel: '返回顶部',
+    langMenuLabel: '切换语言',
   },
 
   locales: {
     root: {
       label: `简体中文 (v${version})`,
     },
-    zh: {
+    en: {
       label: 'English',
       link: 'https://sli.dev/',
+    },
+    ja: {
+      label: '日本語',
+      link: 'https://ja.sli.dev/',
     },
   },
 })

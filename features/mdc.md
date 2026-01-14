@@ -10,22 +10,22 @@ description: |
 
 # MDC 语法
 
-Slidev 支持可选的 [MDC (Markdown Components) 语法](https://content.nuxt.com/docs/files/markdown#mdc-syntax)，由 [`markdown-it-mdc`](https://github.com/antfu/markdown-it-mdc) 驱动。
+Slidev 支持由 [`markdown-it-mdc`](https://github.com/antfu/markdown-it-mdc) 驱动的可选 [MDC (Markdown Components) 语法](https://content.nuxt.com/docs/files/markdown#mdc-syntax)。
 
-你可以通过在 markdown 文件的 frontmatter 中添加 `mdc:true` 来启用它。
+你可以通过在 markdown 文件的 frontmatter 中添加 `mdc: true` 来启用它。
 
 ```mdc
 ---
 mdc: true
 ---
 
-这是一个 [红色的文本]{style="color:red"} :inline-component{prop="value"}
+这是一段 [红色文本]{style="color:red"} :inline-component{prop="value"}
 
 ![](/image.png){width=500px lazy}
 
 ::block-component{prop="value"}
-**default** 插槽的内容
+**默认** 插槽
 ::
 ```
 
-请参阅 [MDC Syntax](https://content.nuxt.com/docs/files/markdown#mdc-syntax) 了解更多。
+了解更多关于 [MDC 语法](https://content.nuxt.com/docs/files/markdown#mdc-syntax)。

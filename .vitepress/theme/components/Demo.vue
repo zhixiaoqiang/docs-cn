@@ -1,18 +1,18 @@
 <script setup lang="ts">
-import { onMounted, ref, watch } from 'vue'
-import TypeIt from 'typeit'
-import Markdown from 'markdown-it'
 import type { SlidevMarkdown } from '@slidev/types'
+import Center from '@slidev/client/layouts/center.vue'
+import Default from '@slidev/client/layouts/default.vue'
 import { parseSync } from '@slidev/parser'
 import Cover from '@slidev/theme-default/layouts/cover.vue'
-import Default from '@slidev/client/layouts/default.vue'
-import Center from '@slidev/client/layouts/center.vue'
-import SlideContainer from './SlideContainer.vue'
-import '@slidev/client/styles/layouts-base.css'
-import '@slidev/theme-default/styles/layouts.css'
-
+import Markdown from 'markdown-it'
+import TypeIt from 'typeit'
+import { onMounted, ref, watch } from 'vue'
 import DemoEditor from './DemoEditor.vue'
 import DemoSlide from './DemoSlide.vue'
+import SlideContainer from './SlideContainer.vue'
+
+import '@slidev/client/styles/layouts-base.css'
+import '@slidev/theme-default/styles/layouts.css'
 
 const page = ref(0)
 const paused = ref(false)
@@ -82,8 +82,8 @@ function play() {
       setTimeout(() => completed.value = true, 300)
     },
   })
-    .type('<br><span class="token title"># 欢迎使用 Slidev!</span><br><br>', { delay: 400 })
-    .type('为开发者打造的演示文稿工具', { delay: 400 })
+    .type('<br><span class="token title"># 欢迎使用 Slidev！</span><br><br>', { delay: 400 })
+    .type('面向开发者的演示幻灯片', { delay: 400 })
     .move(null, { to: 'START', speed: 0 })
     .type('<br>')
     .move(null, { to: 'START' })
@@ -111,7 +111,7 @@ function play() {
     .exec(() => setTimeout(() => page.value = 1))
     .type('<span class="token title"># 第二页</span><br><br>', { delay: 400 })
     .type('- 📄 在 Markdown 文件中编写幻灯片<br>', { delay: 800 })
-    .type('- 🌈 丰富的主题，代码高亮，可交互的组件，等等<br>', { delay: 800 })
+    .type('- 🌈 丰富的主题，代码高亮、交互式组件<br>', { delay: 800 })
     .type('- 😎 阅读文档了解更多！', { delay: 800 })
     .exec(() => setTimeout(() => page.value = 0))
     .go()
@@ -127,8 +127,8 @@ onMounted(play)
         ./slides.md
       </div>
 
-      <div v-if="completed" class="absolute text-xs right-1 top-1 icon-btn opacity-50" title="Replay" @click="play()">
-        <carbon:reset />
+      <div v-if="completed" class="absolute text-xs right-1 top-1 icon-btn opacity-50" title="重新播放" @click="play()">
+        <div class="i-carbon:reset" />
       </div>
 
       <div class="language-md !bg-transparent px4 py1">
@@ -158,10 +158,10 @@ onMounted(play)
         opacity="0 hover:100"
       >
         <div class="icon-btn" :class="{ disabled: page === 0 }" @click="page = 0">
-          <carbon:chevron-left />
+          <div class="i-carbon:chevron-left" />
         </div>
         <div class="icon-btn" :class="{ disabled: page === 1 }" @click="page = 1">
-          <carbon:chevron-right />
+          <div class="i-carbon:chevron-right" />
         </div>
       </div>
     </DemoSlide>

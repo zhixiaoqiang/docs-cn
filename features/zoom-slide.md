@@ -5,29 +5,29 @@ relates:
   - features/transform-component
 tags: [布局]
 description: |
-  将幻灯片内容缩放到一个特定的比例。
+  将幻灯片内容缩放到特定比例。
 ---
 
 # 缩放幻灯片
 
-你可能会发现部分幻灯片太宽敞或太拥挤。Slidev 为每张幻灯片提供了一个 `zoom` 选项来缩放幻灯片的内容：
+你可能会发现演示中的某些幻灯片太空旷或太拥挤。Slidev 为每张幻灯片提供了 `zoom` 选项，允许你缩放幻灯片的内容：
 
 ```md
 ---
 zoom: 0.8
 ---
 
-# 一张有很多内容的幻灯片，该幻灯片的内容会被缩小为 80%
+# 内容很多的幻灯片
 
 ---
 
-# 其他幻灯片不会受到影响
+# 其他幻灯片不受影响
 ```
 
-如要缩放所有的幻灯片，你可以设置幻灯片的 canvas 大小：
+要缩放演示中的所有幻灯片，可以设置幻灯片画布大小：
 
 <LinkCard link="features/canvas-size" />
 
-如要调整幻灯片中部分元素的大小，你可以适用 `Transform` 组件：
+要调整幻灯片上某些元素的大小，可以使用 `Transform` 组件：
 
 <LinkCard link="features/transform-component" />

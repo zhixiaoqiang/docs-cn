@@ -2,34 +2,34 @@
 outline: deep
 ---
 
-# 常见问答
+# 常见问题
 
-## 处理静态资源 {#assets-handling}
+## 资源处理 {#assets-handling}
 
-你可以在幻灯片中使用静态资源，如图片和视频。由于 Slidev 基于 Vite，你可以直接在 Markdown 文件中导入它们。
+你可以在幻灯片中使用图片和视频等静态资源。由于 Slidev 基于 Vite，你可以直接在 markdown 文件中导入它们。
 
-可用被静态分析的 URL 可以使用相对路径：
+可以被静态分析为资源的 URL 可以使用相对路径：
 
 ```md
 ![alt](./image.png)
 <img src="./image.png" />
 ```
 
-在上例中，URL 将在构建时被解析为 `/BASE_URL/assets/image.png`。
+在上述情况下，URL 在构建后将被解析为 `/BASE_URL/assets/image.png`。
 
-但是，frontmatter 和其他组件中的相对路径在构建后将会失效：
+但是，frontmatter 和其他组件中的相对路径在构建后会失效：
 
 ```md
 ---
-background: ./image.png  # 构建后可能会失效
+background: ./image.png  # 构建后失效
 ---
 
 <Comp src="./image.png" />
 ```
 
-上例中的两个 URL 不会被静态分析，构建后将保留原样，这将导致构建后的 404 错误。
+在上述情况下，URL 无法被静态分析，将保持原样，这将导致构建后出现 404 错误。
 
-要解决这个问题，你可以将这些资源放在 [public 文件夹](../custom/directory-structure#public) 中，并使用绝对路径导入它们：
+要解决这个问题，你可以将这些资源放在 [public 文件夹](../custom/directory-structure#public)中，并使用绝对路径导入它们：
 
 ```md
 ---
@@ -39,19 +39,19 @@ background: /image.png
 <Comp src="/image.png" />
 ```
 
-更多细节请参阅 [Vite 的文档](https://cn.vitejs.dev/guide/assets.html).
+有关更多详情，请参阅 [Vite 的文档](https://vitejs.dev/guide/assets.html)。
 
-## 定位元素 {#positioning}
+## 定位 {#positioning}
 
-Slidev 基于 Web，CSS 是定位元素的主要方式。以下是一些有用的定位元素的技巧：
+由于 Slidev 是基于 Web 的，CSS 是定位元素的主要方式。以下是一些定位元素的有用技巧：
 
-### Grids 和 Flexboxes {#grids-and-flexboxes}
+### 网格和 Flexbox {#grid-and-flexbox}
 
-可以使用 CSS Grids 来创建复杂的布局：
+你可以使用 CSS Grid 创建复杂布局：
 
 ::: code-group
 
-```md [双栏]
+```md [两列]
 <div class="grid grid-cols-2 gap-4">
   <div>
     第一列
@@ -62,60 +62,60 @@ Slidev 基于 Web，CSS 是定位元素的主要方式。以下是一些有用�
 </div>
 ```
 
-```md [复杂布局]
+```md [复杂情况]
 <div class="grid grid-cols-[200px_1fr_10%] gap-4">
   <div>
     第一列 (200px)
   </div>
   <div>
-    第二列 (auto fit)
+    第二列 (自动适应)
   </div>
   <div>
-    第三列 (10% width to parent container)
+    第三列 (父容器宽度的 10%)
   </div>
 </div>
 ```
 
 :::
 
-或使用 Flexboxes 来创建更具响应性的布局：
+使用 Flexbox 创建更响应式的布局：
 
 ::: code-group
 
 ```md [水平]
 <div class="flex items-center">
   <div>
-    第一块
+    第一个块
   </div>
   <div>
-    第二块
+    第二个块
   </div>
 </div>
 ```
 
-```md [竖直]
+```md [垂直]
 <div class="flex flex-col items-center">
   <div>
-    居中的内容
+    居中内容
   </div>
 </div>
 ```
 
 :::
 
-了解更多：[CSS Grids](https://css-tricks.com/snippets/css/complete-guide-grid/)，[flexboxes](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)，以及 [Masonry](https://css-tricks.com/native-css-masonry-layout-in-css-grid/)。
+了解更多：[CSS Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)、[Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)，甚至 [Masonry](https://css-tricks.com/native-css-masonry-layout-in-css-grid/)。
 
 ### 绝对定位 {#absolute-positioning}
 
-可以使用 UnoCSS 来绝对定位元素：
+你可以使用 UnoCSS 绝对定位元素：
 
 ```md
 <div class="absolute left-30px bottom-30px">
-  这是一个在左下角的页脚
+  这是一个左下角对齐的页脚
 </div>
 ```
 
-或者使用可拖动元素的功能：
+或者使用可拖动元素功能：
 
 <LinkCard link="features/draggable" />
 
@@ -125,10 +125,10 @@ Slidev 基于 Web，CSS 是定位元素的主要方式。以下是一些有用�
 
 <LinkCard link="features/canvas-size" />
 
-- 调整某几张幻灯片的大小：
+- 调整部分幻灯片的大小：
 
 <LinkCard link="features/zoom-slide" />
 
-- 调整一些元素的大小：
+- 调整某些元素的大小：
 
 <LinkCard link="features/transform-component" />

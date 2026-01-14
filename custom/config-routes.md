@@ -2,15 +2,13 @@
 
 <Environment type="client" />
 
-将自定义页面添加到 Slidev。
+向 Slidev 应用添加自定义页面。
 
+## 使用方法 {#usage}
 
-## 用法 {#usage}
+创建 `./setup/routes.ts`，内容如下：
 
-创建一份包含以下内容的 `./setup/routes.ts` 文件：
-
-
-```ts twoslash
+```ts twoslash [./setup/routes.ts]
 import { defineRoutesSetup } from '@slidev/types'
 
 export default defineRoutesSetup((routes) => {
@@ -27,4 +25,4 @@ export default defineRoutesSetup((routes) => {
 })
 ```
 
-请参考 [Vue Router 文档](https://router.vuejs.org/) 来了解关于路由的更多细节。
+在 [Vue Router 文档](https://router.vuejs.org/)中了解更多关于路由的信息。
