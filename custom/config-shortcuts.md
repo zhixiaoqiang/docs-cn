@@ -33,4 +33,4 @@ export default defineShortcutsSetup((nav: NavOperations, base: ShortcutOptions[]
 
 ## 按键绑定格式 {#key-binding}
 
-每个快捷键的 `key` 可以是字符串（例如 `'Shift+Ctrl+A'`）或计算布尔值。请参阅 [VueUse 的 `useMagicKeys`](https://vueuse.org/core/useMagicKeys/) 了解更多信息。
+每个快捷键的 `key` 可以是字符串（例如 `'Shift+Ctrl+A'`）或 Vue `computed` 形式的布尔值。请参阅 [VueUse 的 `useMagicKeys`](https://vueuse.org/core/useMagicKeys/) 了解更多信息。

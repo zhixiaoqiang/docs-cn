@@ -4,7 +4,7 @@
 
 每个幻灯片项目只能有一个主题。主题应专注于提供幻灯片的外观。如果功能与外观无关且可以单独使用，应作为[插件](./write-addon)实现。
 
-要开始，我们建议使用生成器来创建你的第一个主题
+我们建议您使用我们的生成器来搭建您的第一个主题：
 
 ::: code-group
 
@@ -32,7 +32,7 @@ $ deno init --npm slidev-theme
 
 然后你可以修改并使用它。你也可以参考[官方主题](../resources/theme-gallery#official-themes)作为示例。
 
-## 能力范围 {#capability}
+## 主题能力 {#capability}
 
 主题可以贡献以下功能点：
 
@@ -63,7 +63,7 @@ $ deno init --npm slidev-theme
 }
 ```
 
-### 要求 Slidev 版本 {#require-slidev-version}
+### 限制 Slidev 版本 {#restrict-version}
 
 如果主题依赖于 Slidev 新引入的特定功能，你可以设置使主题正常工作所需的最低 Slidev 版本：
 
@@ -89,7 +89,7 @@ $ deno init --npm slidev-theme
 }
 ```
 
-## 预览 {#previewing}
+## 预览主题 {#previewing}
 
 在开发时，你可以使用演示幻灯片预览你的主题。为此，创建一个 `./slides.md` 文件，包含以下 headmatter：
 
@@ -101,7 +101,7 @@ theme: ./  # 使用当前目录中的主题
 
 然后你可以像往常一样启动演示幻灯片。
 
-## 发布 {#publishing}
+## 发布主题 {#publishing}
 
 发布主题时，`.vue` 和 `.ts` 等非 JS 文件可以直接发布，无需编译。Slidev 在使用主题时会自动编译它们。
 

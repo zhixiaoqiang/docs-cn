@@ -2,16 +2,16 @@
 outline: deep
 ---
 
-# 动画
+# 动画指南
 
-动画是幻灯片演示的重要组成部分。Slidev 提供了多种方式来为你的幻灯片添加动画，从简单到复杂都有。本指南将向你展示如何有效地使用它们。
+动画是幻灯片演示的重要组成部分。Slidev 提供了从简单到高级的各种幻灯片动画制作方法。本指南将告诉你如何有效地使用它们。
 
 ## 点击动画 {#click-animation}
 
-一次"**点击**"可以被视为幻灯片中动画步骤的单位。一张幻灯片可以有一次或多次点击，每次点击可以触发一个或多个动画 - 例如，显示或隐藏元素。
+此处我们用 “**点击**” 一词来代表幻灯片中的一步动画。一张幻灯片可以有一个或多个点击，每个点击可以触发一个或多个动画 - 例如，显示或隐藏元素。可以通过按下 <kbd>space</kbd> 键或 <kbd>→</kbd> 键来触发一步点击动画。
 
 > [!NOTE]
-> 自 v0.48.0 起，我们重写了点击动画系统，使其行为更加一致。在边缘情况下，它可能会改变你现有幻灯片的行为。虽然本页面展示的是新的点击系统，但你可以在 [#1279](https://github.com/slidevjs/slidev/pull/1279) 中找到有关重构的更多详情。
+> 自 v0.48.0 起，我们重写了点击动画系统，使其行为更加一致。在一些情况下，它可能会改变你现有幻灯片的行为本页面展示的是新的点击系统，你可以在 [#1279](https://github.com/slidevjs/slidev/pull/1279) 中找到有关重构的更多详情。
 
 ### `v-click` {#v-click}
 
@@ -42,7 +42,7 @@ outline: deep
 
 ### 点击后隐藏 {#hide-after-clicking}
 
-在 `v-click` 或 `v-after` 指令中添加 `.hide` 修饰符，可以使元素在点击后隐藏，而不是显示。
+指令用法下，可以使用 `.hide` 修饰符来隐藏元素：
 
 ```md
 <div v-click> 1 次点击后可见 </div>
@@ -50,7 +50,7 @@ outline: deep
 <div v-after.hide> 2 次点击后隐藏 </div>
 ```
 
-对于组件，你可以使用 `hide` 属性来实现相同的效果：
+组件用法下，可以使用 `hide` prop 来隐藏元素：
 
 ```md
 <v-click> 1 次点击后可见 </v-click>
@@ -65,9 +65,9 @@ outline: deep
 ```md
 <v-clicks>
 
-- 项目 1
-- 项目 2
-- 项目 3
+- Item 1
+- Item 2
+- Item 3
 
 </v-clicks>
 ```
@@ -78,12 +78,12 @@ outline: deep
 ```md
 <v-clicks depth="2">
 
-- 项目 1
-  - 项目 1.1
-  - 项目 1.2
-- 项目 2
-  - 项目 2.1
-  - 项目 2.2
+- Item 1
+  - Item 1.1
+  - Item 1.2
+- Item 2
+  - Item 2.1
+  - Item 2.2
 
 </v-clicks>
 ```
@@ -93,23 +93,23 @@ outline: deep
 ```md
 <v-clicks every="2">
 
-- 项目 1.1
-- 项目 1.2
-- 项目 2.1
-- 项目 2.2
+- Item 1.1
+- Item 1.2
+- Item 2.1
+- Item 2.2
 
 </v-clicks>
 ```
 
-### 定位 {#positioning}
+### 动画时机 {#positioning}
 
-默认情况下，点击动画按顺序逐个触发。你可以通过使用 `at` 属性或带值的 `v-click` 指令来自定义元素的动画"位置"。
+默认情况下，点击动画按顺序逐个触发。你可以通过使用 `at` 属性或带值的 `v-click` 指令来自定义元素的动画发生时机。
 
-就像 CSS 布局系统一样，点击动画元素可以是"相对"或"绝对"的：
+就像 CSS 布局系统一样，点击动画发生时机可以是 “相对的” (relative) 或 “绝对的” (absolute)：
 
-#### 相对位置 {#relative-position}
+#### 相对的时机 {#relative-position}
 
-相对元素的实际位置是根据前一个相对元素计算的：
+动画发生时机基于相对于前一个也是相对的时机的动画计算。若该动画是第一个相对时机的动画，则从 0 开始计算：
 
 ````md
 <div v-click> 1 次点击后可见 </div>
@@ -123,34 +123,34 @@ outline: deep
 ````
 
 > [!NOTE]
-> 当你不指定时，`v-click` 的默认值是 `'+1'`。
+> 当没有给 `v-click` 传入参数时，将使用默认值 `'+1'`，即动画发生在上一个动画的后一步。
 
-实际上，`v-after` 只是带有 `at` 属性的 `v-click` 的快捷方式：
+事实上，`v-after` 只是带有 `at="+0"` 的 `v-click` 的简写：
 
 ```md
-<!-- 以下 2 种用法是等效的 -->
+<!-- 以下两种写法等价 -->
 <img v-after />
 <img v-click="'+0'" />
 
-<!-- 以下 3 种用法是等效的 -->
+<!-- 以下三种写法等价 -->
 <img v-click />
 <img v-click="'+1'" />
 <v-click-gap size="1" /><img v-after />
 ```
 
 ::: tip `at` 属性值格式
-只有以 `'+'` 或 `'-'` 开头的字符串值如 `'+1'` 才被视为相对位置：
+只有以 `'+'` 或 `'-'` 开头的字符串值如 `'+1'` 才被视为相对时机：
 
 | 值             | 类型     |
 | -------------- | -------- |
-| `'-1'`, `'+1'` | 相对     |
-| `+1` === `1`   | 绝对     |
-| `'1'`          | 绝对     |
+| `'-1'`, `'+1'` | 相对时机 |
+| `+1` === `1`   | 绝对时机 |
+| `'1'`          | 绝对时机 |
 
 所以不要忘记相对值的单引号。
 :::
 
-#### 绝对位置 {#absolute-position}
+#### 绝对时机 {#absolute-position}
 
 给定的值是触发此动画的确切点击次数：
 
@@ -167,7 +167,7 @@ outline: deep
 
 #### 混合情况 {#mixed-case}
 
-你可以混合使用绝对和相对位置：
+你可以混合地使用绝对和相对时机：
 
 ```md
 <div v-click> 1 次点击后可见 </div>
@@ -191,9 +191,9 @@ outline: deep
 ```
 ````
 
-### 进入和离开 {#enter-leave}
+### 显示后隐藏 {#enter-leave}
 
-你还可以通过传递数组来为 `v-click` 指令指定进入和离开索引。结束索引是不包含的。
+你还可以通过传递一个数组来为 `v-click` 指令指定显示的时机和隐藏的时机：
 
 ```md
 <div v-click.hide="[2, 4]">
@@ -205,7 +205,7 @@ outline: deep
 </div>
 ```
 
-你也可以使用 `v-switch` 来实现相同的效果：
+你也可以使用 `v-switch` 组件来实现相同的效果：
 
 ```md
 <v-switch>
@@ -288,9 +288,9 @@ clicks: 10
 
 了解更多关于[自定义样式](/custom/directory-structure#style)。
 
-## Motion {#motion}
+## Motion 动画 {#motion}
 
-Slidev 内置了 [@vueuse/motion](https://motion.vueuse.org/)。你可以使用 `v-motion` 指令为任何元素应用 motion。例如：
+Slidev 内置了 [@vueuse/motion](https://motion.vueuse.org/)。你可以使用 `v-motion` 指令来赋予元素 Motion 动画：
 
 ```html
 <div
@@ -303,11 +303,11 @@ Slidev 内置了 [@vueuse/motion](https://motion.vueuse.org/)。你可以使用 
 </div>
 ```
 
-文本 `Slidev` 会在进入幻灯片时从 `-80px` 移动到其原始位置。离开时，它会移动到 `80px`。
+上例中，当切换至这张幻灯片时，`Slidev` 几个字将从 `-80px` 移动到原始位置。当离开该幻灯片时，它将移动到 `80px`。
 
 > 在 v0.48.9 之前，你需要在幻灯片的 frontmatter 中添加 `preload: false` 来启用 motion。
 
-### 配合点击使用 Motion {#motion-with-clicks}
+### 基于点击动画的 Motion {#motion-with-clicks}
 
 > 自 v0.48.9 起可用
 
@@ -353,13 +353,13 @@ Slidev 内置了 [@vueuse/motion](https://motion.vueuse.org/)。你可以使用 
 由于 Vue 内部的一个 [bug](https://github.com/vuejs/core/issues/10295)，目前**只有**应用在与 `v-motion` 相同元素上的 `v-click` 才能控制 motion 动画。作为变通方案，你可以使用类似 `v-if="3 < $clicks"` 的方式来实现相同效果。
 :::
 
-了解更多：[演示](https://sli.dev/demo/starter/10) | [@vueuse/motion](https://motion.vueuse.org/) | [v-motion](https://motion.vueuse.org/features/directive-usage) | [预设](https://motion.vueuse.org/features/presets)
+了解更多：[Demo](https://sli.dev/demo/starter/10) | [@vueuse/motion](https://motion.vueuse.org/) | [v-motion](https://motion.vueuse.org/features/directive-usage) | [Presets](https://motion.vueuse.org/features/presets)
 
 ## 幻灯片过渡 {#slide-transitions}
 
 <div id="pages-transitions" />
 
-Slidev 开箱即用地支持幻灯片过渡。你可以通过设置 `transition` frontmatter 选项来启用它：
+Slidev 内置了幻灯片过渡效果。你可以通过设置 `transition` frontmatter 选项来启用它：
 
 ```md
 ---
@@ -404,7 +404,7 @@ mdc: true
 # View Transition {.inline-block.view-transition-title}
 ```
 
-### 自定义过渡 {#custom-transitions}
+### 自定义过渡效果 {#custom-transitions}
 
 Slidev 的幻灯片过渡由 [Vue Transition](https://vuejs.org/guide/built-ins/transition.html) 驱动。你可以通过以下方式提供自定义过渡：
 
@@ -414,7 +414,7 @@ transition: my-transition
 ---
 ```
 
-然后在你的自定义样式表中：
+并在你的自定义样式表中添加以下内容：
 
 ```css
 .my-transition-enter-active,
@@ -428,7 +428,7 @@ transition: my-transition
 }
 ```
 
-在 [Vue Transition](https://vuejs.org/guide/built-ins/transition.html) 中了解更多关于其工作原理。
+参阅 [Vue Transition](https://vuejs.org/guide/built-ins/transition.html) 以了解更多。
 
 ### 前进和后退过渡 {#forward-backward-transitions}
 
@@ -440,11 +440,11 @@ transition: go-forward | go-backward
 ---
 ```
 
-这样，当你从幻灯片 1 转到幻灯片 2 时，将应用 `go-forward` 过渡。当你从幻灯片 2 转到幻灯片 1 时，将应用 `go-backward` 过渡。
+在上例中，当你从幻灯片 1 切换到幻灯片 2 时，将应用 `go-forward` 过渡效果。当你从幻灯片 2 切换到幻灯片 1 时，将应用 `go-backward` 过渡效果。
 
-### 高级用法 {#advanced-usage}
+### 高级过渡选项 {#advanced-usage}
 
-`transition` 字段接受一个将传递给 [`<TransitionGroup>`](https://vuejs.org/api/built-in-components.html#transition) 组件的选项。例如：
+`transition` 字段接受一个选项对象，该选项对象将传递给 [`<TransitionGroup>`](https://vuejs.org/api/built-in-components.html#transition) 组件。例如：
 
 ```md
 ---

@@ -1,4 +1,4 @@
-# 目录结构
+# 目录结构 {#directory-structure}
 
 Slidev 采用目录结构约定来最小化配置并使功能扩展灵活直观。
 
@@ -21,25 +21,25 @@ your-slidev/
 
 ## 组件 {#components}
 
-模式：`./components/*.{vue,js,ts,jsx,tsx,md}`
+路径模式：`./components/*.{vue,js,ts,jsx,tsx,md}`
 
 <LinkCard link="guide/component" />
 
 ## 布局 {#layouts}
 
-模式：`./layouts/*.{vue,js,ts,jsx,tsx}`
+路径模式：`./layouts/*.{vue,js,ts,jsx,tsx}`
 
 <LinkCard link="guide/layout" />
 
 ## Public {#public}
 
-模式：`./public/*`
+路径模式：`./public/*`
 
 此目录中的资源将在开发时以根路径 `/` 提供服务，并原样复制到 dist 目录的根目录。了解更多关于[资源处理](../guide/faq#assets-handling)。
 
 ## 样式 {#style}
 
-模式：`./style.css` | `./styles/index.{css,js,ts}`
+路径模式：`./style.css` | `./styles/index.{css,js,ts}`
 
 遵循此约定的文件将被注入到 App 根部。如果你需要导入多个 CSS 入口，可以创建以下结构并自行管理导入顺序。
 
@@ -87,7 +87,7 @@ import './layouts.css'
 
 ## `index.html` {#index-html}
 
-模式：`index.html`
+路径模式：`index.html`
 
 `index.html` 提供了向主 `index.html` 注入 meta 标签和/或脚本的能力。
 
@@ -128,6 +128,6 @@ import './layouts.css'
 
 ## 全局图层 {#global-layers}
 
-模式：`global-top.vue` | `global-bottom.vue` | `custom-nav-controls.vue` | `slide-top.vue` | `slide-bottom.vue`
+路径模式：`global-top.vue` | `global-bottom.vue` | `custom-nav-controls.vue` | `slide-top.vue` | `slide-bottom.vue`
 
 <LinkCard link="features/global-layers" />

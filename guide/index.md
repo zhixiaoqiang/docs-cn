@@ -4,11 +4,11 @@ outline: deep
 
 # 快速开始
 
-Slidev <sup>(slide + dev, **/slaɪdɪv/**)</sup> 是一个基于 Web 的幻灯片制作和演示工具。它专为开发者设计，让你专注于用 Markdown 编写内容。借助 Vue 等 Web 技术的强大能力，你可以在演示文稿中实现像素级精确的设计和交互式演示。
+Slidev <sup>(slide + dev, **/slaɪdɪv/**)</sup> 是一个为开发者设计的基于 Web 的幻灯片制作工具。它帮助您以 Markdown 的形式专注于编写幻灯片的内容，并制作出具有交互式演示功能的、高度可自定义的幻灯片。
 
 ::: tip
 
-你可以在 <LinkInline link="guide/why" /> 中了解更多关于这个项目的设计理念。
+你可以在 <LinkInline link="guide/why" /> 中了解更多关于本项目的设计理念。
 
 :::
 
@@ -34,15 +34,15 @@ Slidev <sup>(slide + dev, **/slaɪdɪv/**)</sup> 是一个基于 Web 的幻灯�
 
 ## 创建幻灯片 {#create-slides}
 
-### 在线体验 {#try-it-online}
+### 在浏览器中创建 {#try-it-online}
 
-在浏览器中通过 StackBlitz 直接启动 Slidev：[sli.dev/new](https://sli.dev/new)
+通过 StackBlitz 在浏览器中创建幻灯片: [sli.dev/new](https://sli.dev/new)
 
-### 本地创建 {#create-locally}
+### 在本地创建 {#create-locally}
 
-> 需要安装 [Node.js](https://nodejs.org) >= 18.0。
+> 需要先安装 [Node.js](https://nodejs.org) >= 22.0
 
-运行以下命令在本地创建一个新的 Slidev 项目：
+在终端运行以下命令来创建一个新的 Slidev 项目：
 
 ::: code-group
 
@@ -75,9 +75,9 @@ deno init --npm slidev
 
 :::
 
-按照提示操作即可启动你的幻灯片项目。幻灯片内容位于 `slides.md` 文件中，初始内容包含了大多数 Slidev 功能的演示。有关 Markdown 语法的更多信息，请查看 <LinkInline link="guide/syntax" />。
+根据指引，输入项目名称并按照提示完成项目创建。幻灯片内容在 `slides.md` 文件中，初始内容包含了 Slidev 的大部分功能的演示。关于幻灯片 Markdown 语法的更多信息，请查看 <LinkInline link="guide/syntax" />。
 
-:::: details 单文件使用（不推荐）
+:::: details 单文件模式 (不推荐)
 
 如果你希望使用单个 Markdown 文件作为幻灯片，可以全局安装 Slidev CLI：
 
@@ -105,7 +105,7 @@ deno i -g npm:@slidev/cli
 
 :::
 
-然后，你可以通过以下命令创建并启动单文件幻灯片：
+然后，你可以通过以下命令创建并启动幻灯片:
 
 ```bash
 slidev slides.md
@@ -115,15 +115,15 @@ slidev slides.md
 
 ## 基本命令 {#basic-commands}
 
-Slidev 在其 CLI 中提供了一组命令。以下是一些常用命令：
+以下是 Slidev CLI 的一些常用命令：
 
-- `slidev` - 启动开发服务器。参见 [dev 命令](../builtin/cli#dev)。
-- `slidev export` - 将幻灯片导出为 PDF、PPTX 或 PNG。参见 <LinkInline link="guide/exporting" />。
-- `slidev build` - 将幻灯片构建为静态 Web 应用。参见 <LinkInline link="guide/hosting" />。
-- `slidev format` - 格式化幻灯片。参见 [format 命令](../builtin/cli#format)。
+- `slidev` - 启动开发服务器。细节请参见 [dev 命令](../builtin/cli#dev)
+- `slidev export` - 将幻灯片导出为 PDF、PPTX 或 PNG 文件。细节请参见 <LinkInline link="guide/exporting" />
+- `slidev build` - 将幻灯片构建为静态网页。细节请参见 <LinkInline link="guide/hosting" />
+- `slidev format` - 将幻灯片格式化。细节请参见 [format 命令](../builtin/cli#format)
 - `slidev --help` - 显示帮助信息
 
-要运行这些命令，你可以将它们添加到 `package.json` 的 scripts 中（如果项目是通过 `npm init slidev` 创建的，这已经为你配置好了）：
+你可以将这些命令添加到你的 `package.json` 的 `scripts` 字段中，来更方便地运行它们（如果幻灯片项目是通过 `npm init slidev` 创建的，则可以跳过这一步）：
 
 ```json [package.json]
 {
@@ -135,9 +135,9 @@ Slidev 在其 CLI 中提供了一组命令。以下是一些常用命令：
 }
 ```
 
-然后，你可以简单地运行 `npm run dev`、`npm run build` 和 `npm run export`。
+这样，你就可以通过 `npm run dev`、`npm run build` 和 `npm run export` 来运行这些命令了。
 
-有关 CLI 的更多信息，请查看 [CLI 指南](../builtin/cli)。
+关于 CLI 的更多信息，请查看 [CLI 指南](../builtin/cli)。
 
 ## 设置编辑器 {#editor}
 
@@ -151,19 +151,21 @@ Slidev 在其 CLI 中提供了一组命令。以下是一些常用命令：
 
 推荐加入我们的官方 [Discord 服务器](https://chat.sli.dev/) 获取帮助、分享你的幻灯片，或讨论任何关于 Slidev 的话题。
 
-如果你遇到了 bug，欢迎在 [GitHub](https://github.com/slidevjs/slidev/issues/new/choose) 上提交 issue。
+如果你遇到了疑似 bug 的问题，欢迎在 [GitHub](https://github.com/slidevjs/slidev/issues/new/choose) 上开一个 issue。
+
+也欢迎中文社区的朋友们加入我们的（半官方）QQ 群 978643067，讨论 Slidev 相关话题。
 
 ## 技术栈 {#tech-stack}
 
 Slidev 由以下工具和技术驱动：
 
-- [Vite](https://vitejs.dev) - 极速的前端构建工具
-- [Vue 3](https://v3.vuejs.org/) 驱动的 [Markdown](https://daringfireball.net/projects/markdown/syntax) - 专注于内容，同时在需要时可以使用 HTML 和 Vue 组件
-- [UnoCSS](https://github.com/unocss/unocss) - 按需加载的原子化 CSS 框架，轻松为幻灯片添加样式
-- [Shiki](https://github.com/shikijs/shiki)、[Monaco Editor](https://github.com/Microsoft/monaco-editor) - 一流的代码片段支持，具备实时编码能力
-- [RecordRTC](https://recordrtc.org) - 内置录制和摄像头视图
-- [VueUse](https://vueuse.org) 系列 - [`@vueuse/core`](https://github.com/vueuse/vueuse)、[`@vueuse/head`](https://github.com/vueuse/head)、[`@vueuse/motion`](https://github.com/vueuse/motion) 等
-- [Iconify](https://iconify.design/) - 图标集合
-- [Drauu](https://github.com/antfu/drauu) - 绘图和标注支持
-- [KaTeX](https://katex.org/) - LaTeX 数学公式渲染
-- [Mermaid](https://mermaid-js.github.io/mermaid) - 文本图表
+- [Vite](https://vitejs.dev) - 一款极速响应的下一代的前端工具链
+- [Vue 3](https://v3.vuejs.org/) powered [Markdown](https://daringfireball.net/projects/markdown/syntax) - 用于编写幻灯片内容
+- [UnoCSS](https://github.com/unocss/unocss) - 帮助快速构建幻灯片样式
+- [Shiki](https://github.com/shikijs/shiki), [Monaco Editor](https://github.com/Microsoft/monaco-editor) - 为在幻灯片中嵌入代码提供一流支持
+- [RecordRTC](https://recordrtc.org) - 内置的录制工具和摄像头视图
+- [VueUse](https://vueuse.org) 系列 - [`@vueuse/core`](https://github.com/vueuse/vueuse), [`@vueuse/head`](https://github.com/vueuse/head), [`@vueuse/motion`](https://github.com/vueuse/motion), 等等
+- [Iconify](https://iconify.design/) - 用图标集丰富你的幻灯片
+- [Drauu](https://github.com/antfu/drauu) - 用于在幻灯片上绘图和批注
+- [KaTeX](https://katex.org/) - 用于渲染 LaTeX 数学公式
+- [Mermaid](https://mermaid-js.github.io/mermaid) - 基于文本的图表绘制工具

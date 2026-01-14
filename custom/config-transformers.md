@@ -9,7 +9,7 @@ import type { MarkdownTransformContext } from '@slidev/types'
 import { defineTransformersSetup } from '@slidev/types'
 
 function myCodeblock(ctx: MarkdownTransformContext) {
-  console.log('index in presentation', ctx.slide.index)
+  console.log('在整个幻灯片中的索引：', ctx.slide.index)
   ctx.s.replace(
     /^```myblock *(\{[^\n]*\})?\n([\s\S]+?)\n```/gm,
     (full: string, options = '', code = '') => {

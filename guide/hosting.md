@@ -2,11 +2,11 @@
 outline: deep
 ---
 
-# 构建和托管
+# 构建和部署
 
 Slidev 设计为在你编辑或演示幻灯片时作为 Web 服务器运行。但是，在演示结束后，你可能仍想与他人分享你的**交互式**幻灯片。本指南将向你展示如何构建和托管你的幻灯片。
 
-## 构建为 SPA {#spa}
+## 构建为静态网页 {#spa}
 
 你可以通过以下命令将幻灯片构建为静态的[单页应用 (SPA)](https://developer.mozilla.org/en-US/docs/Glossary/SPA)：
 
@@ -42,7 +42,7 @@ $ slidev build --out my-build-folder
 $ slidev build --without-notes
 ```
 
-### 多文件构建 {#multiple-builds}
+### 多个幻灯片 {#multiple-builds}
 
 你可以通过传递多个 markdown 文件作为参数一次性构建多个幻灯片：
 
@@ -56,7 +56,7 @@ $ slidev build slides1.md slides2.md
 $ slidev build *.md
 ```
 
-在这种情况下，每个输入文件将在输出目录中生成一个包含构建结果的文件夹。
+在上例中，每个输入文件将在输出目录中生成一个包含构建的文件夹。
 
 ### 示例 {#examples}
 
@@ -64,14 +64,14 @@ $ slidev build *.md
 
 - [Demo Slides](https://sli.dev/demo/starter)
 - [Composable Vue](https://talks.antfu.me/2021/composable-vue) by [Anthony Fu](https://github.com/antfu)
-- 更多在[展示](../resources/showcases)
+- 更多请查阅 [案例展示](../resources/showcases)
 
 ### 选项 {#options}
 
 <LinkCard link="features/build-with-pdf" />
 <LinkCard link="features/bundle-remote-assets" />
 
-## 托管 {#hosting}
+## 静态部署 {#hosting}
 
 我们建议使用 `npm init slidev@latest` 来搭建你的项目，它包含开箱即用的托管服务配置文件。
 
@@ -188,7 +188,7 @@ status = 200
 
 然后进入你的 [Vercel dashboard](https://vercel.com/) 并使用该仓库创建一个新站点。
 
-### Docker 托管 {#docker}
+### 在 Docker 上部署 {#docker}
 
 如果你需要一种快速的方式在容器中运行演示，你可以使用由 [tangramor](https://github.com/tangramor) 维护的预构建 [docker 镜像](https://hub.docker.com/r/tangramor/slidev)，或者构建你自己的。
 

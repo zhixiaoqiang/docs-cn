@@ -16,15 +16,15 @@ Current page is: {{ $nav.currentPage }}
 <template>
   <div>Title: {{ $slidev.configs.title }}</div>
   <button @click="$nav.next">
-    Next Click
+    下一步动画
   </button>
   <button @click="$nav.nextSlide">
-    Next Slide
+    下一张幻灯片
   </button>
 </template>
 ```
 
-## 组合式使用 {#composable-usage}
+## 通过 Composable 使用 {#composable-usage}
 
 > 自 v0.48.0 起可用
 
@@ -123,11 +123,11 @@ Is current page active: {{ $page === $nav.currentPage }}
 title: My First Slidev!
 ---
 
-# Page 1
+# 第一页
 
 ---
 
-# Any Page
+# 其他任何页面
 
 {{ $slidev.configs.title }} // 'My First Slidev!'
 ```

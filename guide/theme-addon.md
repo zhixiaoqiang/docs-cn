@@ -1,6 +1,6 @@
 # 主题和插件
 
-一个幻灯片项目可以有一个主题和多个插件。它们都可以为你的幻灯片项目提供样式、组件、布局和其他配置。
+一个幻灯片项目可以有一个主题和多个插件。它们可以为你的幻灯片项目提供样式、组件、布局和其他配置。
 
 ## 使用主题 {#use-theme}
 
@@ -14,7 +14,7 @@ theme: seriph
 # The first slide
 ```
 
-你可以在[主题库](../resources/theme-gallery)中找到官方主题和社区主题列表。
+你可以在[主题合集](../resources/theme-gallery)中找到官方主题和社区主题列表。
 
 ::: info 主题名称约定
 
@@ -25,7 +25,7 @@ theme: seriph
 
 :::
 
-你可以启动服务器，确认后将提示安装主题。
+启动服务器后，你将会看到如下提示，选择同意即可安装该主题：
 
 <div class="language-md text-xs pl-6">
 <pre style="overflow: hidden; text-wrap: pretty;">
@@ -33,13 +33,13 @@ theme: seriph
 </pre>
 </div>
 
-或通过以下方式手动安装主题：
+或者，你也可以手动安装主题：
 
 ```bash
 $ npm install @slidev/theme-seriph
 ```
 
-就这样，享受新主题吧！有关使用的更多详情，你可以参考主题的 README。
+这就是使用主题的全部步骤！如果你想要更多关于主题的细节，可以查看主题的 README。
 
 <SeeAlso :links="[
   'features/eject-theme',
@@ -59,4 +59,4 @@ addons:
 ---
 ```
 
-你可以在[插件库](../resources/addon-gallery)中找到官方插件和社区插件列表。
+你可以在[插件合集](../resources/addon-gallery)中找到官方插件和社区插件。
