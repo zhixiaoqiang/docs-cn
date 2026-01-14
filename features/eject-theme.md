@@ -1,7 +1,7 @@
 ---
 depends:
   - guide/theme-addon
-tags: [theme, cli]
+tags: [主题, CLI]
 description: |
   将已安装的主题弹出到本地以进行自定义。
 ---

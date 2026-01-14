@@ -1,5 +1,5 @@
 ---
-tags: [layout]
+tags: [布局]
 description: |
   通过鼠标拖动来移动、调整大小和旋转元素。
 ---

@@ -36,7 +36,7 @@ export const Guides = [
     link: '/guide/exporting',
   },
   {
-    text: '托管',
+    text: '部署',
     link: '/guide/hosting',
   },
   {
@@ -51,11 +51,11 @@ export const BuiltIn = [
     link: '/builtin/cli',
   },
   {
-    text: '组件',
+    text: '内置组件',
     link: '/builtin/components',
   },
   {
-    text: '布局',
+    text: '内置布局',
     link: '/builtin/layouts',
   },
 ]
@@ -81,15 +81,15 @@ export const Advanced = [
 
 export const Resources = [
   {
-    text: '展示',
+    text: '案例展示',
     link: '/resources/showcases',
   },
   {
-    text: '主题库',
+    text: '主题合集',
     link: '/resources/theme-gallery',
   },
   {
-    text: '插件库',
+    text: '插件合集',
     link: '/resources/addon-gallery',
   },
   {
@@ -101,7 +101,7 @@ export const Resources = [
     link: '/resources/covers',
   },
   {
-    text: '版本说明',
+    text: '更新日志',
     link: 'https://github.com/slidevjs/slidev/releases',
   },
 ]

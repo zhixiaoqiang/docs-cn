@@ -3,7 +3,7 @@ relates:
   - Iconify: https://iconify.design/
   - Icones: https://icones.js.org/
   - unplugin-icons: https://github.com/antfu/unplugin-icons
-tags: [components]
+tags: [组件]
 description: |
   在 markdown 中直接使用几乎所有开源图标集的图标。
 ---

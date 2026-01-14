@@ -1,9 +1,9 @@
 ---
 relates:
   - features/block-frontmatter
-  - GitHub Repo: https://github.com/slidevjs/prettier-plugin
-  - Prettier: https://prettier.io/
-tags: [editor]
+  - 插件的 GitHub 仓库: https://github.com/slidevjs/prettier-plugin
+  - Prettier.js 官网: https://prettier.io/
+tags: [编辑器]
 description: |
   使用 Prettier 插件格式化你的幻灯片。
 ---

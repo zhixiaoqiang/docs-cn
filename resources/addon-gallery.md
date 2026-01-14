@@ -6,7 +6,7 @@ aside: false
 import AddonGallery from '../.vitepress/theme/components/AddonGallery.vue'
 </script>
 
-# 插件库
+# 插件合集
 
 在此浏览 Slidev 可用的精彩插件。
 
@@ -29,4 +29,4 @@ import AddonGallery from '../.vitepress/theme/components/AddonGallery.vue'
 
 ## 更多插件 {#more-addons}
 
-查找所有 [NPM 上可用的插件](https://www.npmjs.com/search?q=keywords%3Aslidev-addon)。
+[在 NPM 上](https://www.npmjs.com/search?q=keywords%3Aslidev-addon)查找所有已发布的插件。

@@ -2,7 +2,7 @@
 depends:
   - guide/syntax#importing-slides
   - features/importing-slides
-tags: [syntax]
+tags: [语法]
 description: |
   从多个 markdown 文件合并 frontmatter。
 ---

@@ -1,5 +1,5 @@
 ---
-tags: [presenter]
+tags: [演示模式]
 description: 演讲者模式的计时器。
 ---
 

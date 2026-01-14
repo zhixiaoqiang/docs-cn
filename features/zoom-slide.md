@@ -3,7 +3,7 @@ relates:
   - guide/faq#adjust-size
   - features/canvas-size
   - features/transform-component
-tags: [layout]
+tags: [布局]
 description: |
   将幻灯片内容缩放到特定比例。
 ---

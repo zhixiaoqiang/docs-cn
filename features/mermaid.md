@@ -4,7 +4,7 @@ relates:
   - Mermaid Live Editor: https://mermaid.live/
   - Demo Slide: https://sli.dev/demo/starter/12
   - features/plantuml
-tags: [diagram]
+tags: [图表]
 description: |
   使用 Mermaid 从文本描述创建图表。
 ---

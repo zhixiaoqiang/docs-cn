@@ -3,9 +3,9 @@ depends:
   - features/monaco-editor
   - guide/animations
 relates:
-  - Custom Code Runners: /custom/config-code-runners
+  - 自定义代码运行器: /custom/config-code-runners
 since: v0.48.0
-tags: [codeblock, editor]
+tags: [代码块, 编辑器]
 description: |
   直接在编辑器中运行代码并查看结果。
 ---

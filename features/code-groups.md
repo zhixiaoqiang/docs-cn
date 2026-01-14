@@ -1,7 +1,7 @@
 ---
 depends:
   - guide/syntax#code-block
-tags: [codeblock]
+tags: [代码块]
 description: |
   分组多个代码块，并根据标题名称自动匹配图标。
 ---

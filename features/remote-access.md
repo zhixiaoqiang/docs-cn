@@ -3,7 +3,7 @@ relates:
   - guide/ui
   - CLI: builtin/cli
   - Cloudflare Quick Tunnels: https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/do-more-with-tunnels/trycloudflare/
-tags: [remote, tool]
+tags: [远程控制, 工具]
 description: |
   使用 Slidev 的远程访问功能远程访问你的演示文稿。
 ---

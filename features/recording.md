@@ -4,7 +4,7 @@ depends:
 relates:
   - RecordRTC: https://github.com/muaz-khan/RecordRTC
   - WebRTC API: https://webrtc.org/
-tags: [presenter, tool]
+tags: [演示模式, 工具]
 description: |
   使用内置摄像头视图和录制功能录制你的演示。
 ---

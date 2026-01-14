@@ -1,5 +1,5 @@
 ---
-tags: [notes, presenter]
+tags: [笔记, 演示模式]
 description: 自动为你的备注添加 `<ruby>` 标签。
 ---
 

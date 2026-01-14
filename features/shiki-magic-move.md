@@ -5,7 +5,7 @@ depends:
 relates:
   - Shiki Magic Move: https://github.com/shikijs/shiki-magic-move
 since: v0.48.0
-tags: [codeblock, animation]
+tags: [代码块, 动画]
 description: |
   启用代码变化之间的精细过渡效果，类似于 Keynote 的 Magic Move。
 ---

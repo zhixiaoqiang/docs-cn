@@ -3,7 +3,7 @@ depends:
   - custom/index#headmatter
 relates:
   - features/og-image
-tags: [SEO, head]
+tags: [SEO, 部署]
 description: |
   配置 SEO meta 标签以改善社交媒体分享和搜索引擎优化。
 ---

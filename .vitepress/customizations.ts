@@ -1,6 +1,6 @@
 export default [
   {
-    text: '自定义配置',
+    text: '自定义',
     link: '/custom/',
   },
   {
@@ -8,7 +8,7 @@ export default [
     link: '/custom/directory-structure',
   },
   {
-    text: '配置代码高亮器',
+    text: '代码高亮',
     link: '/custom/config-highlighter',
   },
   {
@@ -16,7 +16,7 @@ export default [
     link: '/custom/config-vite',
   },
   {
-    text: '配置 Vue 应用',
+    text: '配置 Vue 实例',
     link: '/custom/config-vue',
   },
   {
@@ -28,7 +28,7 @@ export default [
     link: '/custom/config-code-runners',
   },
   {
-    text: '配置 Transformers',
+    text: '配置自定义语法',
     link: '/custom/config-transformers',
   },
   {
@@ -52,7 +52,7 @@ export default [
     link: '/custom/config-shortcuts',
   },
   {
-    text: '配置上下文菜单',
+    text: '配置右键菜单',
     link: '/custom/config-context-menu',
   },
   {
@@ -60,7 +60,7 @@ export default [
     link: '/custom/config-fonts',
   },
   {
-    text: '配置预解析器',
+    text: '配置预处理器',
     link: '/custom/config-parser',
   },
 ]

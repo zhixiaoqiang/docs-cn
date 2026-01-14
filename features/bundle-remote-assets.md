@@ -1,7 +1,7 @@
 ---
 relates:
   - vite-plugin-remote-assets: https://github.com/antfu/vite-plugin-remote-assets
-tags: [build]
+tags: [构建]
 description: |
   在构建幻灯片时下载并打包远程资源。
 ---

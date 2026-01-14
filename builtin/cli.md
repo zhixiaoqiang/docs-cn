@@ -2,7 +2,7 @@
 
 `@slidev/cli` 提供了一个名为 `slidev` 的二进制文件，你可以用它来开发、构建和导出你的幻灯片。
 
-## 前置条件 {#prerequisites}
+## 环境配置 {#prerequisites}
 
 要使用 CLI，你可以全局安装 `@slidev/cli`，或者在你的 Node.js 项目中本地安装。如果你是使用 `npm init slidev` 创建的项目，CLI 已经本地安装好了。
 

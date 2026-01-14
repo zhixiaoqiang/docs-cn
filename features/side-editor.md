@@ -3,9 +3,9 @@ depends:
   - guide/ui#navigation-actions
 relates:
   - features/vscode-extension
-tags: [editor]
+tags: [编辑器]
 description: |
-  在演示旁边编辑你的幻灯片源文件。
+  在放映模式下编辑你的幻灯片源文件。
 ---
 
 # 集成编辑器

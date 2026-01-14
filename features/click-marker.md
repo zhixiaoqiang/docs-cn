@@ -3,7 +3,7 @@ depends:
   - guide/syntax#notes
   - guide/animations
 since: v0.48.0
-tags: [presenter, animation]
+tags: [演示模式, 动画]
 description: |
   高亮备注并自动滚动到备注的活动部分。
 ---

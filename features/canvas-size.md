@@ -3,7 +3,7 @@ relates:
   - guide/faq#adjust-size
   - features/zoom-slide
   - features/transform-component
-tags: [layout]
+tags: [布局]
 description: |
   设置所有幻灯片的大小。
 ---

@@ -3,9 +3,9 @@ depends:
   - guide/exporting
   - guide/hosting
 relates:
-  - CLI export options: /builtin/cli#export
-  - Headmatter export options: /custom/#headmatter
-tags: [export, build]
+  - CLI export 命令: /builtin/cli#export
+  - Headmatter: /custom/#headmatter
+tags: [导出, 构建]
 description: |
   在构建幻灯片时生成可下载的 PDF。
 ---

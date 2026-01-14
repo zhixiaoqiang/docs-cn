@@ -3,7 +3,7 @@ relates:
   - features/monaco-write
   - features/monaco-editor
 since: v0.47.0
-tags: [codeblock, syntax]
+tags: [代码块, 语法]
 description: |
   从现有文件导入代码片段到你的幻灯片中。
 ---

@@ -1,8 +1,8 @@
 ---
 relates:
-  - Vue's Scoped CSS: https://vuejs.org/api/sfc-css-features.html#scoped-css
+  - Vue 的 Scoped CSS: https://vue-loader.vuejs.org/guide/scoped-css.html
   - UnoCSS directives: https://unocss.dev/transformers/directives
-tags: [styling, syntax]
+tags: [样式, 语法]
 description: |
   为当前幻灯片定义样式。
 ---

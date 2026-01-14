@@ -1,7 +1,7 @@
 ---
 relates:
   - features/frontmatter-merging
-tags: [syntax]
+tags: [语法]
 description: |
   将 `slides.md` 拆分为多个文件以提高复用性和组织性。
 ---

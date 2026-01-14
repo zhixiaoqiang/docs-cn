@@ -4,9 +4,9 @@ depends:
   - features/import-snippet
 relates:
   - features/import-snippet
-  - Custom Code Runners: /custom/config-code-runners
+  - 自定义代码运行器: /custom/config-code-runners
 since: v0.49.5
-tags: [codeblock, editor]
+tags: [代码块, 编辑器]
 description: |
   一个 Monaco 编辑器，允许你直接在幻灯片中编写代码并将更改保存回文件。
 ---

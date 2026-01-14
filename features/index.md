@@ -40,11 +40,11 @@ function removeTag(tag: string) {
 }
 </script>
 
-# 功能
+# 功能列表
 
-这是 Slidev 提供的所有独立功能的列表。每个功能都可以独立使用，且都是可选的。
+本页是 Slidev 提供的相对独立的功能列表。每一个功能都可以在有需要的时候单独使用，使你的幻灯片更加精彩。
 
-你也可以阅读 <LinkInline link="guide/" /> 按主题学习这些功能。
+如果你想按主题了解这些功能，也可以阅读 <LinkInline link="guide/index" />。
 
 <ClientOnly>
 <div flex items-center mt-6 gap-6>

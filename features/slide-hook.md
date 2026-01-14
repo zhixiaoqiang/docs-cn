@@ -1,9 +1,9 @@
 ---
 depends:
   - guide/global-context
-tags: [client-api]
+tags: [客户端 API]
 description: |
-  管理幻灯片生命周期的 hooks。
+  用于侦听幻灯片生命周期的 hooks。
 ---
 
 # 幻灯片 Hooks

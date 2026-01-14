@@ -3,7 +3,7 @@ relates:
   - guide/faq#adjust-size
   - features/canvas-size
   - features/zoom-slide
-tags: [layout]
+tags: [布局]
 description: |
   用于缩放某些元素的组件。
 ---

@@ -2,7 +2,7 @@
 relates:
   - UnoCSS Variants: https://unocss.dev/config/variants#variants
 since: v0.48.0
-tags: [navigation, styling]
+tags: [导航, 样式]
 description: |
   根据导航方向应用不同的样式和动画。
 ---

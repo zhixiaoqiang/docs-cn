@@ -15,16 +15,12 @@ const route = useRoute()
       <a @click.prevent>
         <Dropdown :triggers="['hover', 'click']" :popper-triggers="['hover']" theme="twoslash" popper-class="z-1000">
           <Badge class="scale-80 translate-x--1 select-none">
-            新文档！
+            新版文档
           </Badge>
           <template #popper>
             <div class="p3 text-sm">
               <p>
-                你正在查看新版 Slidev 文档。
-              </p>
-              <p>
-                旧版文档可在
-                <a href="https://docs-legacy.sli.dev/" class="underline text-primary" target="_blank">这里</a>访问。
+                您正在访问新版文档。
               </p>
             </div>
           </template>
@@ -43,7 +39,7 @@ const route = useRoute()
         </div>
         <div v-if="route.data?.frontmatter?.since" class="bg-$vp-c-bg-soft px2 pb2 rounded-lg" flex="~ col gap-1">
           <div font-bold text-sm op75 px2 pt4>
-            起始版本
+            要求版本
           </div>
           <VPMenuLink
             :item="{

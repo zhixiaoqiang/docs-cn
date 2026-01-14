@@ -1,9 +1,9 @@
 ---
 relates:
   - VS Code: https://code.visualstudio.com/
-  - View in Marketplace: https://marketplace.visualstudio.com/items?itemName=antfu.slidev
-  - View in OVSX: https://open-vsx.org/extension/antfu/slidev
-tags: [editor]
+  - 在插件市场中查看: https://marketplace.visualstudio.com/items?itemName=antfu.slidev
+  - 在 OVSX 中查看: https://open-vsx.org/extension/antfu/slidev
+tags: [编辑器]
 description: |
   帮助你更好地组织幻灯片并快速预览。
 ---

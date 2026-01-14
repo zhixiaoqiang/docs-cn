@@ -3,7 +3,7 @@ depends:
   - guide/syntax
 relates:
   - features/prettier-plugin
-tags: [syntax]
+tags: [语法]
 description: |
   使用 YAML 代码块作为 frontmatter。
 ---

@@ -4,7 +4,7 @@ depends:
 relates:
   - TwoSlash: https://twoslash.netlify.app/
 since: v0.46.0
-tags: [codeblock]
+tags: [代码块]
 description: |
   渲染带有悬停或内联类型信息的 TypeScript 代码块的强大工具。
 ---

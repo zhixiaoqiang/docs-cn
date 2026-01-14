@@ -1,10 +1,10 @@
 ---
 relates:
   - Plant UML: https://plantuml.com/
-  - Plant UML Live Editor: https://plantuml.com/plantuml
-  - Example side: https://sli.dev/demo/starter/12
+  - Plant UML 在线编辑器: https://plantuml.com/plantuml
+  - Demo: https://sli.dev/demo/starter/12
   - features/mermaid
-tags: [diagram]
+tags: [图表]
 description: |
   从文本描述创建图表，由 PlantUML 驱动。
 ---

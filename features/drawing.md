@@ -3,7 +3,7 @@ depends:
   - guide/ui#navigation-bar
 relates:
   - drauu: https://github.com/antfu/drauu
-tags: [drawing]
+tags: [绘图]
 description: |
   轻松绘制和标注你的幻灯片。
 ---

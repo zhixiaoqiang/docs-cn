@@ -1,5 +1,5 @@
 ---
-tags: [navigation, layout]
+tags: [导航, 布局]
 description: |
   创建跨幻灯片持久存在的自定义组件。
 ---

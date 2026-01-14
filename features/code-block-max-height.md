@@ -1,7 +1,7 @@
 ---
 depends:
   - guide/syntax#code-block
-tags: [codeblock, layout]
+tags: [代码块, 布局]
 description: |
   为代码块设置最大高度并启用滚动。
 ---

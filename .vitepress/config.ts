@@ -14,11 +14,11 @@ export const slidebars: DefaultTheme.SidebarItem[] = [
     items: Guides,
   },
   {
-    text: '高级',
+    text: '进阶',
     items: Advanced,
   },
   {
-    text: '自定义',
+    text: '定制',
     items: Customizations,
   },
   {
@@ -33,13 +33,13 @@ export const slidebars: DefaultTheme.SidebarItem[] = [
 
 export default defineConfig({
   title: 'Slidev',
-  description: '面向开发者的演示幻灯片',
+  description: '为开发者打造的演示文稿工具',
   head: [
     ['link', { rel: 'icon', type: 'image/png', href: '/favicon.png' }],
     ['meta', { name: 'author', content: 'Anthony Fu' }],
-    ['meta', { property: 'og:title', content: 'Slidev' }],
+    ['meta', { property: 'og:title', content: 'Slidev 中文文档' }],
     ['meta', { property: 'og:image', content: 'https://sli.dev/og-image.png' }],
-    ['meta', { property: 'og:description', content: '面向开发者的演示幻灯片' }],
+    ['meta', { property: 'og:description', content: '为开发者打造的演示文稿工具' }],
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
     ['meta', { name: 'twitter:creator', content: '@slidevjs' }],
     ['meta', { name: 'twitter:image', content: 'https://sli.dev/og-image.png' }],
@@ -82,9 +82,11 @@ export default defineConfig({
   themeConfig: {
     logo: '/logo.svg',
     editLink: {
-      pattern: 'https://github.com/slidevjs/slidev/edit/main/docs-cn/:path',
-      text: '为此页面提出修改建议',
+      pattern: 'https://github.com/slidevjs/docs-cn/edit/main/:path',
+      text: '改进翻译',
     },
+
+    outlineTitle: '本页目录',
 
     search: {
       provider: 'local',
@@ -96,7 +98,7 @@ export default defineConfig({
         items: [
           ...Guides,
           {
-            text: '高级',
+            text: '进阶',
             items: Advanced,
           },
         ],
@@ -113,7 +115,7 @@ export default defineConfig({
             items: BuiltIn,
           },
           {
-            text: '自定义',
+            text: '定制',
             items: Customizations,
           },
         ],
@@ -144,8 +146,8 @@ export default defineConfig({
     },
 
     footer: {
-      message: '基于 MIT 许可证发布。',
-      copyright: '版权所有 © 2020-2025 Anthony Fu。',
+      message: 'Released under the MIT License.',
+      copyright: 'Copyright © 2020-2026 Anthony Fu.',
     },
 
     outline: {

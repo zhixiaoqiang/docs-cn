@@ -11,6 +11,6 @@ background: https://cover.sli.dev
 ---
 ```
 
-如果你喜欢其中任何一张，请查看我们的 [Unsplash 合集](https://unsplash.com/collections/94734566/slidev)并找到它们的作者。
+如果你喜欢这些图片，可以访问我们的 [Unsplash 合集](https://unsplash.com/collections/94734566/slidev)，同时还能了解它们的作者。
 
-[cover.sli.dev](https://cover.sli.dev) 托管于 [`slidevjs/slidev-covers`](https://github.com/slidevjs/slidev-covers)。
+目前，[cover.sli.dev](https://cover.sli.dev) 的内容来自于 [`slidevjs/slidev-covers` 仓库](https://github.com/slidevjs/slidev-covers)。

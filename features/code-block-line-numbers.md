@@ -1,7 +1,7 @@
 ---
 depends:
   - guide/syntax#code-block
-tags: [codeblock]
+tags: [代码块]
 description: |
   为所有幻灯片的代码块启用行号，或单独启用。
 ---

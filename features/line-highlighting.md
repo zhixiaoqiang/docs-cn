@@ -2,7 +2,7 @@
 depends:
   - guide/syntax#code-block
   - guide/animations
-tags: [codeblock, animation]
+tags: [代码块, 动画]
 description: |
   根据点击高亮代码块中的特定行。
 ---

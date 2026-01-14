@@ -2,7 +2,7 @@
 relates:
   - Demo: /demo/starter/11
   - KaTeX: https://katex.org/
-tags: [codeblock, syntax]
+tags: [代码块, 语法]
 description: |
   Slidev 内置了由 KaTeX 驱动的 LaTeX 支持。
 ---

@@ -1,7 +1,7 @@
 ---
 relates:
   - features/seo-meta
-tags: ['SEO', head]
+tags: ['SEO', 部署]
 description: |
   为你的幻灯片设置 Open Graph 图片。
 ---

@@ -2,9 +2,9 @@
 depends:
   - guide/animations
 relates:
-  - Rough Notation: https://github.com/slidevjs/rough-notation
+  - Rough Notation: https://github.com/linkstrifer/react-rough-notation
 since: v0.48.0
-tags: [drawing, animation]
+tags: [绘图, 动画]
 description: |
   集成 Rough Notation，允许在幻灯片中标记或高亮元素。
 ---

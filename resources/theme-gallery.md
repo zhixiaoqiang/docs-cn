@@ -6,7 +6,7 @@ aside: false
 import ThemeGallery from '../.vitepress/theme/components/ThemeGallery.vue'
 </script>
 
-# 主题库
+# 主题合集
 
 在此浏览 Slidev 可用的精彩主题。
 
@@ -29,4 +29,4 @@ import ThemeGallery from '../.vitepress/theme/components/ThemeGallery.vue'
 
 ## 更多主题 {#more-themes}
 
-查找所有 [NPM 上可用的主题](https://www.npmjs.com/search?q=keywords%3Aslidev-theme)。
+[在 NPM 上](https://www.npmjs.com/search?q=keywords%3Aslidev-theme)查找所有已发布的主题。
