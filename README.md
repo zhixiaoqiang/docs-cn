@@ -22,31 +22,49 @@
 
 欢迎来到 Slidev 中文文档站点！本文档是 https://github.com/slidevjs/slidev/tree/main/docs 的中文翻译版本。
 
-如欲修改文档内容，请前往 [Slidev 仓库](https://github.com/slidevjs/slidev) 的 `docs` 目录进行编辑，然后提交 Pull Request。如欲修改翻译内容，请在该仓库提交 Pull Request。
-
-欢迎中文社区的朋友们加入我们的（半官方）QQ 群 978643067，讨论 Slidev 相关话题。
-
-
-
-### 📝 参与贡献
-
-感谢您的参与！若要修正翻译错误，请向 main 分支提交 PR；若要帮助翻译新增内容，请向 sync 分支提交 PR；若英文原版即有需要修改之处，请向[主仓库](https://github.com/slidevjs/slidev)提交 PR。
+### 开发预览
 
 若需要本地预览网站效果，可执行如下命令：
 
 ```bash
-# 全局安装 pnpm
-$ npm i -g pnpm
-
-# 安装依赖，使用 pnpm
-$ pnpm i
-# 启动文档
-$ pnpm run dev
+pnpm i
+pnpm dev
 ```
 
-接着访问提示的网址（一般为 `http://localhost:5173/`）即可。
+接着访问提示的网址即可。
 
 或者安装 [VSCode 的 Vite 插件](https://marketplace.visualstudio.com/items?itemName=antfu.vite) 快速启动开发服务器。
+
+### 📝 参与贡献
+
+感谢您的参与!
+
+- **翻译新增内容** / **修正翻译错误**: 请向 [slidevjs/docs-cn:main](https://github.com/slidevjs/docs-cn/tree/main) 分支提交 PR
+- **修改英文原版**: 请向 [slidevjs/slidev:main](https://github.com/slidevjs/slidev/tree/main) 提交 PR
+
+目前 Slidev 中文文档翻译已全部完成。欢迎中文社区的朋友们加入我们的（半官方）QQ 群 978643067，讨论 Slidev 相关话题。
+
+### 翻译新增内容
+
+相关的一些 Git 分支包括：
+
+- [slidev/slidev:main](https://github.com/slidevjs/slidev/tree/main): Slidev 主仓库，英文原版
+- [slidevjs/docs-cn:main](https://github.com/slidevjs/docs-cn/tree/main): Slidev 中文翻译主分支，对外发布
+- [slidevjs/docs-cn:upstream](https://github.com/slidevjs/docs-cn/tree/upstream): 每天自动从 [slidev/slidev:main](https://github.com/slidevjs/slidev/tree/main) 同步的英文文档
+
+新增翻译内容时，推荐操作如下：
+
+1. 在你的 fork 中，添加官方仓库为上游远程仓库（如未添加）：
+
+```sh
+git remote add upstream https://github.com/slidevjs/docs-cn.git
+git fetch upstream
+```
+
+2. 以 slidevjs/docs-cn:main 为基础创建新分支：`git checkout -b sync-1 upstream/main`
+3. 将 slidevjs/docs-cn:upstream 合入：`git merge upstream/upstream`
+4. 处理 Merge 产生的冲突
+5. 上传分支并向本仓库提交 PR
 
 ### 贡献者
 
